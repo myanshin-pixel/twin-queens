@@ -45,7 +45,7 @@ static/images/pieces/merida/* | Armando Hernandez Marroquin | [GPLv2+](https://w
 static/images/pieces/mono/* | Thibault Duplessis and [Colin M.L. Burnett](https://en.wikipedia.org/wiki/User:Cburnett) | [GPLv2+](https://www.gnu.org/licenses/gpl-2.0.txt) | From lichess
 static/images/pieces/orda/* | Couch Tomato | [AGPLv3+](https://www.gnu.org/licenses/agpl-3.0.txt) |
 static/images/pieces/paradigm/* | pychess-variants contributors | [AGPLv3+](https://www.gnu.org/licenses/agpl-3.0.txt) |
-static/images/pieces/santa/* | pychess-variants contributors | [AGPLv3+](https://www.gnu.org/licenses/agpl-3.0.txt) |
+static/images/pieces/santa/* | Ben Jacobs | [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) | See static/images/pieces/santa/LICENSE.txt. Not offered in Twin Queens.
 static/images/pieces/shinobi/* | Couch Tomato | [AGPLv3+](https://www.gnu.org/licenses/agpl-3.0.txt) |
 static/images/pieces/shogi/2kanji/* | [orangain](https://github.com/orangain/shogi-piece-images) | [CC-BY-SA-3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.en) |
 static/images/pieces/shogi/Ka/* | [Kadagaden](https://github.com/orangain/shogi-piece-images) | [CC-BY-SA-3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.en) |
@@ -68,6 +68,10 @@ static/sound/sfx/* | [Enigmahack](https://github.com/Enigmahack) | [AGPLv3+](htt
 static/sound/silent/* | pychess-variants contributors | [AGPLv3+](https://www.gnu.org/licenses/agpl-3.0.txt) |
 static/sound/standard/* | pychess-variants contributors | [AGPLv3+](https://www.gnu.org/licenses/agpl-3.0.txt) |
 static/images/board/* | pychess-variants contributors | [AGPLv3+](https://www.gnu.org/licenses/agpl-3.0.txt) |
+static/images/board/9x8* | Twin Queens contributors | [AGPLv3+](https://www.gnu.org/licenses/agpl-3.0.txt) | 9x8 boards; the jpg ones are crops of the pychess 8x8/10x8 boards
+static/sound/standard/chat.* | [yfjesse](https://freesound.org/people/yfjesse/sounds/235911/) | [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) |
+static/sound/standard/dinding.* | [Daenn](https://freesound.org/people/Daenn/sounds/159158/) | [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) |
+static/sound/standard/Tick.* | DeepFrozenApps / Mike Koenig ([SoundBible](https://soundbible.com/2044-Tick.html)) | [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/) |
 static/images/trophy/* | pychess-variants contributors | [AGPLv3+](https://www.gnu.org/licenses/agpl-3.0.txt) |
 static/images/\*Guide/* | pychess-variants contributors | [AGPLv3+](https://www.gnu.org/licenses/agpl-3.0.txt) |
 static/images/bughouse.jpg | [Alexandre Duret-Lutz](https://www.flickr.com/photos/gadl/91700546) | [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/) |

@@ -318,19 +318,9 @@ export const PIECE_FAMILIES: Record<string, PieceFamily> = {
     ataxx: { pieceCSS: ['disguised', 'virus', 'zombie', 'cat-dog'] },
     standard: {
         pieceNames: CHESS_NAMES,
-        pieceCSS: [
-            'standard',
-            'green',
-            'alpha',
-            'chess_kaneo',
-            'santa',
-            'maestro',
-            'dubrovny',
-            'atopdown',
-            'luffy',
-            'firi',
-            'disguised',
-        ],
+        // Twin Queens offers only piece sets whose licenses allow commercial use
+        // (alpha, santa, maestro, dubrovny and disguised are non-commercial; see static/COPYING.md).
+        pieceCSS: ['standard', 'green', 'chess_kaneo', 'atopdown', 'luffy', 'firi'],
     },
     capa: { pieceCSS: ['capa0', 'capa1', 'capa2', 'capa3', 'capa4', 'capa5', 'disguised'], pieceNames: CAPA_NAMES },
     centaur: { pieceCSS: ['centaur0', 'centaur1', 'disguised'] },

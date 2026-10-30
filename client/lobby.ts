@@ -117,6 +117,8 @@ export function disableCorr(disable: boolean) {
     });
 }
 
+const SOURCE_CODE_URL = 'https://github.com/pychess/pychess-variants';
+
 export class LobbyController {
     sock: WebsocketHeartbeatJs;
     home: string;
@@ -2283,33 +2285,10 @@ export function lobbyView(model: PyChessModel): VNode[] {
             ),
             h('div.lobby-ranking-panels', [h('div#leaders.lobby-ranking'), h('div#winners.lobby-ranking')]),
             h('div.lobby-links-block', [
-                h(
-                    'a.reflist',
-                    { attrs: { href: 'https://discord.gg/aPs8RKr', rel: 'noopener', target: '_blank' } },
-                    'Discord',
-                ),
-                h(
-                    'a.reflist',
-                    {
-                        attrs: {
-                            href: 'https://github.com/pychess/pychess-variants',
-                            rel: 'noopener',
-                            target: '_blank',
-                        },
-                    },
-                    'Github',
-                ),
-                h(
-                    'a.reflist',
-                    {
-                        attrs: {
-                            href: 'https://www.youtube.com/channel/UCj_r_FSVXQFLgZLwSeFBE8g',
-                            rel: 'noopener',
-                            target: '_blank',
-                        },
-                    },
-                    'YouTube',
-                ),
+                // AGPL: the source code of this modified server must be offered to its users.
+                // Replace SOURCE_CODE_URL with the Twin Queens repository once it exists.
+                h('a.reflist', { attrs: { href: SOURCE_CODE_URL, rel: 'noopener', target: '_blank' } }, _('Source code')),
+                h('a.reflist', { attrs: { href: '/static/COPYING.md', target: '_blank' } }, _('Licenses')),
                 h('div.internalLinks', [
                     h('a.reflist', { attrs: { href: '/faq' } }, _('FAQ')),
                     h('a.reflist', { attrs: { href: '/stats' } }, _('Stats')),

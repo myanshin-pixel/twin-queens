@@ -289,7 +289,6 @@ const soundThemes = {
     nes: 'NES',
     sfx: 'SFX',
     futuristic: 'Futuristic',
-    lisp: 'Lisp',
     robot: 'Robot',
 };
 
