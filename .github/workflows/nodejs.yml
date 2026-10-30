@@ -1,13 +1,10 @@
 name: Nodejs-CI
 
+# Server CI from pychess-variants: runs on pull requests and on demand only,
+# so pushes of the website/app don't wait behind it.
 on:
   pull_request:
-  push:
-    paths-ignore:
-      - 'site/**'
-      - 'android-app/**'
-      - '.github/workflows/pages.yml'
-      - '.github/workflows/android.yml'
+  workflow_dispatch:
 
 permissions:
   contents: read
