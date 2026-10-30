@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   apk:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     env:
       TQ_VERSION_CODE: ${{ github.run_number }}
       TQ_VERSION_NAME: 1.0.${{ github.run_number }}
@@ -24,7 +24,13 @@ jobs:
         with:
           distribution: temurin
           java-version: 21
-      - uses: android-actions/setup-android@v3
+      - name: Android SDK
+        run: |
+          SDK="${ANDROID_HOME:-${ANDROID_SDK_ROOT:-/usr/local/lib/android/sdk}}"
+          if [ ! -d "$SDK" ]; then echo "::error title=Android SDK::not found at $SDK"; exit 1; fi
+          echo "ANDROID_HOME=$SDK" >> "$GITHUB_ENV"
+          echo "ANDROID_SDK_ROOT=$SDK" >> "$GITHUB_ENV"
+          echo "::notice title=Android SDK::$SDK platforms: $(ls $SDK/platforms | tr '\n' ' ') build-tools: $(ls $SDK/build-tools | tr '\n' ' ')"
 
       - name: Copy the website into the app
         working-directory: android-app
