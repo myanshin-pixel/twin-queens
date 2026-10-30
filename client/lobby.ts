@@ -2224,6 +2224,14 @@ export function lobbyView(model: PyChessModel): VNode[] {
            tournament spotlights and the timeline. Naming it for the tournaments would go stale the
            moment a stream is live. */
         h('aside.sidebar-first', { attrs: { 'aria-label': _("What's up") } }, [
+            h('img.tq-logo', {
+                attrs: {
+                    src: model['assetURL'] + '/images/brand/twinqueens-logo-720.jpg',
+                    alt: 'Twin Queens — new chess',
+                    width: 720,
+                    height: 720,
+                },
+            }),
             srHeading('h2', _("What's up")),
             h('div#streams'),
             h('div#spotlights'),

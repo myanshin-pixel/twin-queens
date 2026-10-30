@@ -333,3 +333,6 @@ box-shadow: var(--box-shadow-panel-btn);
         grid-template-columns: repeat(3, 1fr);
     }
 }
+
+/* Twin Queens branding */
+.tq-logo{display:block;width:100%;height:auto;aspect-ratio:1;border-radius:8px;margin-bottom:12px;box-shadow:0 6px 24px rgba(0,0,0,.35)}
