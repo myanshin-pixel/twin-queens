@@ -36,7 +36,7 @@ export function nnueLookupContextForVariant(variant: {
     };
 }
 
-// These Super Chess mappings are not present as rows in Fairy-Stockfish's NNUE
+// These Twin Queens mappings are not present as rows in Fairy-Stockfish's NNUE
 // catalogue, but are known site/engine compatibility paths.
 const PYCHESS_NNUE_ENGINE_VARIANT_ALIASES: Readonly<Partial<Record<string, NnueNetworkId>>> = {
     chess: 'nn',
@@ -53,7 +53,7 @@ function exactNetworkId(engineVariant: string): NnueNetworkId | undefined {
 
 // Prefix matching is intentionally broader than automatic NNUE selection. It is
 // also used by the manual file picker, where users may deliberately experiment
-// with a network even when Super Chess cannot prove that a UDV matches it.
+// with a network even when Twin Queens cannot prove that a UDV matches it.
 export function nnueNetworkIdForEngineVariant(engineVariant: string): NnueNetworkId | undefined {
     const exact = exactNetworkId(engineVariant);
     if (exact) return exact;

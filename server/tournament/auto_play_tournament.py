@@ -82,7 +82,7 @@ async def create_auto_play_tournament(app):
         base=1,
         before_start=0.5,
         minutes=10,
-        created_by="Super Chess",
+        created_by="Twin Queens",
         rounds=5,
         round_interval=10,
     )

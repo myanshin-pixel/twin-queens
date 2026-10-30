@@ -10,7 +10,7 @@ from views import get_user_context
 @aiohttp_jinja2.template("report_faq.html")
 async def report_faq(request: web.Request) -> ViewContext:
     _user, context = await get_user_context(request)
-    context["title"] = "Report FAQ • Super Chess"
+    context["title"] = "Report FAQ • Twin Queens"
     context["view"] = "report_faq"
     context["view_css"] = "faq.css"
     return context

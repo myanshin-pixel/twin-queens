@@ -8,5 +8,5 @@ from views import get_user_context
 @aiohttp_jinja2.template("index.html")
 async def my_variants(request: web.Request) -> ViewContext:
     _user, context = await get_user_context(request)
-    context["title"] = "Manage my variants • Super Chess"
+    context["title"] = "Manage my variants • Twin Queens"
     return context

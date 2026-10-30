@@ -22,7 +22,7 @@ if TYPE_CHECKING:
 
 
 # Lichess ties simul admission to its general realtime-playing capacity (100).
-# Super Chess runs on a much smaller server, so keep one host from creating more than
+# Twin Queens runs on a much smaller server, so keep one host from creating more than
 # 50 live games at once. Keep this as a single explicit constant so it can be
 # raised later if production measurements show that is safe.
 MAX_SIMUL_OPPONENTS = 50
@@ -63,7 +63,7 @@ def is_simul_featurable(
     """Return whether a simul may be featured on the public simul home page.
 
     Team-restricted simuls are intentionally never featured globally. Otherwise
-    Super Chess features established hosts: titled players, site admins, tournament
+    Twin Queens features established hosts: titled players, site admins, tournament
     directors, or a current Top 10 player in any offered rated variant.
     """
     if host.anon or host.bot or entry_team_id is not None:

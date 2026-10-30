@@ -46,7 +46,7 @@ def _joined_at_for_payload(created_at: datetime) -> datetime | None:
 
 
 def _select_best8_perfs_by_activity(profile: PublicProfile) -> list[dict[str, object]]:
-    # Super Chess variants are broadly distributed, so use pure activity ranking
+    # Twin Queens variants are broadly distributed, so use pure activity ranking
     # instead of fixed anchor variants.
     played_perfs = [
         (key, perf)

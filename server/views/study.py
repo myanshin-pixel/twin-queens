@@ -169,7 +169,7 @@ def _study_creation_metadata(
 
 def _study_context(context: ViewContext) -> None:
     context["view_css"] = "study.css"
-    context["title"] = "Studies • Super Chess"
+    context["title"] = "Studies • Twin Queens"
     context["study_preview_nb_members"] = STUDY_PREVIEW_NB_MEMBERS
     context["study_enabled_modes"] = json_dumps(list(study_enabled_chapter_modes()))
 
@@ -537,7 +537,7 @@ async def studies_contributed(request: web.Request) -> ViewContext:
         raise web.HTTPServiceUnavailable(text="Studies require database access.")
 
     _study_context(context)
-    context["title"] = "Studies I contribute to • Super Chess"
+    context["title"] = "Studies I contribute to • Twin Queens"
     order = study_list_order(request.rel_url.query.get("order"))
     result = await contributed_studies_page(
         app_state,
@@ -565,7 +565,7 @@ async def studies_liked(request: web.Request) -> ViewContext:
         raise web.HTTPServiceUnavailable(text="Studies require database access.")
 
     _study_context(context)
-    context["title"] = "My favorite studies • Super Chess"
+    context["title"] = "My favorite studies • Twin Queens"
     order = study_list_order(request.rel_url.query.get("order"))
     result = await favorite_studies_page(
         app_state,
@@ -593,7 +593,7 @@ async def studies_mine_public(request: web.Request) -> ViewContext:
         raise web.HTTPServiceUnavailable(text="Studies require database access.")
 
     _study_context(context)
-    context["title"] = "My public studies • Super Chess"
+    context["title"] = "My public studies • Twin Queens"
     order = study_list_order(request.rel_url.query.get("order"))
     result = await owner_studies_page(
         app_state,
@@ -622,7 +622,7 @@ async def studies_mine_private(request: web.Request) -> ViewContext:
         raise web.HTTPServiceUnavailable(text="Studies require database access.")
 
     _study_context(context)
-    context["title"] = "My private studies • Super Chess"
+    context["title"] = "My private studies • Twin Queens"
     order = study_list_order(request.rel_url.query.get("order"))
     result = await owner_studies_page(
         app_state,
@@ -650,7 +650,7 @@ async def studies_public(request: web.Request) -> ViewContext:
         raise web.HTTPServiceUnavailable(text="Studies require database access.")
 
     _study_context(context)
-    context["title"] = "All studies • Super Chess"
+    context["title"] = "All studies • Twin Queens"
     order = study_list_order(request.rel_url.query.get("order"))
     result = await public_studies_page(
         app_state,
@@ -692,7 +692,7 @@ async def studies_by_owner(request: web.Request) -> ViewContext:
     viewer = None if user.anon else user.username
     is_self = viewer == owner
     _study_context(context)
-    context["title"] = f"Studies by {owner} • Super Chess"
+    context["title"] = f"Studies by {owner} • Twin Queens"
     owner_studies = await studies_for_owner_view(app_state, owner, viewer)
     context["studies"] = owner_studies
     context["study_card_chapters"] = await study_list_chapter_names(app_state, owner_studies)
@@ -714,7 +714,7 @@ async def studies_search(request: web.Request) -> ViewContext:
         raise web.HTTPServiceUnavailable(text="Studies require database access.")
 
     _study_context(context)
-    context["title"] = "Search studies • Super Chess"
+    context["title"] = "Search studies • Twin Queens"
     order = study_list_order(request.rel_url.query.get("order"))
     viewer = None if user.anon else user.username
     result = await study_search_page(
@@ -764,7 +764,7 @@ async def studies_topics(request: web.Request) -> ViewContext:
         raise web.HTTPServiceUnavailable(text="Studies require database access.")
 
     _study_context(context)
-    context["title"] = "Study topics • Super Chess"
+    context["title"] = "Study topics • Twin Queens"
     context["study_list_can_create"] = not user.anon and not user.bot
     context["study_topics_index"] = True
     context["study_popular_topics"] = await popular_study_topics(app_state)
@@ -796,7 +796,7 @@ async def studies_by_topic(request: web.Request) -> ViewContext:
         page=_positive_page(request.rel_url.query.get("page")),
     )
     _study_context(context)
-    context["title"] = f"{topic} • Study topics • Super Chess"
+    context["title"] = f"{topic} • Study topics • Twin Queens"
     context["study_list_owner"] = ""
     context["study_list_is_self"] = False
     context["study_list_can_create"] = not user.anon and not user.bot
@@ -1034,7 +1034,7 @@ async def study_show(request: web.Request) -> ViewContext | web.Response:
     writable = can_write_study(study, viewer)
     _study_context(context)
     context["view"] = "study"
-    context["title"] = f"{study.name} • Super Chess"
+    context["title"] = f"{study.name} • Twin Queens"
     await _populate_study_chapter_context(
         app_state,
         user,
@@ -1068,7 +1068,7 @@ async def study_embed(request: web.Request) -> ViewContext:
     app_state = get_app_state(request.app)
     context["view"] = "embed"
     context["view_css"] = "embed.css"
-    context["title"] = f"{study.name}: {chapter.name} • Super Chess"
+    context["title"] = f"{study.name}: {chapter.name} • Twin Queens"
     await _populate_study_chapter_context(
         app_state,
         user,

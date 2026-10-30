@@ -99,7 +99,7 @@ def _thread_update(sender: str, recipient: str, text: str, now: datetime) -> dic
 async def send_system_inbox_messages(
     app_state, recipients: list[str], text: str, *, batch_size: int = 200
 ) -> int:
-    """Persist one Super Chess inbox message per recipient without loading offline users."""
+    """Persist one Twin Queens inbox message per recipient without loading offline users."""
     if app_state.db is None or not recipients:
         return 0
 

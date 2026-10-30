@@ -16,7 +16,7 @@ export interface StudyPracticeGoalPosition {
 }
 
 /** Human-readable learner objective, following lila's Practice wording while
- * keeping Super Chess's variant-native `win` goals and non-pawn promotion support. */
+ * keeping Twin Queens's variant-native `win` goals and non-pawn promotion support. */
 export function studyPracticeGoalText(goal: PracticeGoal, learnerColor: 'white' | 'black', learnerMoves = 0): string {
     const remaining = 'moves' in goal ? Math.max(0, goal.moves - learnerMoves) : undefined;
     switch (goal.result) {

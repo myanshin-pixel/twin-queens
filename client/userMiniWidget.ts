@@ -354,7 +354,7 @@ class UserMiniWidget {
             payload.patron ? ' patron icon-patron-wing' : ''
         }`;
         status.setAttribute('aria-hidden', 'true');
-        if (payload.patron) status.title = _('Super Chess Patron');
+        if (payload.patron) status.title = _('Twin Queens Patron');
         head.appendChild(status);
 
         const nameLink = document.createElement('a');

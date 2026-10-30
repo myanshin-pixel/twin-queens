@@ -961,9 +961,9 @@ export const VARIANTS: Record<string, Variant> = {
         },
     }),
 
-    superchess: variant({
-        name: 'superchess',
-        displayName: 'super chess',
+    twinqueens: variant({
+        name: 'twinqueens',
+        displayName: 'twin queens',
         tooltip: 'Chess on a 9x8 board with two queens on each side.',
         startFen: 'rnbqkqnbr/ppppppppp/9/9/9/9/PPPPPPPPP/RNBQKQNBR w KQkq - 0 1',
         icon: 'M',
@@ -2145,8 +2145,8 @@ const BUILTIN_VARIANT_NAMES = new Set(Object.keys(VARIANTS));
 export function isBuiltinVariantName(name: string | undefined | null): boolean {
     return !!name && BUILTIN_VARIANT_NAMES.has(name);
 }
-// Super Chess: the only variant offered on this site
-export const SITE_VARIANTS = ['superchess'];
+// Twin Queens: the only variant offered on this site
+export const SITE_VARIANTS = ['twinqueens'];
 const disabledVariants = [
     'gothic',
     'gothhouse',
@@ -3035,7 +3035,7 @@ export function disabledVariantsForCreateMode(
 export const variantGroups: { [key: string]: { variants: string[] } } = {
     chess: {
         variants: [
-            'superchess',
+            'twinqueens',
             'chess',
             'bughouse',
             'crazyhouse',

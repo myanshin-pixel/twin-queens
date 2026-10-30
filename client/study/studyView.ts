@@ -125,7 +125,7 @@ function studySettingsForm(study: StudyPageModel, formId: string): VNode {
         studyPermissionField('computer', _('Computer analysis'), studySetting(study, 'computer')),
         studyPermissionField('cloneable', _('Allow cloning'), studySetting(study, 'cloneable')),
         studyPermissionField('shareable', _('Share & export'), studySetting(study, 'shareable')),
-        // Super Chess does not have an opening explorer yet. Preserve the compatible
+        // Twin Queens does not have an opening explorer yet. Preserve the compatible
         // Lichess setting in the document without exposing a non-functional control.
         h('input', { attrs: { type: 'hidden', name: 'explorer', value: studySetting(study, 'explorer') } }),
     ]);
@@ -939,8 +939,8 @@ function chapterIdFromStudyUrl(study: StudyPageModel, pathname: string): string 
 }
 
 function studyDocumentTitle(study: StudyPageModel): string {
-    if (study.practice?.preview) return `${study.name} • Practice Preview • Super Chess`;
-    return study.practice ? `${study.name} • Practice • Super Chess` : `${study.name} • Super Chess`;
+    if (study.practice?.preview) return `${study.name} • Practice Preview • Twin Queens`;
+    return study.practice ? `${study.name} • Practice • Twin Queens` : `${study.name} • Twin Queens`;
 }
 
 function nextStudyChapter(study: StudyPageModel): StudyPageModel['chapters'][number] | undefined {

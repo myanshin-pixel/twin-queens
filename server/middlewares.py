@@ -93,12 +93,12 @@ async def handle_404(request: web.Request, handler: Handler) -> web.StreamRespon
                     '<!doctype html><html lang="en"><head>'
                     '<meta charset="utf-8"><meta name="viewport" '
                     'content="width=device-width,initial-scale=1">'
-                    "<title>404 · Super Chess</title>"
+                    "<title>404 · Twin Queens</title>"
                     "<style>body{font:1.2rem system-ui,sans-serif;max-width:38rem;"
                     "margin:12vh auto;padding:0 1.5rem;color:#333}"
                     "h1{font-size:4rem;margin:0}a{color:#1769aa}</style>"
                     "</head><body><main><h1>404</h1><p>Page not found.</p>"
-                    '<p><a href="/">Return to Super Chess</a></p></main></body></html>'
+                    '<p><a href="/">Return to Twin Queens</a></p></main></body></html>'
                 ),
                 status=404,
                 content_type="text/html",

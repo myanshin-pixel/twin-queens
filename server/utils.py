@@ -1476,7 +1476,7 @@ def pgn(doc):
     setup_fen = fen if variant != "crazyhouse" else fen.replace("[]", "")
 
     return '[Event "{}"]\n[Site "{}"]\n[Date "{}"]\n[Round "-"]\n[White "{}"]\n[Black "{}"]\n[Result "{}"]\n[TimeControl "{}+{}"]\n[WhiteElo "{}"]\n[BlackElo "{}"]\n[Variant "{}"]\n{fen}{setup}\n{} {}\n'.format(
-        "Super Chess " + ("rated" if "y" in doc and doc["y"] == 1 else "casual") + " game",
+        "Twin Queens " + ("rated" if "y" in doc and doc["y"] == 1 else "casual") + " game",
         URI + "/" + doc["_id"],
         doc["d"].strftime("%Y.%m.%d"),
         doc["us"][0],

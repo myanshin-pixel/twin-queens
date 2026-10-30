@@ -102,7 +102,7 @@ class ServerVariants(Enum):
         self.move_encoding = variant.move_encoding
         self.move_decoding = variant.move_decoding
 
-    SUPERCHESS = Variant("9", "superchess", _("Super Chess"), "M")
+    SUPERCHESS = Variant("9", "twinqueens", _("Twin Queens"), "M")
     CHESS = Variant("n", "chess", _("Chess"), "M")
     CHESS960 = Variant("n", "chess", _("Chess960"), "V", chess960=True)
     BUGHOUSE = Variant("F", "bughouse", _("Bughouse"), "¢", two_boards=True, base_variant="crazyhouse")  # fmt: skip
@@ -227,9 +227,9 @@ VARIANTS: dict[str, ServerVariants] = {
     variant.server_name: variant for variant in ServerVariants if variant not in NO_VARIANTS
 }
 
-# Super Chess: the site offers only its own variant. Other variants stay defined
+# Twin Queens: the site offers only its own variant. Other variants stay defined
 # (old code paths and tests reference them) but are not playable.
-SITE_VARIANTS: tuple[str, ...] = ("superchess",)
+SITE_VARIANTS: tuple[str, ...] = ("twinqueens",)
 VARIANTS = {name: variant for name, variant in VARIANTS.items() if name in SITE_VARIANTS}
 
 VARIANT_ICONS: dict[str, str] = {variant.server_name: variant.icon for variant in ServerVariants}

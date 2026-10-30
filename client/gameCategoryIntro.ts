@@ -7,7 +7,7 @@ import { showMainSettings } from './settingsView';
 let dialogVNode: VNode | null = null;
 
 function shouldShowIntro(): boolean {
-    // Super Chess has a single variant, so the category filter never applies.
+    // Twin Queens has a single variant, so the category filter never applies.
     return false;
 }
 

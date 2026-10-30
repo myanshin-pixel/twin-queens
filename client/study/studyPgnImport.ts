@@ -213,7 +213,7 @@ interface ParsedPgnComments {
 }
 
 // Only interpret opaque lesson comments when their version tag opts into the
-// Super Chess extension. Without it, [%pygamebook ...] remains an ordinary comment.
+// Twin Queens extension. Without it, [%pygamebook ...] remains an ordinary comment.
 const PYCHESS_STUDY_PGN_VERSION = '1';
 const STUDY_CHAPTER_MODES = new Set<StudyChapterMode>(['normal', 'practice', 'conceal', 'gamebook']);
 
@@ -276,14 +276,14 @@ function chapterTeaching(
 } {
     const version = tags['PyChessStudyVersion'];
     if (version !== undefined && version !== PYCHESS_STUDY_PGN_VERSION) {
-        throw new StudyPgnImportError(`Unsupported Super Chess Study PGN version: ${version}.`);
+        throw new StudyPgnImportError(`Unsupported Twin Queens Study PGN version: ${version}.`);
     }
     const rawMode = tags['PyChessChapterMode'];
     if (rawMode !== undefined && version !== PYCHESS_STUDY_PGN_VERSION) {
         throw new StudyPgnImportError('PyChessChapterMode requires [PyChessStudyVersion "1"].');
     }
     if (rawMode !== undefined && !STUDY_CHAPTER_MODES.has(rawMode as StudyChapterMode)) {
-        throw new StudyPgnImportError(`Invalid Super Chess chapter mode: ${rawMode}.`);
+        throw new StudyPgnImportError(`Invalid Twin Queens chapter mode: ${rawMode}.`);
     }
     const compatible = tags['ChapterMode'];
     if (compatible !== undefined && compatible !== 'gamebook') {
@@ -305,11 +305,11 @@ function chapterTeaching(
         throw new StudyPgnImportError('PyChessConcealPly is only valid for concealed chapters.');
     }
     if (rawConcealPly !== undefined && !/^(?:0|[1-9]\d*)$/.test(rawConcealPly.trim())) {
-        throw new StudyPgnImportError('Invalid Super Chess conceal boundary.');
+        throw new StudyPgnImportError('Invalid Twin Queens conceal boundary.');
     }
     const concealPly = rawConcealPly === undefined ? undefined : Number(rawConcealPly);
     if (concealPly !== undefined && !Number.isSafeInteger(concealPly)) {
-        throw new StudyPgnImportError('Invalid Super Chess conceal boundary.');
+        throw new StudyPgnImportError('Invalid Twin Queens conceal boundary.');
     }
     return {
         mode,
@@ -325,7 +325,7 @@ function parseGamebookDirective(encoded: string): StudyGamebookDto {
         raw = JSON.parse(decodePgnUtf8Base64(encoded.trim()));
         return parseStudyGamebook(raw);
     } catch {
-        throw new StudyPgnImportError('Invalid Super Chess lesson metadata in PGN comment.');
+        throw new StudyPgnImportError('Invalid Twin Queens lesson metadata in PGN comment.');
     }
 }
 
@@ -525,19 +525,19 @@ function commentsFromPgn(
         });
         if (lessonExtension) {
             text = text.replace(/\[%pygamebook\s+([^\]]+)\]/gi, (_full, body: string) => {
-                if (gamebook) throw new StudyPgnImportError('Duplicate Super Chess lesson metadata on one position.');
+                if (gamebook) throw new StudyPgnImportError('Duplicate Twin Queens lesson metadata on one position.');
                 gamebook = parseGamebookDirective(body);
                 return '';
             });
             if (/\[%pygamebook\b/i.test(text)) {
-                throw new StudyPgnImportError('Malformed Super Chess lesson metadata in PGN comment.');
+                throw new StudyPgnImportError('Malformed Twin Queens lesson metadata in PGN comment.');
             }
             text = text.replace(/\[%pyforcevariation\s*\]/gi, () => {
                 forceVariation = true;
                 return '';
             });
             if (/\[%pyforcevariation\b/i.test(text)) {
-                throw new StudyPgnImportError('Malformed Super Chess forced-variation metadata in PGN comment.');
+                throw new StudyPgnImportError('Malformed Twin Queens forced-variation metadata in PGN comment.');
             }
         }
         const cleaned = text.trim();
@@ -916,15 +916,15 @@ function normalizeGame(engine: StudyPgnEngine, game: ParsedStudyPgnGame, index: 
         rootComments.annotations = coalesceImportedComments(rootComments.annotations);
         for (const node of nodes) node.annotations = coalesceImportedComments(node.annotations);
         if (nodes.filter(node => node.forceVariation).length > 1) {
-            throw new StudyPgnImportError('Super Chess Study PGN contains more than one forced-variation marker.');
+            throw new StudyPgnImportError('Twin Queens Study PGN contains more than one forced-variation marker.');
         }
         const importedTags = canonicalTags(tags);
         // Lichess PracticeGoal defaults an absent/unrecognized Termination tag to
-        // mate. Keep Super Chess's stricter explicit-goal rule for authored Practice
+        // mate. Keep Twin Queens's stricter explicit-goal rule for authored Practice
         // Studies, but materialize the missing default when importing a chapter
         // whose Practice mode itself had to be recovered from the official Lichess
         // curriculum. Existing non-empty Termination values remain untouched so a
-        // malformed source goal is still visible to Super Chess validation.
+        // malformed source goal is still visible to Twin Queens validation.
         if (teaching.inferredLichessPractice && importedTags.Termination === undefined) {
             importedTags.Termination = 'mate';
         }

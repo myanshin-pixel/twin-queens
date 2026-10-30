@@ -5,14 +5,14 @@
         {% include "admin_nav.html" %}
         <main class="admin-page admin-system-messages box box-pad">
             <h1>System messages</h1>
-            <p class="admin-page__intro">Send a private inbox message as the reserved <strong>Super Chess</strong> system account.</p>
+            <p class="admin-page__intro">Send a private inbox message as the reserved <strong>Twin Queens</strong> system account.</p>
 
             <p class="admin-ops-feedback" role="status" aria-live="polite"></p>
 
             <section class="admin-ops-card admin-ops-card--wide">
                 <header>
                     <h2>Send message</h2>
-                    <p>System messages bypass blocks and friends-only PM settings. Users cannot reply to Super Chess.</p>
+                    <p>System messages bypass blocks and friends-only PM settings. Users cannot reply to Twin Queens.</p>
                 </header>
 
                 <form id="admin-system-message-form" class="admin-ops-form" action="/api/admin/system-messages/send" method="post">
@@ -40,7 +40,7 @@
                         <small>Maximum 2000 characters.</small>
                     </label>
 
-                    <button class="admin-action-button is-warning" type="submit">Send as Super Chess</button>
+                    <button class="admin-action-button is-warning" type="submit">Send as Twin Queens</button>
                 </form>
             </section>
 

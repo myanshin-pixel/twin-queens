@@ -104,7 +104,7 @@
 .cg-wrap.cg-448.mini {
   --mini-board-width: 224px;
 }
-/* 9x8 Super Chess */
+/* 9x8 Twin Queens */
 .cg-wrap.cg-576-512 {
     padding-bottom: calc(512 * 100% / 576);
     --cg-board-files: 9;

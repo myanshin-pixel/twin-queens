@@ -54,7 +54,7 @@ function outcomeWinningChance(outcome: StudyPracticeFeedback['outcome']): number
 
 /**
  * Fairy-Stockfish UCI scores are from the side-to-move point of view. Passing that
- * side through Super Chess's shared povChances helper first converts the score to White's
+ * side through Twin Queens's shared povChances helper first converts the score to White's
  * point of view; the final sign change converts it to the fixed learner's point of view.
  */
 export function studyPracticeLearnerWinningChances(

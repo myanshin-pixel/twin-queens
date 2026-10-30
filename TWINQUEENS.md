@@ -1,25 +1,25 @@
-# Super Chess
+# Twin Queens
 
-Super Chess is a chess server for one variant: a 9×8 board with two queens on each side
+Twin Queens is a chess server for one variant: a 9×8 board with two queens on each side
 (setup RNBQKQNBR). It is built on pychess-variants (https://github.com/pychess/pychess-variants)
 and is distributed under the same license, GNU AGPL v3 (see LICENSE). If you run a modified
 version as a public site, you must offer its source code to its users.
 
 Base: pychess-variants commit 495b336408eb1090922befb3541addc7cf7d16fd (30 Oct 2026).
-Apply the changes with `git apply --binary superchess-changes.patch`.
+Apply the changes with `git apply --binary twinqueens-changes.patch`.
 
 ## What was changed compared to pychess-variants
 
-- New variant `superchess` (variants.ini, client/variantsIni.ts, server/variants.py, client/variants.ts).
+- New variant `twinqueens` (variants.ini, client/variantsIni.ts, server/variants.py, client/variants.ts).
 - 9×8 board geometry (`cg-576-512` in static/chessground.css, extensions.css, lobby.css) and
   12 board themes (static/images/board/9x8*.svg|jpg).
-- The site offers only Super Chess (`SITE_VARIANTS` in server/variants.py and client/variants.ts).
+- The site offers only Twin Queens (`SITE_VARIANTS` in server/variants.py and client/variants.ts).
 - Lobby: a quick-pairing grid 1+0, 3+0, 3+2, 5+0, 5+3, 10+0, 10+5, 15+10, 30+0, 30+20 and Custom
   (client/lobby/layer1.ts, static/layer-1.css).
-- Tournament schedule: weekly and monthly Super Chess arenas and a monthly shield
+- Tournament schedule: weekly and monthly Twin Queens arenas and a monthly shield
   (server/tournament/scheduler.py).
-- Branding "Super Chess", reduced menu, 10 interface languages (en, ru, es, pt, de, fr, it, tr, ja, zh_CN).
-- Rules page: static/docs/superchess.md and superchess.ru.md.
+- Branding "Twin Queens", reduced menu, 10 interface languages (en, ru, es, pt, de, fr, it, tr, ja, zh_CN).
+- Rules page: static/docs/twinqueens.md and twinqueens.ru.md.
 
 ## Running locally
 

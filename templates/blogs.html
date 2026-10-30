@@ -4,7 +4,7 @@
 <main class="page-menu">
 <aside>
     <ul class="guide">
-    <li><a href="{{ home }}/blogs"><span>{% trans %}By Super Chess{% endtrans %}</span></a></li>
+    <li><a href="{{ home }}/blogs"><span>{% trans %}By Twin Queens{% endtrans %}</span></a></li>
     <li><a href="{{ home }}/blogs/community"><span>{% trans %}Community{% endtrans %}</span></a></li>
     {% for topic in site_tags %}
     <li>
@@ -14,10 +14,10 @@
     </ul>
 </aside>
 <div class="blogs">
-    <div class="box-top"><h1>{% trans %}Super Chess Blogs{% endtrans %}</h1></div>
+    <div class="box-top"><h1>{% trans %}Twin Queens Blogs{% endtrans %}</h1></div>
     <div class="blog">
     {%- for blog in blogs -%}
-    <a class="card" href="{{ blog['url'] if blog['url'] else (home + '/blogs/' + blog['_id']) }}"><span class="card-media"><img class="{% if not blog['image_src'] %}blog-cover-fallback{% endif %}" style="background-image: url('{{ blog['image_src'] or static('images/ublog-default-cover.svg') }}')" alt="{{ blog['imageAlt'] if blog['image_src'] else 'Super Chess' }}"><span class="date">{{ blog['date'] }}</span><span class="author"><player-title>{{ blog['author_title'] }} </player-title>{{ blog['author'] }}</span></span><span class="info"><span class="title">{{ blog['title'] }}</span><span class="sub-title">{{ blog['intro'] }}</span></span></a>
+    <a class="card" href="{{ blog['url'] if blog['url'] else (home + '/blogs/' + blog['_id']) }}"><span class="card-media"><img class="{% if not blog['image_src'] %}blog-cover-fallback{% endif %}" style="background-image: url('{{ blog['image_src'] or static('images/ublog-default-cover.svg') }}')" alt="{{ blog['imageAlt'] if blog['image_src'] else 'Twin Queens' }}"><span class="date">{{ blog['date'] }}</span><span class="author"><player-title>{{ blog['author_title'] }} </player-title>{{ blog['author'] }}</span></span><span class="info"><span class="title">{{ blog['title'] }}</span><span class="sub-title">{{ blog['intro'] }}</span></span></a>
     {%- endfor -%}
     </div>
 </div>

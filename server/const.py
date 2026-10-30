@@ -16,7 +16,7 @@ TEST_PREFIX = "Test" + DASH
 
 NONE_USER = "None" + DASH + "User"
 HTTP_ANON_USER = ANON_PREFIX + "HTTP"
-SYSTEM_USER = "Super Chess"
+SYSTEM_USER = "Twin Queens"
 
 RESERVED_USERS = (
     "Random-Mover",
@@ -241,7 +241,7 @@ VARIANT_960_TO_PGN = {
 
 CATEGORIES = {
     "chess": (
-        "superchess",
+        "twinqueens",
         "chess",
         "chess960",
         "bughouse",

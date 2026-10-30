@@ -28,7 +28,7 @@ log = logging.getLogger(__name__)
 # restores ones whose host was active recently. Started simuls are always
 # restored regardless of age. Lichess uses an even tighter live-host window for
 # featuring created simuls; one hour is intentionally more forgiving here
-# because Super Chess records presence on websocket connect rather than periodic
+# because Twin Queens records presence on websocket connect rather than periodic
 # host pings.
 CREATED_SIMUL_RESTART_WINDOW = timedelta(hours=1)
 SIMUL_HOME_CREATED_LIMIT = 50
@@ -225,7 +225,7 @@ async def erase_user_from_simuls(app_state: PychessGlobalAppState, username: str
     Created simuls owned by the erased account have no game history and can no
     longer be hosted, so delete them. Created-simul applicants are removed. For
     started/finished simuls, keep the historical participant slots but replace
-    usernames with the same non-identifying marker used elsewhere on Super Chess.
+    usernames with the same non-identifying marker used elsewhere on Twin Queens.
     """
     if app_state.db is None:
         return

@@ -113,7 +113,7 @@ export async function loadNnueFile(variant: string, filename: string): Promise<U
     const stored = await bigFileStorage.read(storageKey);
     if (stored) return stored;
 
-    // Before OPFS support, Super Chess stored the full ArrayBuffer in idb-keyval's
+    // Before OPFS support, Twin Queens stored the full ArrayBuffer in idb-keyval's
     // default store. Migrate it lazily so existing users do not need to select
     // their network again after this change.
     const legacy = await idb.get<ArrayBuffer | Uint8Array>(legacyNnueDataKey(variant));
@@ -162,7 +162,7 @@ export async function loadOfficialNnueFile(
         return undefined;
     }
 
-    // Old Super Chess versions had no source/integrity metadata. If the selected
+    // Old Twin Queens versions had no source/integrity metadata. If the selected
     // file exactly matches the current official hash-named network, adopt it as
     // an official cache entry after the available size/hash checks.
     await idb.set(nnueMetadataKey(variant), {

@@ -44,7 +44,7 @@ async def admin_system_messages(request: web.Request) -> ViewContext:
     if app_state.db is None:
         raise web.HTTPServiceUnavailable()
 
-    context["title"] = "System messages • Super Chess"
+    context["title"] = "System messages • Twin Queens"
     context["view"] = "admin"
     context["view_css"] = "admin.css"
     context["admin"] = True

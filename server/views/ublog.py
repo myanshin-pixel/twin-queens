@@ -249,7 +249,7 @@ def _build_form_context(
     errors: list[str],
     post: dict[str, Any] | None = None,
 ) -> ViewContext:
-    context["title"] = "Blog editor • Super Chess"
+    context["title"] = "Blog editor • Twin Queens"
     context["view_css"] = "ublog.css"
     context["profile"] = profile_id
     context["ublog_values"] = values
@@ -327,7 +327,7 @@ async def community(request: web.Request) -> ViewContext:
         context["community_posts"] = []
         context["community_topic"] = topic
         context["community_topics"] = []
-        context["title"] = "Community blogs • Super Chess"
+        context["title"] = "Community blogs • Twin Queens"
         context["view_css"] = "ublog.css"
         return context
 
@@ -354,7 +354,7 @@ async def community(request: web.Request) -> ViewContext:
         )
         if isinstance(t, str)
     )
-    context["title"] = "Community blogs • Super Chess"
+    context["title"] = "Community blogs • Twin Queens"
     context["view_css"] = "ublog.css"
     return context
 
@@ -471,7 +471,7 @@ async def user_blog(request: web.Request) -> ViewContext:
     context["profile"] = profile_id
     context["ublog_is_owner"] = is_owner(user.username, profile_id, user.anon)
     context["ublog_is_drafts"] = False
-    context["title"] = f"By {profile_id} • Super Chess"
+    context["title"] = f"By {profile_id} • Twin Queens"
     context["view_css"] = "ublog.css"
     return context
 
@@ -498,7 +498,7 @@ async def drafts(request: web.Request) -> ViewContext:
     context["profile"] = profile_id
     context["ublog_is_owner"] = True
     context["ublog_is_drafts"] = True
-    context["title"] = f"{profile_id} drafts • Super Chess"
+    context["title"] = f"{profile_id} drafts • Twin Queens"
     context["view_css"] = "ublog.css"
     return context
 
@@ -577,7 +577,7 @@ async def post(request: web.Request) -> ViewContext:
     context["ublog_author_patron"] = bool(author_profile is not None and author_profile.patron)
     context["ublog_post"] = post_card
     context["ublog_related"] = related_cards
-    context["title"] = f"{post_card['title']} • Super Chess"
+    context["title"] = f"{post_card['title']} • Twin Queens"
     context["view_css"] = "ublog.css"
     return context
 
@@ -711,7 +711,7 @@ async def update(request: web.Request) -> web.Response:
         "sticky": values["sticky"],
     }
     if can_publish_site:
-        # Admins can publish posts into the official "By Super Chess" stream.
+        # Admins can publish posts into the official "By Twin Queens" stream.
         if bool(values.get("siteBlog")):
             update_fields["blogType"] = "site"
             update_fields["isOfficial"] = True

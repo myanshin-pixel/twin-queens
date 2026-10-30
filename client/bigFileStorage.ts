@@ -1,7 +1,7 @@
 import { createStore, del as idbDel, get as idbGet, keys as idbKeys, set as idbSet } from 'idb-keyval';
 
 // OPFS is substantially better suited than IndexedDB for the very large NNUE
-// networks used by some Super Chess variants. Keep IndexedDB as a compatibility
+// networks used by some Twin Queens variants. Keep IndexedDB as a compatibility
 // fallback for browsers without OPFS support.
 
 export type BigFileData = Blob | ArrayBuffer | Uint8Array;

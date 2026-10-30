@@ -17,7 +17,7 @@ async def direct_challenge(request: web.Request) -> ViewContext:
     context["view"] = "challenge"
     context["view_css"] = "invite.css"
     context["challengeid"] = seek_id
-    context["title"] = "Challenge • Super Chess"
+    context["title"] = "Challenge • Twin Queens"
 
     seek = app_state.seeks.get(seek_id)
     if (

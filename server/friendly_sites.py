@@ -63,7 +63,7 @@ FRIENDLY_SITES = (
         icon_url="/static/images/friendly-sites/schemingmind-alice.png",
     ),
     FriendlySite(
-        name="Super Chess Desktop",
+        name="Twin Queens Desktop",
         url="https://pychess.github.io/",
         description="Desktop chess client with engines, variants, and offline play.",
         icon_url="https://raw.githubusercontent.com/pychess/pychess/master/pychess.svg",

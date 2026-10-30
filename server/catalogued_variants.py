@@ -1581,7 +1581,7 @@ def _ensure_catalogued_rule_changes(ini: str) -> None:
             return
 
     raise web.HTTPBadRequest(
-        text=f"This variant is already playable on Super Chess as {display_name}."
+        text=f"This variant is already playable on Twin Queens as {display_name}."
     )
 
 
@@ -4248,7 +4248,7 @@ def ensure_catalogued_display_name_available(
 
     raise web.HTTPConflict(
         text=(
-            f'"{effective_name}" is reserved for the official Super Chess variant '
+            f'"{effective_name}" is reserved for the official Twin Queens variant '
             f'"{canonical_name}". Please choose a distinct display name, such as '
             f'"{canonical_name} Custom" or "{canonical_name} Modified".'
         )

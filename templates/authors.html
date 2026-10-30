@@ -6,7 +6,7 @@
             <p class="authors-kicker">People behind the games</p>
             <h1>Chess variant authors</h1>
             <p>
-                Meet some of the designers whose ideas became playable variants on Super Chess.
+                Meet some of the designers whose ideas became playable variants on Twin Queens.
                 Select a tile to read a short biography and open the related rules pages.
             </p>
         </header>
@@ -62,7 +62,7 @@
                     <p class="author-bio">{{ author.bio }}</p>
 
                     <section class="author-variants" aria-label="{% trans name=author.display_name %}Variants by {{ name }}{% endtrans %}">
-                        <h3>On Super Chess</h3>
+                        <h3>On Twin Queens</h3>
                         <div class="author-variant-links">
                             {% for variant in author.variants %}
                             <a class="button" href="{{ home }}/variants/{{ variant }}">{{ variant_display_name(variant) }}</a>

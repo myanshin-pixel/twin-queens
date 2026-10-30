@@ -16,7 +16,7 @@ BYOS = (
 )
 
 V2C_ORIG = {
-    "superchess": "9",
+    "twinqueens": "9",
     "ataxx": "Z",
     "chess": "n",
     "capablanca": "c",
@@ -153,7 +153,7 @@ VARIANTS_ORIG = (
 )
 
 VARIANT_ICONS_ORIG = {
-    "superchess": "M",
+    "twinqueens": "M",
     "ataxx": "☣",
     "makruk": "Q",
     "makpong": "O",

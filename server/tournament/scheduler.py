@@ -45,7 +45,7 @@ ScheduledEntry = tuple[str, str, bool, dt.datetime, int]
 ScheduledEntryWithId = tuple[str, str, bool, dt.datetime, int, str]
 VariantType = TypeVar("VariantType")
 
-SHIELDS: list[str] = ["superchess"]
+SHIELDS: list[str] = ["twinqueens"]
 SEATURDAY: list[str] = ["makruk", "makpong", "sittuyin", "cambodian", "asean"]
 
 MONTHLY_VARIANTS: tuple[str, ...] = (
@@ -185,15 +185,15 @@ class Scheduler:
         return variants[period % len(variants)]
 
     def schedule_plan(self) -> list[Plan]:
-        """Super Chess tournament plan: weekly arenas plus a monthly shield."""
+        """Twin Queens tournament plan: weekly arenas plus a monthly shield."""
         return [
-            Plan(SHIELD, self.first_monthly(cal.SUNDAY), 16, "superchess", False, 5, 3, 0, 120),
-            Plan(MONTHLY, self.third_monthly(cal.SUNDAY), 16, "superchess", False, 10, 5, 0, 120),
+            Plan(SHIELD, self.first_monthly(cal.SUNDAY), 16, "twinqueens", False, 5, 3, 0, 120),
+            Plan(MONTHLY, self.third_monthly(cal.SUNDAY), 16, "twinqueens", False, 10, 5, 0, 120),
             Plan(
-                WEEKLY, self.next_day_of_week(cal.WEDNESDAY), 17, "superchess", False, 3, 2, 0, 60
+                WEEKLY, self.next_day_of_week(cal.WEDNESDAY), 17, "twinqueens", False, 3, 2, 0, 60
             ),
-            Plan(WEEKLY, self.next_day_of_week(cal.SATURDAY), 16, "superchess", False, 1, 0, 0, 60),
-            Plan(WEEKLY, self.next_day_of_week(cal.FRIDAY), 18, "superchess", False, 5, 0, 0, 60),
+            Plan(WEEKLY, self.next_day_of_week(cal.SATURDAY), 16, "twinqueens", False, 1, 0, 0, 60),
+            Plan(WEEKLY, self.next_day_of_week(cal.FRIDAY), 18, "twinqueens", False, 5, 0, 0, 60),
         ]
 
 
@@ -266,7 +266,7 @@ def new_scheduled_tournaments(
             new_tournaments_data.append(
                 {
                     "name": name,
-                    "createdBy": "Super Chess",
+                    "createdBy": "Twin Queens",
                     "frequency": plan.freq,
                     "variant": plan.variant,
                     "chess960": plan.is960,

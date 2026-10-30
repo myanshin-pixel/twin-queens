@@ -38,7 +38,7 @@ export function patronWing(patron: boolean): VNode | string {
     return patron
         ? h('i-side.icon.icon-patron-wing', {
               attrs: {
-                  title: _('Super Chess Patron'),
+                  title: _('Twin Queens Patron'),
               },
           })
         : '';

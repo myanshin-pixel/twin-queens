@@ -10,5 +10,5 @@ from views import get_user_context
 async def authors(request: web.Request) -> ViewContext:
     _user, context = await get_user_context(request)
     context["authors"] = public_variant_authors()
-    context["title"] = "Chess variant authors • Super Chess"
+    context["title"] = "Chess variant authors • Twin Queens"
     return context

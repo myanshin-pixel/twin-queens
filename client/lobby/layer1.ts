@@ -20,7 +20,7 @@ const categoryLayers: Record<string, (lobbyCtrl: LobbyController, containerId: s
     other: layer2other,
 };
 
-// Super Chess quick pairing: one tap starts a seek (or joins a matching one).
+// Twin Queens quick pairing: one tap starts a seek (or joins a matching one).
 export const QUICK_PAIRINGS: { base: number; inc: number }[] = [
     { base: 1, inc: 0 },
     { base: 3, inc: 0 },
@@ -46,7 +46,7 @@ function quickPairing(lobbyCtrl: LobbyController, base: number, inc: number): vo
     const match = lobbyCtrl.seeks.find(
         s =>
             s.user !== lobbyCtrl.username &&
-            s.variant === 'superchess' &&
+            s.variant === 'twinqueens' &&
             s.base === base &&
             s.inc === inc &&
             s.day === 0 &&
@@ -58,14 +58,14 @@ function quickPairing(lobbyCtrl: LobbyController, base: number, inc: number): vo
         return;
     }
     const own = lobbyCtrl.seeks.find(
-        s => s.user === lobbyCtrl.username && s.variant === 'superchess' && s.base === base && s.inc === inc,
+        s => s.user === lobbyCtrl.username && s.variant === 'twinqueens' && s.base === base && s.inc === inc,
     );
     if (own) return;
-    lobbyCtrl.createSeekMsg('superchess', 'r', '', base, inc, 0, 0, false, !lobbyCtrl.anon, -1000, 1000);
+    lobbyCtrl.createSeekMsg('twinqueens', 'r', '', base, inc, 0, 0, false, !lobbyCtrl.anon, -1000, 1000);
 }
 
 export function variantPanels(lobbyCtrl: LobbyController): VNode {
-    return h('div#panel-container.panel-container.superchess-quick', [
+    return h('div#panel-container.panel-container.twinqueens-quick', [
         h('div.quick-head', [
             h('h2', _('Quick pairing')),
             h('p', _('New chess with empty ratings and no theory. Everyone can be first.')),
@@ -84,7 +84,7 @@ export function variantPanels(lobbyCtrl: LobbyController): VNode {
             ).concat([
                 h(
                     'button.quick-tc.quick-custom',
-                    { on: { click: () => lobbyCtrl.createGame('superchess') }, attrs: { type: 'button' } },
+                    { on: { click: () => lobbyCtrl.createGame('twinqueens') }, attrs: { type: 'button' } },
                     [h('span.quick-clock', _('Custom')), h('span.quick-speed', _('Create a game'))],
                 ),
             ]),

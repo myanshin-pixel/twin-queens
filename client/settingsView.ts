@@ -240,7 +240,7 @@ async function syncPushSubscription(): Promise<void> {
 }
 
 function boardSettingsView(modelVariant: string) {
-    const variant = getDocumentData('variant') || 'superchess';
+    const variant = getDocumentData('variant') || 'twinqueens';
     return h('div#settings-board', [
         backButton(_('Board Settings')),
         h('div', [

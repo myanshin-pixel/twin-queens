@@ -15,7 +15,7 @@ async def timeline(request: web.Request) -> ViewContext:
         raise web.HTTPFound("/login")
 
     app_state = get_app_state(request.app)
-    context["title"] = "Timeline • Super Chess"
+    context["title"] = "Timeline • Twin Queens"
     context["view"] = "timeline"
     context["view_css"] = "timeline.css"
     context["timeline"] = json_dumps(

@@ -274,8 +274,8 @@ box-shadow: var(--box-shadow-panel-btn);
     display: none;
 }
 
-/* Super Chess quick pairing */
-.panel-container.superchess-quick {
+/* Twin Queens quick pairing */
+.panel-container.twinqueens-quick {
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -283,21 +283,21 @@ box-shadow: var(--box-shadow-panel-btn);
     padding: 16px;
     box-sizing: border-box;
 }
-.superchess-quick .quick-head h2 {
+.twinqueens-quick .quick-head h2 {
     margin: 0;
     font-size: 1.3em;
     font-weight: 600;
 }
-.superchess-quick .quick-head p {
+.twinqueens-quick .quick-head p {
     margin: 4px 0 0;
     opacity: 0.75;
 }
-.superchess-quick .quick-grid {
+.twinqueens-quick .quick-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
 }
-.superchess-quick .quick-tc {
+.twinqueens-quick .quick-tc {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -312,24 +312,24 @@ box-shadow: var(--box-shadow-panel-btn);
     font: inherit;
     transition: background 0.15s, transform 0.15s;
 }
-.superchess-quick .quick-tc:hover {
+.twinqueens-quick .quick-tc:hover {
     background: var(--green-hover, #629924);
     color: #fff;
 }
-.superchess-quick .quick-clock {
+.twinqueens-quick .quick-clock {
     font-size: 1.8em;
     font-weight: 600;
     font-variant-numeric: tabular-nums;
 }
-.superchess-quick .quick-speed {
+.twinqueens-quick .quick-speed {
     font-size: 0.95em;
     opacity: 0.8;
 }
-.superchess-quick .quick-custom .quick-clock {
+.twinqueens-quick .quick-custom .quick-clock {
     font-size: 1.15em;
 }
 @media (max-width: 799px) {
-    .superchess-quick .quick-grid {
+    .twinqueens-quick .quick-grid {
         grid-template-columns: repeat(3, 1fr);
     }
 }

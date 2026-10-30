@@ -20,7 +20,7 @@ def _positive_int_env(name: str, default: int) -> int:
 
 
 # Lichess uses 64 chapters and 3,000 nodes per chapter. Keep those as the
-# defaults, but make them deployment-configurable because Super Chess variants can
+# defaults, but make them deployment-configurable because Twin Queens variants can
 # have much larger FEN/tree payloads than orthodox chess.
 STUDY_MAX_CHAPTERS = _positive_int_env("STUDY_MAX_CHAPTERS", 64)
 STUDY_MAX_NODES_PER_CHAPTER = _positive_int_env("STUDY_MAX_NODES_PER_CHAPTER", 3_000)
@@ -33,7 +33,7 @@ STUDY_MAX_NATIVE_SNAPSHOT_VARIANTS = _positive_int_env("STUDY_MAX_NATIVE_SNAPSHO
 # default but allow operators to lower/raise it without code changes.
 STUDY_MAX_MEMBERS = _positive_int_env("STUDY_MAX_MEMBERS", 30)
 # Resource-fairness budgets follow Lichess-scale defaults while remaining
-# configurable for Super Chess deployments. A normal new Study costs one creation
+# configurable for Twin Queens deployments. A normal new Study costs one creation
 # credit; cloning costs more because it copies every chapter.
 STUDY_CREATION_CREDITS_PER_24H = _positive_int_env("STUDY_CREATION_CREDITS_PER_24H", 30)
 STUDY_CLONE_CREATION_COST = _positive_int_env("STUDY_CLONE_CREATION_COST", 3)

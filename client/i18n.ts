@@ -89,7 +89,7 @@ export const translatedPieceNames = [
 ];
 
 export const translatedVariantDisplayNames = [
-    _('super chess'),
+    _('twin queens'),
     _('chess'),
     _('bughouse'),
     _('crazyhouse'),

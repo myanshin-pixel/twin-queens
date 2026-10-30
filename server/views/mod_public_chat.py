@@ -88,7 +88,7 @@ async def mod_public_chat(request: web.Request) -> ViewContext:
 
     round_games.sort(key=lambda item: str(item["id"]))
 
-    context["title"] = "Public Chats • Super Chess"
+    context["title"] = "Public Chats • Twin Queens"
     context["view"] = "mod_public_chat"
     context["view_css"] = "mod_public_chat.css"
     context["admin"] = True

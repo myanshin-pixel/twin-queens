@@ -50,7 +50,7 @@ async def variants(request: web.Request) -> ViewContext:
             app_state, variant, user.username if not user.anon else None
         )
         if catalogued_doc is None:
-            variant = "superchess"
+            variant = "twinqueens"
 
     context["variants"] = context["category_variants"]
     context["groups"] = context["category_variant_groups"]
@@ -75,7 +75,7 @@ async def variants(request: web.Request) -> ViewContext:
         context["community_next_href"] = _community_page_href(
             request, community_variants["next_page"]
         )
-        context["title"] = "Community variants • Super Chess"
+        context["title"] = "Community variants • Twin Queens"
         return context
 
     if catalogued_doc is not None:
@@ -89,7 +89,7 @@ async def variants(request: web.Request) -> ViewContext:
                 context["catalogued_variants"] = json_dumps(catalogued_variants)
 
         context["catalogued_variant"] = catalogued_variant_rule_context(catalogued_doc)
-        context["title"] = f"{context['catalogued_variant']['displayName']} • Super Chess"
+        context["title"] = f"{context['catalogued_variant']['displayName']} • Twin Queens"
         return context
 
     locale = get_locale_ext(context)

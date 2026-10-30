@@ -462,7 +462,7 @@ async def process_message(
     study_id: str,
     service: StudyMutationService,
 ) -> None:
-    # One Study-wide sequencer is enough for Super Chess: all chapter mutations in a
+    # One Study-wide sequencer is enough for Twin Queens: all chapter mutations in a
     # room are processed and broadcast in one total order. Holding the lock through
     # broadcast guarantees every connected client observes monotonically ordered
     # revisions before the next queued mutation starts.

@@ -244,7 +244,7 @@ function studyTagsFromAnalysis(model: PyChessModel, ctrl: AnalysisController): R
 
     const date = model.date ? model.date.slice(0, 10).replace(/-/g, '.') : '';
     const tags: Record<string, string> = {
-        Event: `Super Chess ${model.rated === '1' ? 'rated' : 'casual'} game`,
+        Event: `Twin Queens ${model.rated === '1' ? 'rated' : 'casual'} game`,
         Site: `${model.home}/${model.gameId}`,
         White: model.wplayer || '?',
         Black: model.bplayer || '?',

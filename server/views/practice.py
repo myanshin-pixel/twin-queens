@@ -92,7 +92,7 @@ async def practice(request: web.Request) -> ViewContext:
     progress = await _user_practice_progress(app_state, user)
     progress_by_study, variant_progress = _practice_progress_context(visible_curriculum, progress)
 
-    context["title"] = "Practice • Super Chess"
+    context["title"] = "Practice • Twin Queens"
     context["view_css"] = "practice.css"
     context["practice_sections"] = visible_curriculum
     context["practice_variant"] = selected_variant
@@ -152,7 +152,7 @@ async def practice_study(request: web.Request) -> ViewContext | web.Response:
     study_progress = progress.for_study(resolved.study.id, chapter_ids)
     _study_context(context)
     context["view"] = "study"
-    context["title"] = f"{resolved.study.name} • Practice • Super Chess"
+    context["title"] = f"{resolved.study.name} • Practice • Twin Queens"
     await _populate_study_chapter_context(
         app_state,
         user,
@@ -236,7 +236,7 @@ async def practice_preview(request: web.Request) -> web.StreamResponse:
                 },
                 status=422,
             )
-        context["title"] = f"{study.name} • Practice Preview • Super Chess"
+        context["title"] = f"{study.name} • Practice Preview • Twin Queens"
         context["practice_preview_study"] = study
         context["practice_preview_issues"] = resolved.issues
         context["practice_preview_back_url"] = editor_url
@@ -264,7 +264,7 @@ async def practice_preview(request: web.Request) -> web.StreamResponse:
 
     _study_context(context)
     context["view"] = "study"
-    context["title"] = f"{study.name} • Practice Preview • Super Chess"
+    context["title"] = f"{study.name} • Practice Preview • Twin Queens"
     await _populate_study_chapter_context(
         app_state,
         user,

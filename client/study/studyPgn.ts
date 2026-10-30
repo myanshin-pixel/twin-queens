@@ -42,7 +42,7 @@ const BRUSH_CODE: Record<string, string> = {
     yellow: 'Y',
 };
 
-// Versioned Super Chess-only Study extension. Ordinary PGN readers may ignore or
+// Versioned Twin Queens-only Study extension. Ordinary PGN readers may ignore or
 // discard these tags/comments; base64 keeps lesson text opaque to PGN brace syntax.
 const PYCHESS_STUDY_PGN_VERSION = '1';
 
@@ -300,8 +300,8 @@ export function renderStudyChapterPgn(study: StudyPgnContext, chapter: StudyPgnC
     // Rendering the Study forceVariation flag directly would produce a parenthesized
     // continuation such as `1. e4 (1... e5)`, which ordinary RAV parsers interpret as
     // a sibling of e4 rather than a continuation after it. Preserve the authored flag
-    // in a versioned Super Chess directive, but render the move tree itself as ordinary
-    // legal PGN so both Super Chess and external readers can replay it.
+    // in a versioned Twin Queens directive, but render the move tree itself as ordinary
+    // legal PGN so both Twin Queens and external readers can replay it.
     const forcedPaths = new Set<string>();
     for (const [path, node] of tree.byPath) {
         if (!node.forceVariation) continue;

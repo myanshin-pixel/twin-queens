@@ -10,7 +10,7 @@ async def forum_etiquette(request: web.Request) -> ViewContext:
     """Render the forum etiquette page."""
     _user, context = await get_user_context(request)
 
-    context["title"] = "Forum Etiquette • Super Chess"
+    context["title"] = "Forum Etiquette • Twin Queens"
     context["view"] = "faq"
     context["view_css"] = "faq.css"
     return context

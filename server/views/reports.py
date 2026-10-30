@@ -184,7 +184,7 @@ async def reports(request: web.Request) -> ViewContext:
     open_count = await app_state.db.user_report.count_documents({"status": "open"})
     processed_count = await app_state.db.user_report.count_documents({"status": "processed"})
 
-    context["title"] = "Reports • Super Chess"
+    context["title"] = "Reports • Twin Queens"
     context["view"] = "reports"
     context["view_css"] = "reports.css"
     context["admin"] = True

@@ -1089,7 +1089,7 @@ export class TournamentRRController implements ChatController {
                     'icon-offline': !online && !patron,
                     'icon-patron-wing': patron,
                 },
-                attrs: patron ? { title: _('Super Chess Patron') } : {},
+                attrs: patron ? { title: _('Twin Queens Patron') } : {},
             }),
             userLink(
                 username,

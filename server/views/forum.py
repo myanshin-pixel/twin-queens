@@ -29,7 +29,7 @@ async def forum(request: web.Request) -> ViewContext:
                 app_state, categ, user
             ):
                 raise web.HTTPForbidden(text="You cannot moderate this forum.")
-    context["title"] = "Forum • Super Chess"
+    context["title"] = "Forum • Twin Queens"
     context["view"] = "forum"
     context["view_css"] = "forum.css"
     context["variant"] = forum_captcha_variant_for_category(context["game_category"])

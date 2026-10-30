@@ -20,7 +20,7 @@ class Youtube:
         return [self.streams[streamer] for streamer in self.streams]
 
     def add(
-        self, channel: str, username: str = "unknown", title: str = "Super Chess stream"
+        self, channel: str, username: str = "unknown", title: str = "Twin Queens stream"
     ) -> None:
         self.streams[channel] = {
             "username": YOUTUBE_STREAMERS.get(channel, username),

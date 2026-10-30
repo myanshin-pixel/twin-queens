@@ -189,7 +189,7 @@ async def get_daily_puzzle(request):
         await drop_stale_daily_puzzle_keys(app_state, cached_puzzle_id)
 
     if puzzle is None:
-        user = app_state.users["Super Chess"]
+        user = app_state.users["Twin Queens"]
 
         # skip previous daily puzzles
         category_puzzle_ids = {

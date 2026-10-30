@@ -164,7 +164,7 @@ export function aboutView(model: PyChessModel): VNode[] {
             h('hr'),
             h('p', [
                 _(
-                    'To play on Super Chess, sign in with one of our OAuth providers: Lichess, Lishogi, Google, or Discord. ',
+                    'To play on Twin Queens, sign in with one of our OAuth providers: Lichess, Lishogi, Google, or Discord. ',
                 ),
                 _('Please read our Privacy Policy and Terms of Service. '),
                 h('a', { attrs: { href: '/privacy' } }, 'Privacy'),

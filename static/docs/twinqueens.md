@@ -1,4 +1,4 @@
-# Super Chess
+# Twin Queens
 
 *Chess on a 9×8 board with two queens on each side. New chess with empty ratings and no theory: everyone starts from zero.*
 

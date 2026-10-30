@@ -2251,7 +2251,7 @@ export function lobbyView(model: PyChessModel): VNode[] {
                 ),
                 h('span.lobby-support-link__text', [
                     h('strong', _('Donate')),
-                    h('span', _('Become a Super Chess Patron')),
+                    h('span', _('Become a Twin Queens Patron')),
                 ]),
             ]),
             h('a#tv-game', { attrs: { href: '/tv' } }),

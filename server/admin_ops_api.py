@@ -137,7 +137,7 @@ async def admin_operation(request: web.Request) -> web.Response:
     if action == "stream-add":
         channel = str(form.get("channel") or "").strip()
         username = _clean_text(form.get("username") or "unknown", maximum=50)
-        title = _clean_text(form.get("title") or "Super Chess stream", maximum=120)
+        title = _clean_text(form.get("title") or "Twin Queens stream", maximum=120)
         if not CHANNEL_RE.fullmatch(channel):
             return _error("Enter a valid YouTube channel ID", 400)
         if username is None or title is None:

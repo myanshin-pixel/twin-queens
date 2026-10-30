@@ -83,18 +83,18 @@ _CONFIRMATION_PAGE = f"""<!doctype html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Reset Super Chess browser data</title>
+  <title>Reset Twin Queens browser data</title>
   <style>{_PAGE_STYLE}</style>
 </head>
 <body>
   <main>
-    <h1>Reset Super Chess browser data</h1>
+    <h1>Reset Twin Queens browser data</h1>
     <p>
-      Use this when Super Chess does not load correctly after an update, or when the
+      Use this when Twin Queens does not load correctly after an update, or when the
       page remains blank or black.
     </p>
     <div class="notice">
-      This clears cached Super Chess files and browser storage for this site. Your
+      This clears cached Twin Queens files and browser storage for this site. Your
       login cookie is not cleared, so you should stay signed in.
     </div>
     <p>
@@ -103,7 +103,7 @@ _CONFIRMATION_PAGE = f"""<!doctype html>
     </p>
     <form method="post" action="/client-reset">
       <div class="actions">
-        <button type="submit">Reset Super Chess</button>
+        <button type="submit">Reset Twin Queens</button>
         <a class="button secondary" href="/">Cancel</a>
       </div>
     </form>
@@ -117,19 +117,19 @@ _COMPLETE_PAGE = f"""<!doctype html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Super Chess reset complete</title>
+  <title>Twin Queens reset complete</title>
   <style>{_PAGE_STYLE}</style>
 </head>
 <body>
   <main>
     <h1>Reset complete</h1>
     <p>
-      Cached Super Chess files and browser storage were cleared. Your login cookie
+      Cached Twin Queens files and browser storage were cleared. Your login cookie
       was preserved.
     </p>
-    <p>Open Super Chess again to download a fresh copy of the site.</p>
+    <p>Open Twin Queens again to download a fresh copy of the site.</p>
     <div class="actions">
-      <a class="button primary" href="/">Return to Super Chess</a>
+      <a class="button primary" href="/">Return to Twin Queens</a>
     </div>
   </main>
 </body>

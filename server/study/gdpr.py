@@ -20,7 +20,7 @@ log = logging.getLogger(__name__)
 
 # Keep public collaborative content available after account erasure without
 # attributing it to another real account. This intentionally matches the text
-# used by the rest of Super Chess for erased public authorship.
+# used by the rest of Twin Queens for erased public authorship.
 STUDY_ERASED_USER = "<erased>"
 
 
@@ -242,7 +242,7 @@ async def erase_user_from_studies(
 ) -> None:
     """Apply the Study account-erasure policy.
 
-    Policy mirrors Lichess's public/private split while accounting for Super Chess's
+    Policy mirrors Lichess's public/private split while accounting for Twin Queens's
     persisted comment authorship:
 
     * delete Studies owned by the erased account when they are private or unlisted;
