@@ -693,7 +693,7 @@ def _validate_user_arena_schedule(
     for protected in app_state.tournaments.values():
         if protected is tournament:
             continue
-        if protected.created_by != "PyChess" or protected.status not in (T_CREATED, T_STARTED):
+        if protected.created_by != "Super Chess" or protected.status not in (T_CREATED, T_STARTED):
             continue
         if (
             proposed_start < protected.ends_at + COMMUNITY_ARENA_SYSTEM_BUFFER
@@ -1420,7 +1420,7 @@ async def get_scheduled_tournaments(
         tournament_doc: TournamentDoc = doc
         if (
             tournament_doc["status"] in (T_CREATED, T_STARTED)
-            and tournament_doc["createdBy"] == "PyChess"
+            and tournament_doc["createdBy"] == "Super Chess"
             and tournament_doc.get("fr", "") != ""
         ):
             variant = await _resolve_tournament_variant(app_state, tournament_doc)
@@ -1672,7 +1672,7 @@ async def load_tournament(
         forbidden_pairings=tournament_doc.get("forbiddenPairings", ""),
         manual_pairings=tournament_doc.get("manualPairings", ""),
         team_id=tournament_doc.get("teamId", ""),
-        created_by=tournament_doc.get("createdBy", "PyChess"),
+        created_by=tournament_doc.get("createdBy", "Super Chess"),
         created_at=tournament_doc["createdAt"],
         before_start=tournament_doc.get("beforeStart", 0),
         minutes=tournament_doc["minutes"],

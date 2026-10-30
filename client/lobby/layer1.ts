@@ -20,7 +20,79 @@ const categoryLayers: Record<string, (lobbyCtrl: LobbyController, containerId: s
     other: layer2other,
 };
 
+// Super Chess quick pairing: one tap starts a seek (or joins a matching one).
+export const QUICK_PAIRINGS: { base: number; inc: number }[] = [
+    { base: 1, inc: 0 },
+    { base: 3, inc: 0 },
+    { base: 3, inc: 2 },
+    { base: 5, inc: 0 },
+    { base: 5, inc: 3 },
+    { base: 10, inc: 0 },
+    { base: 10, inc: 5 },
+    { base: 15, inc: 10 },
+    { base: 30, inc: 0 },
+    { base: 30, inc: 20 },
+];
+
+export function speedName(base: number, inc: number): string {
+    const total = base * 60 + inc * 40;
+    if (total < 180) return _('Bullet');
+    if (total < 480) return _('Blitz');
+    if (total < 1500) return _('Rapid');
+    return _('Classical');
+}
+
+function quickPairing(lobbyCtrl: LobbyController, base: number, inc: number): void {
+    const match = lobbyCtrl.seeks.find(
+        s =>
+            s.user !== lobbyCtrl.username &&
+            s.variant === 'superchess' &&
+            s.base === base &&
+            s.inc === inc &&
+            s.day === 0 &&
+            s.fen === '' &&
+            s.target === '',
+    );
+    if (match) {
+        lobbyCtrl.doSend({ type: 'accept_seek', seekID: match.seekID, player: lobbyCtrl.username });
+        return;
+    }
+    const own = lobbyCtrl.seeks.find(
+        s => s.user === lobbyCtrl.username && s.variant === 'superchess' && s.base === base && s.inc === inc,
+    );
+    if (own) return;
+    lobbyCtrl.createSeekMsg('superchess', 'r', '', base, inc, 0, 0, false, !lobbyCtrl.anon, -1000, 1000);
+}
+
 export function variantPanels(lobbyCtrl: LobbyController): VNode {
+    return h('div#panel-container.panel-container.superchess-quick', [
+        h('div.quick-head', [
+            h('h2', _('Quick pairing')),
+            h('p', _('New chess with empty ratings and no theory. Everyone can be first.')),
+        ]),
+        h(
+            'div.quick-grid',
+            QUICK_PAIRINGS.map(tc =>
+                h(
+                    'button.quick-tc',
+                    {
+                        on: { click: () => quickPairing(lobbyCtrl, tc.base, tc.inc) },
+                        attrs: { type: 'button' },
+                    },
+                    [h('span.quick-clock', `${tc.base}+${tc.inc}`), h('span.quick-speed', speedName(tc.base, tc.inc))],
+                ),
+            ).concat([
+                h(
+                    'button.quick-tc.quick-custom',
+                    { on: { click: () => lobbyCtrl.createGame('superchess') }, attrs: { type: 'button' } },
+                    [h('span.quick-clock', _('Custom')), h('span.quick-speed', _('Create a game'))],
+                ),
+            ]),
+        ),
+    ]);
+}
+
+export function legacyVariantPanels(lobbyCtrl: LobbyController): VNode {
     if (lobbyCtrl.gameCategory !== 'all') {
         const layer2 = categoryLayers[lobbyCtrl.gameCategory];
         if (layer2) {

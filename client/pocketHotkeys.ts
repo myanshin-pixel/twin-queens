@@ -3,7 +3,7 @@ import type { Api } from 'chessgroundx/api';
 import type * as cg from 'chessgroundx/types';
 
 // Follow the physical number-row order after 9. This keeps Crazyhouse compatible
-// with lichess (1-5) while covering every current PyChess pocket variant, including
+// with lichess (1-5) while covering every current Super Chess pocket variant, including
 // Cannon Shogi's 11 pocket roles.
 export const POCKET_HOTKEYS = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '='] as const;
 

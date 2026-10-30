@@ -893,7 +893,7 @@ async def remove_user_from_teams_on_account_disable(
 ) -> None:
     """Remove a disabled account from Teams and anonymize Team-authored data on erase.
 
-    PyChess currently treats the original creator as the permanent Team owner/Admin.
+    Super Chess currently treats the original creator as the permanent Team owner/Admin.
     Therefore an enabled Team created by an account that disappears is archived rather
     than left open with an unreachable owner. A site admin may reopen it after a
     non-erased creator is enabled again; GDPR-erased creators cannot be restored.

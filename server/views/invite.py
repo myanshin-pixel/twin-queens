@@ -25,7 +25,7 @@ def set_expired_invite_context(context: ViewContext, game_id: str) -> None:
     context["inc"] = 0
     context["byo"] = 0
     context["seekempty"] = False
-    context["title"] = "Invitation expired • PyChess"
+    context["title"] = "Invitation expired • Super Chess"
 
 
 @aiohttp_jinja2.template("index.html")

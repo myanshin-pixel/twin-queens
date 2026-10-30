@@ -2,12 +2,12 @@
 # Copyright (C) 2026 ORGANIZATION
 # This file is distributed under the same license as the PROJECT project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
-# 
+#
 # Translators:
 # gbtami <gbtami@gmail.com>, 2022
 # Marken Foo <marken.foo.yw@gmail.com>, 2022
 # hebon siki, 2025
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
@@ -17,12 +17,12 @@ msgstr ""
 "PO-Revision-Date: 2020-05-04 12:19+0000\n"
 "Last-Translator: hebon siki, 2025\n"
 "Language-Team: Japanese (https://app.transifex.com/gbtami/teams/14790/ja/)\n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.17.0\n"
-"Language: ja\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Babel 2.17.0\n"
 
 #: ../client/about.ts:8
 msgid ""
@@ -1882,7 +1882,7 @@ msgstr "友達と対局する"
 
 #: ../client/lobby.ts:103
 msgid "Create a game"
-msgstr "対局を作成する"
+msgstr "対局を作成"
 
 #: ../client/lobby.ts:249
 msgid "Challenge %1 to a game"
@@ -5093,3 +5093,24 @@ msgstr ""
 #: ../client/two-board/round/roundControls.ts:219
 msgid "CANCEL REMATCH"
 msgstr ""
+
+msgid "Quick pairing"
+msgstr "クイック対局"
+
+msgid "New chess with empty ratings and no theory. Everyone can be first."
+msgstr "レーティングも定跡もまだない新しいチェス。誰もが一番になれる。"
+
+msgid "Bullet"
+msgstr "ブレット"
+
+msgid "Blitz"
+msgstr "ブリッツ"
+
+msgid "Rapid"
+msgstr "ラピッド"
+
+msgid "Classical"
+msgstr "クラシカル"
+
+msgid "Chess on a 9x8 board with two queens on each side."
+msgstr "9×8の盤で、両陣営にクイーンが2枚ずつあるチェス。"

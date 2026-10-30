@@ -104,6 +104,15 @@
 .cg-wrap.cg-448.mini {
   --mini-board-width: 224px;
 }
+/* 9x8 Super Chess */
+.cg-wrap.cg-576-512 {
+    padding-bottom: calc(512 * 100% / 576);
+    --cg-board-files: 9;
+    --cg-board-ranks: 8;
+}
+.cg-wrap.cg-576-512.mini {
+  --mini-board-width: 288px;
+}
 /* 9x10 */
 .cg-wrap.cg-576-640, .cg-wrap.cg-borderlands {
     padding-bottom: calc(640 * 100% / 576);
@@ -176,6 +185,10 @@ cg-board square {
   width: 12.5%;
   height: 12.5%;
   pointer-events: none;
+}
+.cg-576-512 cg-board square{
+  width: 11.11%;
+  height: 12.5%;
 }
 .cg-640 cg-board square{
   width: 10%;
@@ -278,6 +291,10 @@ cg-board square.current-premove {
 }
 .shogi .cg-wrap piece, .kyoto .cg-wrap piece, .dobutsu .cg-wrap piece, .tori .cg-wrap piece, .yokai .cg-wrap piece, .cannonshogi .cg-wrap piece, .janggi .cg-wrap piece {
   background-position: center;
+}
+.cg-wrap.cg-576-512 piece {
+  width: 11.11%;
+  height: 12.5%;
 }
 .cg-wrap.cg-640 piece {
   width: 10%;

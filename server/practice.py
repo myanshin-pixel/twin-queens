@@ -204,7 +204,7 @@ def find_practice_study(
 
 
 # DEV curriculum mirrors lila's PracticeSections registry. Empty ``study_id``
-# values are intentional placeholders: fill them with the local PyChess Study ID
+# values are intentional placeholders: fill them with the local Super Chess Study ID
 # after importing that Lichess source Study. Placeholder entries stay hidden until
 # then, while their title/description/artwork remain ready for curation.
 PRACTICE_SECTIONS: tuple[PracticeSection, ...] = (
@@ -760,7 +760,7 @@ async def build_practice_curriculum(
         studies: list[PracticeStudyValidation] = []
         for ref in section.studies:
             # Empty IDs reserve upstream Lichess Practice curriculum slots until the
-            # corresponding Study has been imported into PyChess.
+            # corresponding Study has been imported into Super Chess.
             if not ref.study_id:
                 continue
             studies.append(await validate_practice_study(app_state, ref))

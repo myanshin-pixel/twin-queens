@@ -508,7 +508,7 @@ def _merge_analysis_line(
     """Merge one validated Fishnet best line, reusing matching Study moves.
 
     Lila's tree ids are move-derived, so ``addChild`` naturally merges an engine
-    line with an existing human variation. PyChess Study ids are random, therefore
+    line with an existing human variation. Super Chess Study ids are random, therefore
     matching is by UCI move below the same parent. Validate the complete PV before
     mutating the tree so a malformed later move cannot leave a half-inserted engine
     line; lila similarly drops a variation when UCI-to-SAN conversion fails.

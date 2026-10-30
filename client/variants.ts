@@ -64,6 +64,24 @@ export const BOARD_FAMILIES: Record<string, BoardFamily> = {
             '8x8dobutsu.svg',
         ],
     },
+    standard9x8: {
+        dimensions: { width: 9, height: 8 },
+        cg: 'cg-576-512',
+        boardCSS: [
+            '9x8brown.svg',
+            '9x8green.svg',
+            '9x8blue.svg',
+            '9x8walnut.svg',
+            '9x8ice.svg',
+            '9x8coral.svg',
+            '9x8purple.svg',
+            '9x8slate.svg',
+            '9x8maple.jpg',
+            '9x8olive.jpg',
+            '9x8wood2.jpg',
+            '9x8wood4.jpg',
+        ],
+    },
     standard9x9: {
         dimensions: { width: 9, height: 9 },
         cg: 'cg-540',
@@ -943,6 +961,17 @@ export const VARIANTS: Record<string, Variant> = {
         },
     }),
 
+    superchess: variant({
+        name: 'superchess',
+        displayName: 'super chess',
+        tooltip: 'Chess on a 9x8 board with two queens on each side.',
+        startFen: 'rnbqkqnbr/ppppppppp/9/9/9/9/PPPPPPPPP/RNBQKQNBR w KQkq - 0 1',
+        icon: 'M',
+        boardFamily: 'standard9x8',
+        pieceFamily: 'standard',
+        pieceRow: ['k', 'q', 'r', 'b', 'n', 'p'],
+        rules: { enPassant: true },
+    }),
     chess: variant({
         name: 'chess',
         tooltip: "Chess, unmodified, as it's played by FIDE standards.",
@@ -2116,6 +2145,8 @@ const BUILTIN_VARIANT_NAMES = new Set(Object.keys(VARIANTS));
 export function isBuiltinVariantName(name: string | undefined | null): boolean {
     return !!name && BUILTIN_VARIANT_NAMES.has(name);
 }
+// Super Chess: the only variant offered on this site
+export const SITE_VARIANTS = ['superchess'];
 const disabledVariants = [
     'gothic',
     'gothhouse',
@@ -2126,7 +2157,7 @@ const disabledVariants = [
     'makrukhouse',
     'xiangqihouse',
 ];
-export const enabledVariants = variants.filter(v => !disabledVariants.includes(v));
+export const enabledVariants = variants.filter(v => !disabledVariants.includes(v) && SITE_VARIANTS.includes(v));
 
 // variants having 0 puzzle so far
 export const noPuzzleVariants = [
@@ -3004,6 +3035,7 @@ export function disabledVariantsForCreateMode(
 export const variantGroups: { [key: string]: { variants: string[] } } = {
     chess: {
         variants: [
+            'superchess',
             'chess',
             'bughouse',
             'crazyhouse',
@@ -3075,6 +3107,7 @@ export function variantGroupLabel(group: string): string {
 function variantSelectOption(name: string, selected: string | null, disableds: string[]): VNode | null {
     const variant = VARIANTS[name];
     if (!variant) return null;
+    if (isBuiltinVariantName(name) && !SITE_VARIANTS.includes(name)) return null;
     return h(
         'option',
         {

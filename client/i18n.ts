@@ -18,23 +18,15 @@ export function pgettext(msgctxt: string, msgid: string, ...vars: any) {
 
 export const LANGUAGES = {
     en: 'English',
-    de: 'Deutsch',
-    es: 'Español',
-    fr: 'Français',
-    gl_ES: 'Galego',
-    hu: 'Magyar',
-    it: 'Italiano',
-    ja: '日本語',
-    ko: '한국어',
-    nl: 'Nederlands',
-    pl: 'Polski',
-    pt: 'Português',
     ru: 'Русский',
-    th: 'ไทย',
+    es: 'Español',
+    pt: 'Português',
+    de: 'Deutsch',
+    fr: 'Français',
+    it: 'Italiano',
     tr: 'Türkçe',
-    vi: 'Tiếng Việt',
+    ja: '日本語',
     zh_CN: '简体中文',
-    zh_TW: '繁體中文',
 };
 
 const LANGUAGETEXT: { [key: string]: string } = {
@@ -97,6 +89,7 @@ export const translatedPieceNames = [
 ];
 
 export const translatedVariantDisplayNames = [
+    _('super chess'),
     _('chess'),
     _('bughouse'),
     _('crazyhouse'),

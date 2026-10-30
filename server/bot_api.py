@@ -35,7 +35,7 @@ BOT_EVENT_STREAM_KEEPALIVE_SECONDS = 6
 BOT_API_ONLINE_TTL_SECONDS = 10
 BOT_STREAM_WRITE_TIMEOUT_SECONDS = 10
 BOT_STREAM_PING = '{"type":"ping"}\n'
-BOT_CAPABILITIES_HEADER = "X-PyChess-Bot-Capabilities"
+BOT_CAPABILITIES_HEADER = "X-Super Chess-Bot-Capabilities"
 BOT_CAPABILITIES_VERSION = 1
 BOT_CAPABILITIES_MAX_BYTES = 6 * 1024
 
@@ -105,7 +105,7 @@ def _parse_bot_capabilities(request: web.Request) -> tuple[set[str], BotEngineIn
         if ("chess" if name == "standard" else name) in ALL_VARIANTS
     }
     if not supported_variants:
-        raise web.HTTPBadRequest(text="BOT does not advertise any PyChess-supported variants.")
+        raise web.HTTPBadRequest(text="BOT does not advertise any Super Chess-supported variants.")
     return supported_variants, _parse_bot_engine_info(capabilities.get("engine"))
 
 
@@ -265,7 +265,7 @@ async def playing(request: web.Request) -> web.StreamResponse:
 
 @authorized(require_bot=False)
 async def challenge_create(request: web.Request) -> web.StreamResponse:
-    raise web.HTTPForbidden(text="BOT accounts cannot create challenges on PyChess.")
+    raise web.HTTPForbidden(text="BOT accounts cannot create challenges on Super Chess.")
 
 
 @authorized(require_bot=False)

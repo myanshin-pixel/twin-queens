@@ -52,6 +52,18 @@ const BOARD_SQUARE_COLORS: Readonly<Record<string, SquarePair>> = {
     '8x8wood4.jpg': ['#bb9861', '#835834'],
     '8x8ic.svg': ['#ececec', '#c1c18e'],
     '8x8purple.svg': ['#9f90b0', '#7d4a8d'],
+    '9x8blue.svg': ['#dee3e6', '#8ca2ad'],
+    '9x8brown.svg': ['#f0d9b5', '#b58863'],
+    '9x8coral.svg': ['#f5e6da', '#c97b63'],
+    '9x8green.svg': ['#ebecd0', '#739552'],
+    '9x8ice.svg': ['#eef3f7', '#9db7cc'],
+    '9x8maple.jpg': ['#e1c096', '#b46e3b'],
+    '9x8olive.jpg': ['#aea795', '#837a69'],
+    '9x8purple.svg': ['#9f90b0', '#7d4a8d'],
+    '9x8slate.svg': ['#d4dadf', '#62778a'],
+    '9x8walnut.svg': ['#e6c89c', '#9a6a44'],
+    '9x8wood2.jpg': ['#967b4e', '#785d2e'],
+    '9x8wood4.jpg': ['#bb9660', '#7f5532'],
 };
 
 /**

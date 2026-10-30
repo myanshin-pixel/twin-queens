@@ -13,7 +13,7 @@
                 </span>
             </button>
             <nav class="topnav" id="site-nav">
-                <a class="nav-link active home" href="/">PyChess{% if dev %}<span>DEV</span>{% endif %}</a>
+                <a class="nav-link active home" href="/">Super Chess{% if dev %}<span>DEV</span>{% endif %}</a>
                 <section>
                     <button type="button" class="nav-link nav-section" aria-expanded="false" aria-controls="nav-play">{% trans %}Play{% endtrans %}</button>
                     <div class="drp" id="nav-play">
@@ -25,19 +25,10 @@
                     </div>
                 </section>
                 <section>
-                    <button type="button" class="nav-link nav-section" aria-expanded="false" aria-controls="nav-puzzles">{% trans %}Puzzles{% endtrans %}</button>
-                    <div class="drp" id="nav-puzzles">
-                        <a class="nav-link" href="/puzzle/{{ menu_variant }}">{% trans %}Puzzles{% endtrans %}</a>
-                    </div>
-                </section>
-                <section>
                     <button type="button" class="nav-link nav-section" aria-expanded="false" aria-controls="nav-learn">{% trans %}Learn{% endtrans %}</button>
                     <div class="drp" id="nav-learn">
-                        <a class="nav-link" href="/variants">{% trans %}Rules & Variants{% endtrans %}</a>
-                        <a class="nav-link" href="/authors">{% trans %}Authors{% endtrans %}</a>
-                        <a class="nav-link" href="/memory">{% trans %}Memory{% endtrans %}</a>
+                        <a class="nav-link" href="/variants/superchess">{% trans %}Rules{% endtrans %}</a>
                         <a class="nav-link" href="/study/all">{% trans %}Study{% endtrans %}</a>
-                        {% if dev %}<a class="nav-link" href="/practice">{% trans %}Practice{% endtrans %}</a>{% endif %}
                     </div>
                 </section>
                 <section>
@@ -45,7 +36,6 @@
                     <div class="drp" id="nav-watch">
                         <a class="nav-link" href="/tv">{% trans %}Tv{% endtrans %}</a>
                         <a class="nav-link" href="/games">{% trans %}Current games{% endtrans %}</a>
-                        <a class="nav-link" href="/video">{% trans %}Video library{% endtrans %}</a>
                     </div>
                 </section>
                 <section>
@@ -56,7 +46,6 @@
                         <a class="nav-link" href="/@/{{ username }}/following">{% trans %}Friends{% endtrans %}</a>
                         {% endif %}
                         <a class="nav-link" href="/team">{% trans %}Teams{% endtrans %}</a>
-                        <a class="nav-link" href="/variants/community">{% trans %}Community Variants{% endtrans %}</a>
                         <a class="nav-link" href="/forum">{% trans %}Forum{% endtrans %}</a>
                         <a class="nav-link" href="/blogs">{% trans %}Blog{% endtrans %}</a>
                     </div>
@@ -68,10 +57,8 @@
                         <a class="nav-link" href="/analysis/{{ menu_variant }}">{% trans %}Analysis{% endtrans %}</a>
                         <a class="nav-link" href="/paste">{% trans %}Import game{% endtrans %}</a>
                         {% if not anon %}<a class="nav-link" href="/games/search">{% trans %}Advanced search{% endtrans %}</a>{% endif %}
-                        <a class="nav-link" href="/my-variants">{% trans %}My variants{% endtrans %}</a>
                     </div>
                 </section>
-                <a class="nav-link donate-link icon-patron-wing" href="/patron">{% trans %}Donate{% endtrans %}</a>
             </nav>
         </div>
         <div class="site-buttons">

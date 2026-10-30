@@ -69,7 +69,7 @@ def can_use_study_computer(study: Study, username: str | None) -> bool:
 
 
 def can_use_study_explorer(study: Study, username: str | None) -> bool:
-    # PyChess has no opening-explorer UI yet. Keeping the permission primitive now
+    # Super Chess has no opening-explorer UI yet. Keeping the permission primitive now
     # means a future explorer can plug into Study without another settings migration.
     return can_use_study_feature(study, username, "explorer")
 

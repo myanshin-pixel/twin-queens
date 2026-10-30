@@ -16,7 +16,7 @@ TEST_PREFIX = "Test" + DASH
 
 NONE_USER = "None" + DASH + "User"
 HTTP_ANON_USER = ANON_PREFIX + "HTTP"
-SYSTEM_USER = "PyChess"
+SYSTEM_USER = "Super Chess"
 
 RESERVED_USERS = (
     "Random-Mover",
@@ -132,24 +132,16 @@ SIMUL = TPairing.SIMUL
 
 # translations
 LANGUAGES = [
-    "de",
     "en",
-    "es",
-    "gl_ES",
-    "fr",
-    "hu",
-    "it",
-    "ja",
-    "ko",
-    "nl",
-    "pl",
-    "pt",
     "ru",
-    "th",
+    "es",
+    "pt",
+    "de",
+    "fr",
+    "it",
     "tr",
-    "vi",
+    "ja",
     "zh_CN",
-    "zh_TW",
 ]
 
 
@@ -249,6 +241,7 @@ VARIANT_960_TO_PGN = {
 
 CATEGORIES = {
     "chess": (
+        "superchess",
         "chess",
         "chess960",
         "bughouse",

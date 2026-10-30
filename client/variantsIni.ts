@@ -524,4 +524,13 @@ promotionRegionBlack = *1 *2 *3
 promotedPieceType = p:z f:e g:d y:v t:b 
 nFoldRule = 4
 stalemateValue = loss
-startFen = rgytkfygl/1c5a1/ppppppppp/9/9/9/PPPPPPPPP/1A5C1/LGYFKTYGR[Nn] w 0 1`;
+startFen = rgytkfygl/1c5a1/ppppppppp/9/9/9/PPPPPPPPP/1A5C1/LGYFKTYGR[Nn] w 0 1
+
+# Super Chess: 9x8 board, two queens per side
+[superchess:chess]
+maxFile = 9
+maxRank = 8
+startFen = rnbqkqnbr/ppppppppp/9/9/9/9/PPPPPPPPP/RNBQKQNBR w KQkq - 0 1
+castlingKingsideFile = g
+castlingQueensideFile = c
+castlingRookKingsideFile = i`;

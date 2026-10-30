@@ -10,7 +10,7 @@ async def accessibility(request: web.Request) -> ViewContext:
     """Render the accessibility guide for screen-reader and keyboard users."""
     _user, context = await get_user_context(request)
 
-    context["title"] = "Accessibility • PyChess"
+    context["title"] = "Accessibility • Super Chess"
     context["view"] = "faq"
     context["view_css"] = "faq.css"
     return context

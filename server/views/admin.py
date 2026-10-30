@@ -35,7 +35,7 @@ async def _admin_context(request: web.Request, section: str, title: str) -> View
     if not _is_admin_username(user.username):
         raise web.HTTPForbidden()
 
-    context["title"] = f"{title} • PyChess"
+    context["title"] = f"{title} • Super Chess"
     context["view"] = "admin"
     context["view_css"] = "admin.css"
     context["admin"] = True

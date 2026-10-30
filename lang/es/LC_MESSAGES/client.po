@@ -2,13 +2,13 @@
 # Copyright (C) 2026 ORGANIZATION
 # This file is distributed under the same license as the PROJECT project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
-# 
+#
 # Translators:
 # Ignacio Poggi <ignaciop.3@gmail.com>, 2020
 # Andersok, 2022
 # Jose Doval Gonzalez <pepellou@gmail.com>, 2022
 # gbtami <gbtami@gmail.com>, 2023
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
@@ -18,12 +18,12 @@ msgstr ""
 "PO-Revision-Date: 2020-05-04 12:19+0000\n"
 "Last-Translator: gbtami <gbtami@gmail.com>, 2023\n"
 "Language-Team: Spanish (https://app.transifex.com/gbtami/teams/14790/es/)\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.17.0\n"
-"Language: es\n"
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+"Generated-By: Babel 2.17.0\n"
 
 #: ../client/about.ts:8
 msgid ""
@@ -2027,7 +2027,7 @@ msgstr "Necesita una cuenta para hacer eso."
 #: ../client/lobby.ts:1456 ../client/myVariants.ts:1331
 #: ../client/myVariants.ts:1423
 msgid "Custom"
-msgstr "Personalizado"
+msgstr "Personalizada"
 
 #: ../client/lobby.ts:1482 ../client/lobby.ts:1906
 msgid "%1 player"
@@ -2125,7 +2125,7 @@ msgstr ""
 
 #: ../client/lobby.ts:2105
 msgid "Auto pairing"
-msgstr ""
+msgstr "Emparejamiento automático"
 
 #: ../client/lobby.ts:2246
 msgid "Donate"
@@ -5177,3 +5177,26 @@ msgstr ""
 #: ../client/two-board/round/roundControls.ts:219
 msgid "CANCEL REMATCH"
 msgstr ""
+
+msgid "Quick pairing"
+msgstr "Partida rápida"
+
+msgid "New chess with empty ratings and no theory. Everyone can be first."
+msgstr ""
+"Un ajedrez nuevo, con ratings vacíos y sin teoría. Cualquiera puede ser el "
+"primero."
+
+msgid "Bullet"
+msgstr "Bala"
+
+msgid "Blitz"
+msgstr "Blitz"
+
+msgid "Rapid"
+msgstr "Rápidas"
+
+msgid "Classical"
+msgstr "Clásicas"
+
+msgid "Chess on a 9x8 board with two queens on each side."
+msgstr "Ajedrez en un tablero de 9×8 con dos damas por bando."

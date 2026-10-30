@@ -175,7 +175,7 @@ class StudyChapterBuilder:
         initial_fen = str(raw_steps[0].get("fen") or game.initial_fen)
         tags = canonical_tags(
             {
-                "Event": "PyChess game",
+                "Event": "Super Chess game",
                 "Site": f"{URI}/{game_id}",
                 "Date": game.date.strftime("%Y.%m.%d"),
                 "White": game.wplayer.username,

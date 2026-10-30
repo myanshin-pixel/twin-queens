@@ -45,16 +45,7 @@ ScheduledEntry = tuple[str, str, bool, dt.datetime, int]
 ScheduledEntryWithId = tuple[str, str, bool, dt.datetime, int, str]
 VariantType = TypeVar("VariantType")
 
-SHIELDS: list[str] = [
-    "3check960",
-    "antichess960",
-    "atomic960",
-    "crazyhouse960",
-    "horde960",
-    "kingofthehill960",
-    "racingkings960",
-    "makruk",
-]
+SHIELDS: list[str] = ["superchess"]
 SEATURDAY: list[str] = ["makruk", "makpong", "sittuyin", "cambodian", "asean"]
 
 MONTHLY_VARIANTS: tuple[str, ...] = (
@@ -194,70 +185,16 @@ class Scheduler:
         return variants[period % len(variants)]
 
     def schedule_plan(self) -> list[Plan]:
-        """Create planned tournament plan list for one full month"""
-        SEA = self.get_next_variant(self.now.month, ("sittuyin", "cambodian"))
-        plans: list[Plan] = []
-        number_of_days = cal.monthrange(self.now.year, self.now.month)[1]
-
-        for i, v in enumerate(NEW_MONTHLY_VARIANTS):
-            if i + 1 > number_of_days:
-                break
-            is_960 = v.endswith("960")
-            base, inc, byo = TC_MONTHLY_VARIANTS[v]
-            hour = 14
-            try:
-                date = dt.datetime(self.now.year, self.now.month, i + 1, tzinfo=dt.UTC)
-                if date.weekday() == cal.SUNDAY:
-                    # Shields on each SUNDAY starts at 12 and 3 hours long, so put this early...
-                    hour = 10
-            except ValueError:
-                log.error("schedule_plan() ValueError")
-                break
-            plans.append(Plan(MONTHLY, date, hour, v.rstrip("960"), is_960, base, inc, byo, 90))
-
-        for i, v in enumerate(MONTHLY_VARIANTS):
-            if i + 1 > number_of_days:
-                break
-            is_960 = v.endswith("960")
-            base, inc, byo = TC_MONTHLY_VARIANTS[v]
-            hour = 16
-            try:
-                date = dt.datetime(self.now.year, self.now.month, i + 1, tzinfo=dt.UTC)
-            except ValueError:
-                log.error("schedule_plan() ValueError")
-                break
-            plans.append(Plan(MONTHLY, date, hour, v.rstrip("960"), is_960, base, inc, byo, 90))
-
-        plans += [
-            Plan(SHIELD, self.first_monthly(cal.SUNDAY), 12, "kingofthehill", True, 3, 2, 0, 180),
-            Plan(SHIELD, self.second_monthly(cal.SUNDAY), 12, "crazyhouse", True, 3, 2, 0, 180),
-            Plan(SHIELD, self.fourth_monthly(cal.SUNDAY), 12, "3check", True, 3, 2, 0, 180),
+        """Super Chess tournament plan: weekly arenas plus a monthly shield."""
+        return [
+            Plan(SHIELD, self.first_monthly(cal.SUNDAY), 16, "superchess", False, 5, 3, 0, 120),
+            Plan(MONTHLY, self.third_monthly(cal.SUNDAY), 16, "superchess", False, 10, 5, 0, 120),
             Plan(
-                SHIELD,
-                self.fourth_monthly(cal.TUESDAY),
-                18,
-                "racingkings",
-                True,
-                3,
-                2,
-                0,
-                180,
+                WEEKLY, self.next_day_of_week(cal.WEDNESDAY), 17, "superchess", False, 3, 2, 0, 60
             ),
-            Plan(SHIELD, self.second_monthly(cal.SATURDAY), 12, "makruk", False, 5, 3, 0, 180),
-            Plan(SHIELD, self.third_monthly(cal.SATURDAY), 18, "antichess", True, 3, 2, 0, 180),
-            Plan(SHIELD, self.fourth_monthly(cal.SATURDAY), 18, "horde", True, 3, 2, 0, 180),
-            Plan(SHIELD, self.third_monthly(cal.SUNDAY), 12, "atomic", True, 3, 2, 0, 180),
-            Plan(MONTHLY, self.first_monthly(cal.SATURDAY), 12, "asean", False, 3, 2, 0, 90),
-            # The second Saturday is Makruk Shield
-            Plan(MONTHLY, self.third_monthly(cal.SATURDAY), 12, SEA, False, 3, 2, 0, 90),
-            Plan(MONTHLY, self.fourth_monthly(cal.SATURDAY), 12, "makpong", False, 3, 2, 0, 90),
-            Plan(WEEKLY, self.next_day_of_week(cal.THURSDAY), 12, "makruk", False, 3, 2, 0, 90),
-            Plan(WEEKLY, self.next_day_of_week(cal.SUNDAY), 18, "duck", False, 3, 5, 0, 90),
-            Plan(WEEKLY, self.next_day_of_week(cal.FRIDAY), 12, "xiangqi", False, 5, 3, 0, 90),
-            Plan(WEEKLY, self.next_day_of_week(cal.WEDNESDAY), 12, "janggi", False, 5, 15, 1, 90),
+            Plan(WEEKLY, self.next_day_of_week(cal.SATURDAY), 16, "superchess", False, 1, 0, 0, 60),
+            Plan(WEEKLY, self.next_day_of_week(cal.FRIDAY), 18, "superchess", False, 5, 0, 0, 60),
         ]
-
-        return plans
 
 
 def new_scheduled_tournaments(
@@ -329,7 +266,7 @@ def new_scheduled_tournaments(
             new_tournaments_data.append(
                 {
                     "name": name,
-                    "createdBy": "PyChess",
+                    "createdBy": "Super Chess",
                     "frequency": plan.freq,
                     "variant": plan.variant,
                     "chess960": plan.is960,

@@ -83,18 +83,18 @@ _CONFIRMATION_PAGE = f"""<!doctype html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Reset PyChess browser data</title>
+  <title>Reset Super Chess browser data</title>
   <style>{_PAGE_STYLE}</style>
 </head>
 <body>
   <main>
-    <h1>Reset PyChess browser data</h1>
+    <h1>Reset Super Chess browser data</h1>
     <p>
-      Use this when PyChess does not load correctly after an update, or when the
+      Use this when Super Chess does not load correctly after an update, or when the
       page remains blank or black.
     </p>
     <div class="notice">
-      This clears cached PyChess files and browser storage for this site. Your
+      This clears cached Super Chess files and browser storage for this site. Your
       login cookie is not cleared, so you should stay signed in.
     </div>
     <p>
@@ -103,7 +103,7 @@ _CONFIRMATION_PAGE = f"""<!doctype html>
     </p>
     <form method="post" action="/client-reset">
       <div class="actions">
-        <button type="submit">Reset PyChess</button>
+        <button type="submit">Reset Super Chess</button>
         <a class="button secondary" href="/">Cancel</a>
       </div>
     </form>
@@ -117,19 +117,19 @@ _COMPLETE_PAGE = f"""<!doctype html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PyChess reset complete</title>
+  <title>Super Chess reset complete</title>
   <style>{_PAGE_STYLE}</style>
 </head>
 <body>
   <main>
     <h1>Reset complete</h1>
     <p>
-      Cached PyChess files and browser storage were cleared. Your login cookie
+      Cached Super Chess files and browser storage were cleared. Your login cookie
       was preserved.
     </p>
-    <p>Open PyChess again to download a fresh copy of the site.</p>
+    <p>Open Super Chess again to download a fresh copy of the site.</p>
     <div class="actions">
-      <a class="button primary" href="/">Return to PyChess</a>
+      <a class="button primary" href="/">Return to Super Chess</a>
     </div>
   </main>
 </body>

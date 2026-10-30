@@ -62,7 +62,6 @@ function mainMenu(anon: boolean) {
         h('button#btn-lang', { on: { click: showSubsettings } }, translatedLanguage),
         h('button#btn-sound', { on: { click: showSubsettings } }, _('Sound')),
         h('button#btn-background', { on: { click: showSubsettings } }, _('Background')),
-        h('button#btn-game-category', { on: { click: showSubsettings } }, translatedGameCategory),
         h('button#btn-board', { on: { click: showSubsettings } }, _('Board Settings')),
         h('button#btn-zen', { on: { click: showSubsettings } }, _('Zen Mode')),
     ];
@@ -241,7 +240,7 @@ async function syncPushSubscription(): Promise<void> {
 }
 
 function boardSettingsView(modelVariant: string) {
-    const variant = getDocumentData('variant') || 'chess';
+    const variant = getDocumentData('variant') || 'superchess';
     return h('div#settings-board', [
         backButton(_('Board Settings')),
         h('div', [

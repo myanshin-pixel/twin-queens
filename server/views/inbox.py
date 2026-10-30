@@ -15,7 +15,7 @@ async def inbox(request: web.Request) -> ViewContext:
     if contact and contact != user.username:
         context["profile"] = contact
 
-    context["title"] = "Inbox • PyChess"
+    context["title"] = "Inbox • Super Chess"
     context["view"] = "inbox"
     context["view_css"] = "inbox.css"
     return context

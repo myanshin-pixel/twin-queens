@@ -273,3 +273,63 @@ box-shadow: var(--box-shadow-panel-btn);
 .app .remove-btn {
     display: none;
 }
+
+/* Super Chess quick pairing */
+.panel-container.superchess-quick {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 16px;
+    box-sizing: border-box;
+}
+.superchess-quick .quick-head h2 {
+    margin: 0;
+    font-size: 1.3em;
+    font-weight: 600;
+}
+.superchess-quick .quick-head p {
+    margin: 4px 0 0;
+    opacity: 0.75;
+}
+.superchess-quick .quick-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+.superchess-quick .quick-tc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    min-height: 92px;
+    border: 1px solid var(--border, rgba(127, 127, 127, 0.3));
+    border-radius: 6px;
+    background: var(--bg-color2, rgba(127, 127, 127, 0.08));
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    transition: background 0.15s, transform 0.15s;
+}
+.superchess-quick .quick-tc:hover {
+    background: var(--green-hover, #629924);
+    color: #fff;
+}
+.superchess-quick .quick-clock {
+    font-size: 1.8em;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+}
+.superchess-quick .quick-speed {
+    font-size: 0.95em;
+    opacity: 0.8;
+}
+.superchess-quick .quick-custom .quick-clock {
+    font-size: 1.15em;
+}
+@media (max-width: 799px) {
+    .superchess-quick .quick-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

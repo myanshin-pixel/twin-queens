@@ -13,7 +13,7 @@ from fairy.fairy_board import NOTATION_SAN, WHITE, FairyBoard
 from typing_defs import AnalysisVariationStep, FishnetAnalysisItem
 
 ANALYSIS_PV_MAX_PLIES = 12
-ANALYSIS_COMMENT_AUTHOR = "PyChess"
+ANALYSIS_COMMENT_AUTHOR = "Super Chess"
 _NAG_INACCURACY = 6
 _NAG_MISTAKE = 2
 _NAG_BLUNDER = 4
@@ -49,7 +49,7 @@ def _invert_score(score: dict[str, int]) -> dict[str, int]:
 
 def _white_pov_score(score: dict[str, int], side_to_move: str) -> dict[str, int]:
     # Fairyfishnet returns the UCI score from the side-to-move point of view. Study
-    # tree evaluations follow PyChess's existing raw-score convention, but advice
+    # tree evaluations follow Super Chess's existing raw-score convention, but advice
     # needs a stable point of view so consecutive positions can be compared.
     return score if side_to_move == "white" else _invert_score(score)
 

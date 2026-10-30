@@ -2,13 +2,13 @@
 # Copyright (C) 2026 ORGANIZATION
 # This file is distributed under the same license as the PROJECT project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
-# 
+#
 # Translators:
 # Lichess Chess960 <lichess960training@gmail.com>, 2021
 # gbtami <gbtami@gmail.com>, 2022
 # Sevengifts *, 2023
 # un known, 2026
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
@@ -18,12 +18,12 @@ msgstr ""
 "PO-Revision-Date: 2020-05-04 12:19+0000\n"
 "Last-Translator: un known, 2026\n"
 "Language-Team: Turkish (https://app.transifex.com/gbtami/teams/14790/tr/)\n"
+"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.17.0\n"
-"Language: tr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Generated-By: Babel 2.17.0\n"
 
 #: ../client/about.ts:8
 msgid ""
@@ -1978,7 +1978,7 @@ msgstr "Bir arkadaşınla oyna"
 
 #: ../client/lobby.ts:103
 msgid "Create a game"
-msgstr "Yeni bir oyun kur"
+msgstr "Oyun oluştur"
 
 #: ../client/lobby.ts:249
 msgid "Challenge %1 to a game"
@@ -5402,3 +5402,25 @@ msgstr "RÖVANŞI KABUL ET"
 #: ../client/two-board/round/roundControls.ts:219
 msgid "CANCEL REMATCH"
 msgstr "RÖVANŞI İPTAL ET"
+
+msgid "Quick pairing"
+msgstr "Hızlı eşleşme"
+
+msgid "New chess with empty ratings and no theory. Everyone can be first."
+msgstr ""
+"Boş reytinglerle ve teorisi olmayan yeni satranç. Herkes ilk olabilir."
+
+msgid "Bullet"
+msgstr "Bullet"
+
+msgid "Blitz"
+msgstr "Blitz"
+
+msgid "Rapid"
+msgstr "Rapid"
+
+msgid "Classical"
+msgstr "Klasik"
+
+msgid "Chess on a 9x8 board with two queens on each side."
+msgstr "Her tarafta iki vezirle 9×8 tahtada satranç."

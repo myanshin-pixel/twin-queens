@@ -114,7 +114,7 @@ def study_conceal_ply(
 ) -> int | None:
     """Validate the stored conceal boundary as depth from the chapter root.
 
-    Unlike Lichess's absolute FEN ply, PyChess stores the number of preferred
+    Unlike Lichess's absolute FEN ply, Super Chess stores the number of preferred
     mainline moves revealed from this chapter's own root. Existing documents that
     predate analysis modes have no boundary and remain normal chapters. A concealed
     chapter with no stored boundary starts fully hidden at root depth 0.

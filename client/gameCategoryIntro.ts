@@ -1,14 +1,14 @@
 import { h, VNode } from 'snabbdom';
 
 import { _ } from './i18n';
-import { getDocumentData, patch } from './document';
+import { patch } from './document';
 import { showMainSettings } from './settingsView';
 
 let dialogVNode: VNode | null = null;
 
 function shouldShowIntro(): boolean {
-    if (getDocumentData('view') === 'my-variants') return false;
-    return getDocumentData('game-category-intro') === 'True';
+    // Super Chess has a single variant, so the category filter never applies.
+    return false;
 }
 
 async function setGameCategoryAll(): Promise<void> {

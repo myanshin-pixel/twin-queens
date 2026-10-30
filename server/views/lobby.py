@@ -38,7 +38,7 @@ async def lobby(request: web.Request) -> ViewContext:
     # Seek from Editor with custom start position
     variant = request.match_info.get("variant")
     if (variant is not None) and (variant not in ALL_VARIANTS):
-        variant = "chess"
+        variant = "superchess"
     if variant is not None:
         context["variant"] = variant
 
@@ -100,7 +100,7 @@ async def lobby(request: web.Request) -> ViewContext:
         if user.anon and context["profile_title"] != "BOT" and profileId != "any#":
             raise web.HTTPNotFound()
 
-    context["title"] = "PyChess • Free Online Chess Variants"
+    context["title"] = "Super Chess • Free Online Chess Variants"
     context["tournamentdirector"] = is_tournament_director(user, app_state)
 
     puzzle = await get_daily_puzzle(request)

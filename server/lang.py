@@ -12,7 +12,7 @@ LOCALE: ContextVar[str] = ContextVar("LOCALE", default="en")
 
 def get_locale_ext(context):
     lang = context["lang"]
-    return (".%s" % lang) if lang in ("es", "hu", "it", "pt", "fr", "zh_CN", "zh_TW") else ""
+    return (".%s" % lang) if lang in ("es", "hu", "it", "pt", "fr", "ru", "zh_CN", "zh_TW") else ""
 
 
 async def select_lang(request):

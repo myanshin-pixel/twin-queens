@@ -42,8 +42,8 @@ del _
 VIDEOS = [
     {
         "_id": "sTCEh3EMyu0",
-        "title": "PyChess - How to create a chess variant on PyChess!",
-        "author": "PyChess",
+        "title": "Super Chess - How to create a chess variant on Super Chess!",
+        "author": "Super Chess",
         "tags": ["Howto", "Introduction"],
         "category": "all",
         "target": "beginner",
@@ -106,7 +106,7 @@ VIDEOS = [
     {
         "_id": "k20Civy_a3E",
         "title": "First duck chess arena on pychess [HIGHLIGHTS]",
-        "author": "PyChess",
+        "author": "Super Chess",
         "tags": ["Duck", "Tournament"],
         "category": "chess",
         "target": "intermediate",
@@ -124,7 +124,7 @@ VIDEOS = [
     {
         "_id": "Qddn3o6yX_M",
         "title": "Chak (Mayan Chess) - How to play",
-        "author": "PyChess",
+        "author": "Super Chess",
         "tags": ["Howto"],
         "category": "army",
         "target": "beginner",
@@ -132,8 +132,8 @@ VIDEOS = [
     },
     {
         "_id": "Vyc4Llxgke8",
-        "title": "Introduction to the PyChess Website",
-        "author": "PyChess",
+        "title": "Introduction to the Super Chess Website",
+        "author": "Super Chess",
         "tags": ["Introduction"],
         "category": ["chess", "fairy", "army", "makruk", "shogi", "xiangqi", "other"],
         "target": "beginner",
@@ -142,7 +142,7 @@ VIDEOS = [
     {
         "_id": "WmMw97hp8C0",
         "title": "Makpong, Ouk Chatrang (Cambodian Chess), and ASEAN Chess - How to play",
-        "author": "PyChess",
+        "author": "Super Chess",
         "tags": ["Howto", "Makruk"],
         "category": "makruk",
         "target": "beginner",
@@ -151,7 +151,7 @@ VIDEOS = [
     {
         "_id": "LWl8nMYrONM",
         "title": "How to checkmate with 2 knights (in Hoppel-Poppel)",
-        "author": "PyChess",
+        "author": "Super Chess",
         "tags": ["Endgame", "Puzzle"],
         "category": "fairy",
         "target": "intermediate",
@@ -160,7 +160,7 @@ VIDEOS = [
     {
         "_id": "wzxgy2qJMwM",
         "title": "The weirdest bug in the history of pychess (how to play placement chess)",
-        "author": "PyChess",
+        "author": "Super Chess",
         "tags": ["Placement", "Opening", "Puzzle"],
         "category": "chess",
         "target": "intermediate",
@@ -169,7 +169,7 @@ VIDEOS = [
     {
         "_id": "hLv7kJQWukg",
         "title": "King vs king endgame (in Synochess and Empire)",
-        "author": "PyChess",
+        "author": "Super Chess",
         "tags": ["Endgame", "Puzzle"],
         "category": "army",
         "target": "intermediate",
@@ -178,7 +178,7 @@ VIDEOS = [
     {
         "_id": "uyNsTgo8ylI",
         "title": "Makruk (Thai Chess) - How to play",
-        "author": "PyChess",
+        "author": "Super Chess",
         "tags": ["Howto", "Makruk"],
         "category": "makruk",
         "target": "beginner",
@@ -187,7 +187,7 @@ VIDEOS = [
     {
         "_id": "p1WEdE3TdM8",
         "title": "如果你一直想找個集分析、對奕、競技於一身的網站，那這隻影片將帶給你Pychess這個好地方。",
-        "author": "PyChess",
+        "author": "Super Chess",
         "tags": ["Introduction"],
         "category": ["chess", "fairy", "army", "makruk", "shogi", "xiangqi", "other"],
         "target": "beginner",
@@ -196,7 +196,7 @@ VIDEOS = [
     {
         "_id": "0HqKri2R5ls",
         "title": "Empire Chess - How to play",
-        "author": "PyChess",
+        "author": "Super Chess",
         "tags": ["Howto"],
         "category": "army",
         "target": "beginner",
@@ -205,7 +205,7 @@ VIDEOS = [
     {
         "_id": "Ap4mGkR8HDA",
         "title": "Orda Chess (and Mirror) - How to play",
-        "author": "PyChess",
+        "author": "Super Chess",
         "tags": ["Howto"],
         "category": "army",
         "target": "beginner",
@@ -214,7 +214,7 @@ VIDEOS = [
     {
         "_id": "5f9QKK7cm20",
         "title": "Tori Shogi - How to play",
-        "author": "PyChess",
+        "author": "Super Chess",
         "tags": ["Howto"],
         "category": "shogi",
         "target": "beginner",
@@ -223,7 +223,7 @@ VIDEOS = [
     {
         "_id": "YH63AlxpXkg",
         "title": "Shogi - How to play (using internationalized piece set)",
-        "author": "PyChess",
+        "author": "Super Chess",
         "tags": ["Howto", "Shogi"],
         "category": "shogi",
         "target": "beginner",
@@ -232,7 +232,7 @@ VIDEOS = [
     {
         "_id": "KDkF2dEt41g",
         "title": "Janggi (Korean Chess) - How to play (using internationalized piece set)",
-        "author": "PyChess",
+        "author": "Super Chess",
         "tags": ["Howto", "Janggi"],
         "category": "xiangqi",
         "target": "beginner",
@@ -241,7 +241,7 @@ VIDEOS = [
     {
         "_id": "e4jYQ0UMmGk",
         "title": "Hybrid Piece Basics",
-        "author": "PyChess",
+        "author": "Super Chess",
         "tags": ["Fundamentals", "Tactics"],
         "category": "fairy",
         "target": "beginner",
@@ -250,7 +250,7 @@ VIDEOS = [
     {
         "_id": "WRk3ZbX2bpA",
         "title": "Shogun Chess - How to play",
-        "author": "PyChess",
+        "author": "Super Chess",
         "tags": ["Howto"],
         "category": "fairy",
         "target": "beginner",
@@ -259,7 +259,7 @@ VIDEOS = [
     {
         "_id": "E6AzOO4-340",
         "title": "S-Chess (Seiwaran Chess, SHARPER Chess) - How to play",
-        "author": "PyChess",
+        "author": "Super Chess",
         "tags": ["Howto", "S-Chess"],
         "category": "fairy",
         "target": "beginner",
@@ -268,7 +268,7 @@ VIDEOS = [
     {
         "_id": "CRrncO-w524",
         "title": "Grand Chess - How to play",
-        "author": "PyChess",
+        "author": "Super Chess",
         "tags": ["Howto"],
         "category": "fairy",
         "target": "beginner",
@@ -286,7 +286,7 @@ VIDEOS = [
     {
         "_id": "HNYWioiltH0",
         "title": "Capablanca Chess - How to Play",
-        "author": "PyChess",
+        "author": "Super Chess",
         "tags": ["Howto", "Capablanca"],
         "category": "fairy",
         "target": "beginner",
@@ -295,7 +295,7 @@ VIDEOS = [
     {
         "_id": "boT1qyDA5RA",
         "title": "Xiangqi Basics",
-        "author": "PyChess",
+        "author": "Super Chess",
         "tags": ["Xiangqi", "Opening", "Endgame"],
         "category": "xiangqi",
         "target": "beginner",
@@ -304,7 +304,7 @@ VIDEOS = [
     {
         "_id": "5EDG5RP8OZ8",
         "title": "Xiangqi (Chinese Chess) - How to play (Using Internationalized Piece Set)",
-        "author": "PyChess",
+        "author": "Super Chess",
         "tags": ["Xiangqi", "Howto"],
         "category": "xiangqi",
         "target": "beginner",
@@ -592,7 +592,7 @@ VIDEOS = [
     {
         "_id": "WujZgsAWoFM",
         "title": "Sittuyin (Burmese Chess) - How to play",
-        "author": "PyChess",
+        "author": "Super Chess",
         "tags": ["Howto"],
         "category": "makruk",
         "target": "beginner",
@@ -601,7 +601,7 @@ VIDEOS = [
     {
         "_id": "tiIEvtG4ND4",
         "title": "Spartan Chess - How to play",
-        "author": "PyChess",
+        "author": "Super Chess",
         "tags": ["Howto"],
         "category": "army",
         "target": "beginner",
@@ -610,7 +610,7 @@ VIDEOS = [
     {
         "_id": "_Mis4iWRHws",
         "title": "Chennis - How to play",
-        "author": "PyChess",
+        "author": "Super Chess",
         "tags": ["Howto"],
         "category": "army",
         "target": "beginner",
@@ -655,7 +655,7 @@ VIDEOS = [
     {
         "_id": "lL367e31i2c",
         "title": "Mansindam - How to play",
-        "author": "PyChess",
+        "author": "Super Chess",
         "tags": ["Howto"],
         "category": "fairy",
         "target": "beginner",

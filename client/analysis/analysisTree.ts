@@ -143,7 +143,7 @@ export function mergeServerAdvice(tree: AnalysisTree, ply: number, evaluation?: 
         shapes: annotations.shapes,
         comments: [
             ...annotations.comments.filter(comment => comment.id !== commentId),
-            { id: commentId, author: 'PyChess', text: advice.comment },
+            { id: commentId, author: 'Super Chess', text: advice.comment },
         ],
         nags: annotations.nags.includes(advice.nag) ? annotations.nags : [...annotations.nags, advice.nag],
     };

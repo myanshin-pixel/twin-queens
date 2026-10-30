@@ -1580,7 +1580,9 @@ def _ensure_catalogued_rule_changes(ini: str) -> None:
         if separator and key.strip().casefold() not in CATALOGUED_NON_RULE_OPTIONS:
             return
 
-    raise web.HTTPBadRequest(text=f"This variant is already playable on PyChess as {display_name}.")
+    raise web.HTTPBadRequest(
+        text=f"This variant is already playable on Super Chess as {display_name}."
+    )
 
 
 def replace_variant_section_name(ini: str, new_name: str) -> str:
@@ -4246,7 +4248,7 @@ def ensure_catalogued_display_name_available(
 
     raise web.HTTPConflict(
         text=(
-            f'"{effective_name}" is reserved for the official PyChess variant '
+            f'"{effective_name}" is reserved for the official Super Chess variant '
             f'"{canonical_name}". Please choose a distinct display name, such as '
             f'"{canonical_name} Custom" or "{canonical_name} Modified".'
         )

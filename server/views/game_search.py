@@ -13,6 +13,6 @@ async def game_search(request: web.Request) -> ViewContext:
 
     context["view"] = "game-search"
     context["view_css"] = "game-search.css"
-    context["title"] = "Advanced game search • PyChess"
+    context["title"] = "Advanced game search • Super Chess"
     context["search_query"] = request.rel_url.query
     return context

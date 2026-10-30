@@ -31,7 +31,7 @@ export function player(
                     'icon-offline': !online && !patron,
                     'icon-patron-wing': patron,
                 },
-                attrs: patron ? { title: _('PyChess Patron') } : {},
+                attrs: patron ? { title: _('Super Chess Patron') } : {},
             }),
             h('player', [
                 userLink(playerName, [

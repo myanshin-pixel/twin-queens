@@ -2,7 +2,7 @@
 # Copyright (C) 2026 ORGANIZATION
 # This file is distributed under the same license as the PROJECT project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
-# 
+#
 # Translators:
 # What Ever <benjamin.a@mailoo.org>, 2021
 # William Wu <fynmorph@gmail.com>, 2021
@@ -11,7 +11,7 @@
 # James Faure, 2022
 # Gael Huynh, 2022
 # Max Allan Jonathan Fotchin, 2023
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
@@ -21,12 +21,12 @@ msgstr ""
 "PO-Revision-Date: 2020-05-04 12:19+0000\n"
 "Last-Translator: Max Allan Jonathan Fotchin, 2023\n"
 "Language-Team: French (https://app.transifex.com/gbtami/teams/14790/fr/)\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.17.0\n"
-"Language: fr\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+"Generated-By: Babel 2.17.0\n"
 
 #: ../client/about.ts:8
 msgid ""
@@ -2077,7 +2077,7 @@ msgstr "Compte utilisateur requis."
 #: ../client/lobby.ts:1456 ../client/myVariants.ts:1331
 #: ../client/myVariants.ts:1423
 msgid "Custom"
-msgstr "Custom"
+msgstr "Personnalisée"
 
 #: ../client/lobby.ts:1482 ../client/lobby.ts:1906
 msgid "%1 player"
@@ -2175,7 +2175,7 @@ msgstr ""
 
 #: ../client/lobby.ts:2105
 msgid "Auto pairing"
-msgstr ""
+msgstr "Appariement automatique"
 
 #: ../client/lobby.ts:2246
 msgid "Donate"
@@ -5257,3 +5257,26 @@ msgstr ""
 #: ../client/two-board/round/roundControls.ts:219
 msgid "CANCEL REMATCH"
 msgstr ""
+
+msgid "Quick pairing"
+msgstr "Partie rapide"
+
+msgid "New chess with empty ratings and no theory. Everyone can be first."
+msgstr ""
+"Des échecs nouveaux, sans classement ni théorie. Chacun peut être le "
+"premier."
+
+msgid "Bullet"
+msgstr "Bullet"
+
+msgid "Blitz"
+msgstr "Blitz"
+
+msgid "Rapid"
+msgstr "Rapide"
+
+msgid "Classical"
+msgstr "Classique"
+
+msgid "Chess on a 9x8 board with two queens on each side."
+msgstr "Les échecs sur un échiquier 9×8 avec deux dames de chaque côté."

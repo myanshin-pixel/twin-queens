@@ -153,7 +153,7 @@ async def _build_report_context(
         if not thread:
             thread = _thread_id(reporter, suspect)
 
-    context["title"] = "Report a user • PyChess"
+    context["title"] = "Report a user • Super Chess"
     context["view"] = "report"
     context["view_css"] = "report.css"
     context["report_error"] = error
@@ -264,7 +264,7 @@ async def report_thanks(request: web.Request) -> ViewContext:
     if user.anon:
         raise web.HTTPFound("/")
 
-    context["title"] = "Thanks for the report • PyChess"
+    context["title"] = "Thanks for the report • Super Chess"
     context["view"] = "thanks"
     context["view_css"] = "report.css"
     context["report_username"] = request.rel_url.query.get("username", "")

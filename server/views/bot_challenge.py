@@ -32,7 +32,7 @@ async def bot_challenge(request: web.Request) -> ViewContext:
     seek = app_state.invites.get(game_id)
 
     if seek is not None and seek.is_bot_challenge and seek.creator.username == user.username:
-        context["title"] = "Challenge • PyChess"
+        context["title"] = "Challenge • Super Chess"
         context["variant"] = seek.variant
         context["chess960"] = seek.chess960
         context["rated"] = seek.rated
@@ -61,7 +61,7 @@ async def bot_challenge(request: web.Request) -> ViewContext:
     if game is not None and user.username in (game.wplayer.username, game.bplayer.username):
         raise web.HTTPFound("/%s" % game_id)
 
-    context["title"] = "Challenge • PyChess"
+    context["title"] = "Challenge • Super Chess"
     context["variant"] = "chess"
     context["chess960"] = False
     context["rated"] = False

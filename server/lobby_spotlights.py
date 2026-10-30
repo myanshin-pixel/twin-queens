@@ -15,7 +15,7 @@ if TYPE_CHECKING:
 
 # Lichess only keeps created simuls eligible for its homepage spotlight during
 # their first hour. It also requires the host to have pinged the simul recently.
-# PyChess can use the live simul websocket directly instead of adding a second
+# Super Chess can use the live simul websocket directly instead of adding a second
 # host-ping endpoint: while the host has this simul open, a socket is present.
 SIMUL_SPOTLIGHT_MAX_AGE = timedelta(hours=1)
 
@@ -48,7 +48,7 @@ def simul_spotlight(app_state: PychessGlobalAppState) -> SimulSpotlightItem | No
             "sid": simul.id,
             "name": simul.name,
             "variants": list(simul.variants),
-            # Lichess shows the number of applicants, not the host. PyChess
+            # Lichess shows the number of applicants, not the host. Super Chess
             # stores accepted and pending applicants separately.
             "nbPlayers": simul.opponent_count + len(simul.pending_players),
         }

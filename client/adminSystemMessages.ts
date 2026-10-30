@@ -74,9 +74,9 @@ export function initAdminSystemMessages(root: ParentNode = document): void {
 
         if (selectedAudience() === 'active') {
             dialogText.textContent =
-                'Send this inbox message from PyChess to every eligible active human user? This can create many inbox documents.';
+                'Send this inbox message from Super Chess to every eligible active human user? This can create many inbox documents.';
         } else {
-            dialogText.textContent = `Send this inbox message from PyChess to: ${recipientsInput.value.trim()}?`;
+            dialogText.textContent = `Send this inbox message from Super Chess to: ${recipientsInput.value.trim()}?`;
         }
         dialog.showModal();
     });

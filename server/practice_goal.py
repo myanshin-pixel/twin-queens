@@ -21,7 +21,7 @@ class PracticeGoal:
     """Typed objective for one open-ended computer Practice chapter.
 
     Result names intentionally match Lichess's Practice JSON contract for the goals
-    it already supports. ``win`` and ``winIn`` are PyChess extensions for variants
+    it already supports. ``win`` and ``winIn`` are Super Chess extensions for variants
     whose terminal win condition is not checkmate.
     """
 
@@ -69,7 +69,7 @@ def parse_practice_goal(value: object) -> PracticeGoal | None:
     """Parse a Study ``Termination`` value into a Practice objective.
 
     Whitespace normalization and case-insensitive matching follow Lichess. Unlike
-    Lichess, missing or unknown values do *not* default to mate: PyChess supports
+    Lichess, missing or unknown values do *not* default to mate: Super Chess supports
     variants with non-checkmate win conditions, so curation must state the objective
     explicitly and validation can reject an ambiguous computer-practice chapter.
     """

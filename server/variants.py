@@ -102,6 +102,7 @@ class ServerVariants(Enum):
         self.move_encoding = variant.move_encoding
         self.move_decoding = variant.move_decoding
 
+    SUPERCHESS = Variant("9", "superchess", _("Super Chess"), "M")
     CHESS = Variant("n", "chess", _("Chess"), "M")
     CHESS960 = Variant("n", "chess", _("Chess960"), "V", chess960=True)
     BUGHOUSE = Variant("F", "bughouse", _("Bughouse"), "¢", two_boards=True, base_variant="crazyhouse")  # fmt: skip
@@ -226,6 +227,11 @@ VARIANTS: dict[str, ServerVariants] = {
     variant.server_name: variant for variant in ServerVariants if variant not in NO_VARIANTS
 }
 
+# Super Chess: the site offers only its own variant. Other variants stay defined
+# (old code paths and tests reference them) but are not playable.
+SITE_VARIANTS: tuple[str, ...] = ("superchess",)
+VARIANTS = {name: variant for name, variant in VARIANTS.items() if name in SITE_VARIANTS}
+
 VARIANT_ICONS: dict[str, str] = {variant.server_name: variant.icon for variant in ServerVariants}
 
 
@@ -240,7 +246,7 @@ DEV_VARIANTS: tuple[ServerVariants, ...] = (
 # Remove DEV variants on prod site until they stabilize
 if PROD:
     for variant in DEV_VARIANTS:
-        del VARIANTS[variant.server_name]
+        VARIANTS.pop(variant.server_name, None)
 
 # Two-board and explicitly casual-only variants have no ratings.
 RATED_VARIANTS: tuple[str, ...] = tuple(

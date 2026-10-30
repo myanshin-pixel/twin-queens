@@ -2,12 +2,12 @@
 # Copyright (C) 2026 ORGANIZATION
 # This file is distributed under the same license as the PROJECT project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
-# 
+#
 # Translators:
 # Lichess Chess960 <lichess960training@gmail.com>, 2021
 # gbtami <gbtami@gmail.com>, 2022
 # un known, 2026
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
@@ -17,12 +17,12 @@ msgstr ""
 "PO-Revision-Date: 2020-05-04 12:19+0000\n"
 "Last-Translator: un known, 2026\n"
 "Language-Team: Turkish (https://app.transifex.com/gbtami/teams/14790/tr/)\n"
+"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.17.0\n"
-"Language: tr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Generated-By: Babel 2.17.0\n"
 
 #: ../server/const.py:406 ../templates/team-show.html:214
 msgid "Arena"

@@ -57,6 +57,9 @@
   box-sizing: border-box;
   transition: 0.2s;
 }
+.cg-576-512 #extension_choice square {
+  width: 11.11%;
+}
 .cg-640 #extension_choice square {
   width: 10%;
 }

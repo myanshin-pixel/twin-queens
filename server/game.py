@@ -1648,7 +1648,7 @@ class Game:
         )
         tc = "-" if self.base + self.inc == 0 else "%s+%s" % (int(self.base * 60), self.inc)
         return '[Event "{}"]\n[Site "{}"]\n[Date "{}"]\n[Round "-"]\n[White "{}"]\n[Black "{}"]\n[Result "{}"]\n[TimeControl "{}"]\n[WhiteElo "{}"]\n[BlackElo "{}"]\n[Variant "{}"]\n{fen}{setup}\n{} {}\n'.format(
-            "PyChess "
+            "Super Chess "
             + ("rated" if self.rated == RATED else "casual" if self.rated == CASUAL else "imported")
             + " game",
             URI + "/" + self.id,

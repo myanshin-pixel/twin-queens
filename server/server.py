@@ -253,7 +253,7 @@ async def close_mongodb_client(app: Application) -> None:
 
 if __name__ == "__main__":
     logger.init_default_logger()
-    parser = argparse.ArgumentParser(description="PyChess chess variants server")
+    parser = argparse.ArgumentParser(description="Super Chess chess variants server")
     parser.add_argument(
         "-s",
         action="store_true",

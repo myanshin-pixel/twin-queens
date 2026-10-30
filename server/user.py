@@ -311,7 +311,7 @@ class User:
             self.bot_online_expire_task: asyncio.Task[None] | None = None
         if not hasattr(self, "bot_supported_variants"):
             # External BOTs replace this during their authenticated event-stream
-            # handshake. None is reserved for PyChess's built-in BOTs.
+            # handshake. None is reserved for Super Chess's built-in BOTs.
             self.bot_supported_variants: set[str] | None = None
 
     async def remove(self) -> None:

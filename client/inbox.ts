@@ -46,7 +46,7 @@ function inboxApiErrorMessage(data: InboxApiError, fallback: string): string {
         case 'invalid_contact': return _('Invalid contact');
         case 'user_not_found': return _('User not found');
         case 'invalid_before': return _('Invalid message cursor');
-        case 'system_user_no_messages': return _("PyChess doesn't accept new messages.");
+        case 'system_user_no_messages': return _("Super Chess doesn't accept new messages.");
         case 'invalid_request': return _('Invalid request');
         case 'message_empty': return _('Message is empty');
         case 'message_too_long': return _('Message too long (max %1)', INBOX_MAX_MSG_LEN);
@@ -55,7 +55,7 @@ function inboxApiErrorMessage(data: InboxApiError, fallback: string): string {
         case 'user_blocked': return _('User is blocked');
         case 'cannot_message_user': return _('Cannot message this user');
         case 'friends_only': return _('Only friends can message this user');
-        case 'system_messages_cannot_delete': return _('PyChess system messages cannot be deleted.');
+        case 'system_messages_cannot_delete': return _('Super Chess system messages cannot be deleted.');
         default: return data.message || fallback;
     }
 }
@@ -463,7 +463,7 @@ export function inboxView(model: PyChessModel) {
                 h('div.inbox-thread-head', [
                     h(
                         `strong.inbox-user${statusClass}`,
-                        { attrs: thread.patron ? { title: _('PyChess Patron') } : {} },
+                        { attrs: thread.patron ? { title: _('Super Chess Patron') } : {} },
                         titleAndName(thread.title, thread.user),
                     ),
                     h('span.inbox-thread-date', timeago(thread.lastMsg?.createdAt || thread.updatedAt)),
@@ -581,7 +581,7 @@ export function inboxView(model: PyChessModel) {
                                         {
                                             attrs: {
                                                 href: `/@/${encodeURIComponent(thread.user)}`,
-                                                ...(contactPatron ? { title: _('PyChess Patron') } : {}),
+                                                ...(contactPatron ? { title: _('Super Chess Patron') } : {}),
                                             },
                                         },
                                         titleAndName(thread.title || contactTitle, thread.user),
@@ -631,7 +631,7 @@ export function inboxView(model: PyChessModel) {
                     loading ? h('div.inbox-empty', _('Loading...')) : (convoBodyNodes.filter(Boolean) as VNode[]),
                 ),
                 contactSystem
-                    ? h('div.inbox-convo-readonly', _("PyChess doesn't accept new messages."))
+                    ? h('div.inbox-convo-readonly', _("Super Chess doesn't accept new messages."))
                     : h(
                           'form.inbox-convo-post',
                           {

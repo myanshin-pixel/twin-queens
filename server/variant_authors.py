@@ -149,7 +149,7 @@ VARIANT_AUTHORS: tuple[VariantAuthor, ...] = (
             "and the author of the SMIRF chess engine. He was a pioneer of Fischer "
             "Random Chess (Chess960) and of computer chess on larger boards such as "
             "10×8, and he designed Capablanca Random Chess, now called Caparandom on "
-            "PyChess."
+            "Super Chess."
         ),
         portrait="images/variant-authors/reinhard-scharnagl.jpg",
         portrait_alt="Portrait of Reinhard Scharnagl",
@@ -222,7 +222,7 @@ VARIANT_AUTHORS: tuple[VariantAuthor, ...] = (
             "Vernon Rylands Parton (1897–1974) was an English teacher and prolific "
             "inventor of chess variants whose designs were often inspired by Lewis "
             "Carroll. He created Alice Chess in 1953 and Racing Kings in 1961, two "
-            "of his best-known games and both playable on PyChess."
+            "of his best-known games and both playable on Super Chess."
         ),
         portrait="images/variant-authors/v-r-parton.jpg",
         portrait_alt=("John Tenniel illustration of Alice stepping through the looking-glass"),
@@ -256,7 +256,7 @@ VARIANT_AUTHORS: tuple[VariantAuthor, ...] = (
         portrait_alt="Cannon Shogi starting position",
         source_url="https://ftp.chessvariants.com/index/displayitem.php?itemid=zCannonShogi",
         portrait_source_url="https://www.pychess.org/variants/cannonshogi",
-        portrait_credit="the PyChess Cannon Shogi rules guide",
+        portrait_credit="the Super Chess Cannon Shogi rules guide",
         portrait_credit_label="Representative image from",
         portrait_note=(
             "Representative Cannon Shogi artwork is used instead of an author portrait."
@@ -315,7 +315,7 @@ VARIANT_AUTHORS: tuple[VariantAuthor, ...] = (
         portrait_alt="Fog of War Chess position from White's limited-information view",
         source_url="https://ftp.chessvariants.com/incinf.dir/darkness.html",
         portrait_source_url="https://www.pychess.org/variants/fogofwar",
-        portrait_credit="the PyChess Fog of War rules guide",
+        portrait_credit="the Super Chess Fog of War rules guide",
         portrait_credit_label="Representative image from",
         portrait_note=("Representative Fog of War artwork is used instead of author portraits."),
         representative_artwork=True,
@@ -335,7 +335,7 @@ VARIANT_AUTHORS: tuple[VariantAuthor, ...] = (
         portrait_alt="Shako starting position",
         source_url="https://www.chessvariants.com/who/jean-louiscazaux",
         portrait_source_url="https://www.pychess.org/variants/shako",
-        portrait_credit="the PyChess Shako rules guide",
+        portrait_credit="the Super Chess Shako rules guide",
         portrait_credit_label="Representative image from",
         portrait_note="Representative Shako artwork is used instead of an author portrait.",
         representative_artwork=True,
@@ -355,7 +355,7 @@ VARIANT_AUTHORS: tuple[VariantAuthor, ...] = (
         portrait_alt="Spartan Chess starting position",
         source_url="https://www.youtube.com/watch?v=gq90ib3fYuM",
         portrait_source_url="https://www.pychess.org/variants/spartan",
-        portrait_credit="the PyChess Spartan Chess rules guide",
+        portrait_credit="the Super Chess Spartan Chess rules guide",
         portrait_credit_label="Representative image from",
         portrait_note=(
             "Representative Spartan Chess artwork is used instead of an author portrait."
@@ -378,7 +378,7 @@ VARIANT_AUTHORS: tuple[VariantAuthor, ...] = (
         portrait_alt="Kyoto Shogi starting position with international pieces",
         source_url="https://en.wikipedia.org/wiki/Kyoto_shogi",
         portrait_source_url="https://www.pychess.org/variants/kyotoshogi",
-        portrait_credit="the PyChess Kyoto Shogi rules guide",
+        portrait_credit="the Super Chess Kyoto Shogi rules guide",
         portrait_credit_label="Representative image from",
         portrait_note=("Representative Kyoto Shogi artwork is used instead of an author portrait."),
         representative_artwork=True,
@@ -399,7 +399,7 @@ VARIANT_AUTHORS: tuple[VariantAuthor, ...] = (
         portrait_alt="Tori Shogi starting position with international bird pieces",
         source_url="https://history.chess.free.fr/torishogi.htm",
         portrait_source_url="https://www.pychess.org/variants/torishogi",
-        portrait_credit="the PyChess Tori Shogi rules guide",
+        portrait_credit="the Super Chess Tori Shogi rules guide",
         portrait_credit_label="Representative image from",
         portrait_note=("Representative Tori Shogi artwork is used instead of an author portrait."),
         representative_artwork=True,

@@ -2,12 +2,12 @@
 # Copyright (C) 2026 ORGANIZATION
 # This file is distributed under the same license as the PROJECT project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
-# 
+#
 # Translators:
 # Jose Doval Gonzalez <pepellou@gmail.com>, 2021
 # fjscabral <fjscabral@gmail.com>, 2021
 # gbtami <gbtami@gmail.com>, 2022
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
@@ -17,12 +17,12 @@ msgstr ""
 "PO-Revision-Date: 2020-05-04 12:19+0000\n"
 "Last-Translator: gbtami <gbtami@gmail.com>, 2022\n"
 "Language-Team: Portuguese (https://app.transifex.com/gbtami/teams/14790/pt/)\n"
+"Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.17.0\n"
-"Language: pt\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+"Generated-By: Babel 2.17.0\n"
 
 #: ../client/about.ts:8
 msgid ""
@@ -1963,7 +1963,7 @@ msgstr "Jogar com Amigo"
 
 #: ../client/lobby.ts:103
 msgid "Create a game"
-msgstr "Criar uma Partida"
+msgstr "Criar uma partida"
 
 #: ../client/lobby.ts:249
 msgid "Challenge %1 to a game"
@@ -2055,7 +2055,7 @@ msgstr "Precisas de uma conta para fazer isto."
 #: ../client/lobby.ts:1456 ../client/myVariants.ts:1331
 #: ../client/myVariants.ts:1423
 msgid "Custom"
-msgstr "Personalizado"
+msgstr "Personalizada"
 
 #: ../client/lobby.ts:1482 ../client/lobby.ts:1906
 msgid "%1 player"
@@ -2153,7 +2153,7 @@ msgstr ""
 
 #: ../client/lobby.ts:2105
 msgid "Auto pairing"
-msgstr ""
+msgstr "Pareamento automático"
 
 #: ../client/lobby.ts:2246
 msgid "Donate"
@@ -5218,3 +5218,26 @@ msgstr ""
 #: ../client/two-board/round/roundControls.ts:219
 msgid "CANCEL REMATCH"
 msgstr ""
+
+msgid "Quick pairing"
+msgstr "Pareamento rápido"
+
+msgid "New chess with empty ratings and no theory. Everyone can be first."
+msgstr ""
+"Um xadrez novo, com ratings zerados e sem teoria. Qualquer um pode ser o "
+"primeiro."
+
+msgid "Bullet"
+msgstr "Bullet"
+
+msgid "Blitz"
+msgstr "Blitz"
+
+msgid "Rapid"
+msgstr "Rápida"
+
+msgid "Classical"
+msgstr "Clássica"
+
+msgid "Chess on a 9x8 board with two queens on each side."
+msgstr "Xadrez num tabuleiro 9×8 com duas damas de cada lado."

@@ -99,7 +99,7 @@ def forum_captcha_variant_for_category(game_category: str) -> str:
     if variant in VARIANTS:
         return variant
     fallback = FORUM_CAPTCHA_VARIANT_BY_CATEGORY[GAME_CATEGORY_ALL]
-    return fallback if fallback in VARIANTS else "chess"
+    return fallback if fallback in VARIANTS else next(iter(VARIANTS))
 
 
 def _forum_captcha_game_query(game_category: str) -> dict[str, object]:

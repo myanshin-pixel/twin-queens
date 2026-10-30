@@ -2,12 +2,12 @@
 # Copyright (C) 2026 ORGANIZATION
 # This file is distributed under the same license as the PROJECT project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
-# 
+#
 # Translators:
 # renyhp r <renyhp@disroot.org>, 2020
 # gbtami <gbtami@gmail.com>, 2022
 # Armando Gagliardi <armandogagliardi0@gmail.com>, 2022
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
@@ -17,12 +17,12 @@ msgstr ""
 "PO-Revision-Date: 2020-05-04 12:19+0000\n"
 "Last-Translator: Armando Gagliardi <armandogagliardi0@gmail.com>, 2022\n"
 "Language-Team: Italian (https://app.transifex.com/gbtami/teams/14790/it/)\n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.17.0\n"
-"Language: it\n"
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+"Generated-By: Babel 2.17.0\n"
 
 #: ../client/about.ts:8
 msgid ""
@@ -2061,7 +2061,7 @@ msgstr "Hai bisogno di un account per questo."
 #: ../client/lobby.ts:1456 ../client/myVariants.ts:1331
 #: ../client/myVariants.ts:1423
 msgid "Custom"
-msgstr "Personalizzato"
+msgstr "Personalizzata"
 
 #: ../client/lobby.ts:1482 ../client/lobby.ts:1906
 msgid "%1 player"
@@ -2159,7 +2159,7 @@ msgstr ""
 
 #: ../client/lobby.ts:2105
 msgid "Auto pairing"
-msgstr ""
+msgstr "Abbinamento automatico"
 
 #: ../client/lobby.ts:2246
 msgid "Donate"
@@ -5235,3 +5235,25 @@ msgstr ""
 #: ../client/two-board/round/roundControls.ts:219
 msgid "CANCEL REMATCH"
 msgstr ""
+
+msgid "Quick pairing"
+msgstr "Partita rapida"
+
+msgid "New chess with empty ratings and no theory. Everyone can be first."
+msgstr ""
+"Scacchi nuovi, senza punteggi né teoria. Chiunque può essere il primo."
+
+msgid "Bullet"
+msgstr "Bullet"
+
+msgid "Blitz"
+msgstr "Blitz"
+
+msgid "Rapid"
+msgstr "Rapid"
+
+msgid "Classical"
+msgstr "Classica"
+
+msgid "Chess on a 9x8 board with two queens on each side."
+msgstr "Scacchi su una scacchiera 9×8 con due donne per parte."

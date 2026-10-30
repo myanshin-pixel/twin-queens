@@ -186,7 +186,7 @@ async def get_user_context(request: web.Request) -> tuple[User, ViewContext]:
         return gettext(server_variant.translated_name)
 
     if game_category == GAME_CATEGORY_ALL:
-        menu_variant = "chess"
+        menu_variant = "superchess"
     else:
         menu_variant = category_variant_list[0] if category_variant_list else "chess"
 
@@ -232,7 +232,7 @@ async def get_user_context(request: web.Request) -> tuple[User, ViewContext]:
         "corr_push_enabled": user.corr_push_enabled,
         "rr_push_enabled": user.rr_push_enabled,
         "menu_variant": menu_variant,
-        "title": "%s • PyChess" % view.capitalize(),
+        "title": "%s • Super Chess" % view.capitalize(),
         "view": view,
         "view_css": ("round" if view == "tv" else view) + ".css",
         "anon": user.anon,

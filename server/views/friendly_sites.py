@@ -10,5 +10,5 @@ from views import get_user_context
 async def friendly_sites(request: web.Request) -> ViewContext:
     _user, context = await get_user_context(request)
     context["friendly_sites"] = public_friendly_sites()
-    context["title"] = "Friendly sites • PyChess"
+    context["title"] = "Friendly sites • Super Chess"
     return context

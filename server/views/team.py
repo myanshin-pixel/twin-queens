@@ -78,7 +78,7 @@ def _is_site_admin_username(username: str) -> bool:
 
 def _team_context(context: ViewContext) -> None:
     context["view_css"] = "team.css"
-    context["title"] = "Teams • PyChess"
+    context["title"] = "Teams • Super Chess"
 
 
 async def _request_manager_team_ids(app_state: Any, username: str) -> list[str]:
@@ -161,7 +161,7 @@ async def team_requests(request: web.Request) -> ViewContext:
         {
             "team_requests": requests,
             "team_request_teams": teams_by_id,
-            "title": f"{len(requests)} join requests • PyChess",
+            "title": f"{len(requests)} join requests • Super Chess",
         }
     )
     return context
@@ -326,7 +326,7 @@ async def team_show(request: web.Request) -> ViewContext:
             "team_forum_topics": forum_topics,
             "team_public_permission": PERMISSION_PUBLIC,
             "team_tournaments": team_tournaments,
-            "title": f"{team['name']} • PyChess",
+            "title": f"{team['name']} • Super Chess",
         }
     )
     return context
@@ -374,7 +374,7 @@ async def team_members(request: web.Request) -> ViewContext:
             "team_members_page": page,
             "team_members_prev_href": prev_href,
             "team_members_next_href": next_href,
-            "title": f"{team['name']} • Members • PyChess",
+            "title": f"{team['name']} • Members • Super Chess",
         }
     )
     return context
@@ -429,7 +429,7 @@ async def team_declined_requests(request: web.Request) -> ViewContext:
             "team_declined_requests_prev_href": prev_href,
             "team_declined_requests_next_href": next_href,
             "team_declined_requests_current_href": current_href,
-            "title": f"{team['name']} • Declined requests • PyChess",
+            "title": f"{team['name']} • Declined requests • Super Chess",
         }
     )
     return context
@@ -465,7 +465,7 @@ async def team_join_form(request: web.Request) -> ViewContext:
             "team": team,
             "team_request_default_message": TEAM_REQUEST_DEFAULT_MESSAGE,
             "team_request_max_length": TEAM_REQUEST_MAX_LENGTH,
-            "title": f"Join {team['name']} • PyChess",
+            "title": f"Join {team['name']} • Super Chess",
         }
     )
     return context
@@ -528,7 +528,7 @@ async def team_edit(request: web.Request) -> ViewContext:
     )
     context["team_forum_access_options"] = TEAM_FORUM_ACCESS_OPTIONS
     context["team_forum_access_none"] = TEAM_FORUM_ACCESS_NONE
-    context["title"] = f"Edit {team['name']} • PyChess"
+    context["title"] = f"Edit {team['name']} • Super Chess"
     return context
 
 
@@ -620,7 +620,7 @@ async def team_updates(request: web.Request) -> ViewContext:
             "updates_team": None,
             "team_updates_subscribed": True,
             "team_can_send_update": False,
-            "title": "Team updates • PyChess",
+            "title": "Team updates • Super Chess",
         }
     )
     return context
@@ -647,7 +647,7 @@ async def team_updates_of(request: web.Request) -> ViewContext:
             "team_can_send_update": await has_team_permission(
                 app_state, team_id, user.username, PERMISSION_UPDATES
             ),
-            "title": f"{team['name']} updates • PyChess",
+            "title": f"{team['name']} updates • Super Chess",
         }
     )
     return context
@@ -671,7 +671,7 @@ async def team_update_new(request: web.Request) -> ViewContext:
             "team_update_max_length": TEAM_UPDATE_MAX_LENGTH,
             "team_update_max_per_7_days": TEAM_UPDATE_MAX_PER_7_DAYS,
             "team_update_quota_remaining": await team_update_quota_remaining(app_state, team_id),
-            "title": f"New {team['name']} update • PyChess",
+            "title": f"New {team['name']} update • Super Chess",
         }
     )
     return context
@@ -730,7 +730,7 @@ async def team_leaders(request: web.Request) -> ViewContext:
             "team_permission_definitions": TEAM_PERMISSION_DEFINITIONS,
             "team_max_admins": TEAM_MAX_ADMINS,
             "team_max_leaders": TEAM_MAX_LEADERS,
-            "title": f"{team['name']} leaders • PyChess",
+            "title": f"{team['name']} leaders • Super Chess",
         }
     )
     return context

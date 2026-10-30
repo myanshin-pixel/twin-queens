@@ -2,13 +2,13 @@
 # Copyright (C) 2026 ORGANIZATION
 # This file is distributed under the same license as the PROJECT project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
-# 
+#
 # Translators:
 # Стримы с шахами и матами, 2021
 # gbtami <gbtami@gmail.com>, 2022
 # Aleksey Matvienko, 2023
 # Артем Артем, 2024
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
@@ -18,12 +18,12 @@ msgstr ""
 "PO-Revision-Date: 2020-05-04 12:19+0000\n"
 "Last-Translator: Артем Артем, 2024\n"
 "Language-Team: Russian (https://app.transifex.com/gbtami/teams/14790/ru/)\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.17.0\n"
-"Language: ru\n"
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+"Generated-By: Babel 2.17.0\n"
 
 #: ../client/about.ts:8
 msgid ""
@@ -2183,7 +2183,7 @@ msgstr "Зал ожидания"
 
 #: ../client/lobby.ts:2105
 msgid "Auto pairing"
-msgstr ""
+msgstr "Автоподбор"
 
 #: ../client/lobby.ts:2246
 msgid "Donate"
@@ -5256,3 +5256,25 @@ msgstr ""
 #: ../client/two-board/round/roundControls.ts:219
 msgid "CANCEL REMATCH"
 msgstr ""
+
+msgid "Quick pairing"
+msgstr "Быстрая игра"
+
+msgid "New chess with empty ratings and no theory. Everyone can be first."
+msgstr ""
+"Новые шахматы с пустыми рейтингами и без теории. Каждый может стать первым."
+
+msgid "Bullet"
+msgstr "Пуля"
+
+msgid "Blitz"
+msgstr "Блиц"
+
+msgid "Rapid"
+msgstr "Рапид"
+
+msgid "Classical"
+msgstr "Классика"
+
+msgid "Chess on a 9x8 board with two queens on each side."
+msgstr "Шахматы на доске 9×8 с двумя ферзями у каждой стороны."

@@ -310,7 +310,7 @@ async def popular_study_topics(app_state: Any, *, limit: int = 50) -> list[str]:
 async def member_study_topics(app_state: Any, username: str, *, limit: int = 12) -> list[str]:
     """Return recent distinct topics from Studies the user owns or belongs to.
 
-    Lichess stores a separate personal topic-shortcut list. PyChess derives the
+    Lichess stores a separate personal topic-shortcut list. Super Chess derives the
     shortcuts from the user's accessible Studies instead, which keeps the first
     topic implementation small while preserving the same useful navigation.
     """
