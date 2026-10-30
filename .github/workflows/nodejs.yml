@@ -1,6 +1,13 @@
 name: Nodejs-CI
 
-on: [pull_request, push]
+on:
+  pull_request:
+  push:
+    paths-ignore:
+      - 'site/**'
+      - 'android-app/**'
+      - '.github/workflows/pages.yml'
+      - '.github/workflows/android.yml'
 
 permissions:
   contents: read

@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Twin Queens — новые шахматы 9×8 с двумя ферзями</title>
+<meta name="description" content="Twin Queens — шахматы на доске 9×8, где у каждой стороны по два ферзя. Новые шахматы с пустыми рейтингами и теорией. Играйте бесплатно в браузере или на Android.">
+<meta name="theme-color" content="#0e4a40">
+<meta property="og:title" content="Twin Queens — New Chess">
+<meta property="og:description" content="Chess on a 9×8 board with two queens per side. Everything starts from zero.">
+<meta property="og:image" content="https://twinqueens.com/assets/og-banner.jpg">
+<meta property="og:url" content="https://twinqueens.com/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="./"><img src="assets/icons/icon-192.png" alt=""><b class="gold">Twin Queens</b></a>
+  <span class="sp"></span>
+  <a class="navlink hide-m" href="#rules" data-t="rules"></a>
+  <a class="navlink" href="play.html" data-t="play"></a>
+  <button class="langbtn" id="langBtn"></button>
+</header>
+
+<main>
+  <section class="hero">
+    <div>
+      <div class="kicker">NEW CHESS · 9 × 8</div>
+      <h1 class="gold">Twin Queens</h1>
+      <p class="lead" data-l="lead"></p>
+      <ul class="slogans">
+        <li data-l="s1"></li><li data-l="s2"></li><li data-l="s3"></li>
+      </ul>
+      <div class="cta">
+        <a class="btn primary big" href="play.html?mode=pc" data-t="playPc"></a>
+        <a class="btn big" href="play.html?mode=pvp" data-t="playFriend"></a>
+        <a class="btn big" id="apkBtn" href="https://github.com/myanshin-pixel/twin-queens/releases/latest/download/twin-queens.apk" data-t="download"></a>
+      </div>
+    </div>
+    <img class="logo" src="assets/logo-720.jpg" width="720" height="720" alt="Twin Queens">
+  </section>
+
+  <section class="section" id="rules">
+    <h2 class="gold" data-t="rules"></h2>
+    <div class="rules-grid">
+      <div class="rcard">
+        <h3 data-l="r1h"></h3>
+        <p data-l="r1"></p>
+        <div class="setup" id="setupRow"></div>
+        <div class="files"><span>a</span><span>b</span><span>c</span><span>d</span><span>e</span><span>f</span><span>g</span><span>h</span><span>i</span></div>
+      </div>
+      <div class="rcard"><h3 data-l="r2h"></h3><p data-l="r2"></p></div>
+      <div class="rcard"><h3 data-l="r3h"></h3><p data-l="r3"></p></div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div>© 2026 Twin Queens · <a href="https://twinqueens.com">twinqueens.com</a></div>
+  <div data-l="credits"></div>
+</footer>
+
+<script src="i18n.js"></script>
+<script>
+(function(){
+var L={
+  ru:{
+    lead:'Шахматы на доске 9 на 8, где у каждой стороны по два ферзя. Те же правила, которые вы знаете, — но совершенно новая игра.',
+    s1:'Новые шахматы с пустыми рейтингами и теорией.',s2:'Всё начинается с нуля.',s3:'Каждый может стать первым.',
+    r1h:'Расстановка',r1:'Девять вертикалей (a–i) и восемь горизонталей. Перед фигурами — девять пешек. Ферзи стоят по обе стороны от короля, слоны — на полях разного цвета.',
+    r2h:'Ходы',r2:'Все фигуры ходят как в классических шахматах: взятие на проходе, превращение пешки, шах и мат, пат, правило 50 ходов и троекратное повторение.',
+    r3h:'Рокировка',r3:'Король стоит на e. Короткая рокировка: король e→g, ладья i→f. Длинная: король e→c, ладья a→d. Условия те же, что в обычных шахматах.',
+    credits:'Фигуры: Colin M. L. Burnett (лицензия BSD/GPL/GFDL). Шрифты: Playfair Display и Cinzel (SIL Open Font License).'
+  },
+  en:{
+    lead:'Chess on a 9 by 8 board where each side has two queens. The rules you already know — a completely new game.',
+    s1:'New chess: empty ratings, no opening theory.',s2:'Everything starts from zero.',s3:'Anyone can be the first.',
+    r1h:'Setup',r1:'Nine files (a–i) and eight ranks. Nine pawns in front. A queen stands on each side of the king, and the bishops are on opposite colours.',
+    r2h:'Moves',r2:'Every piece moves as in classical chess: en passant, promotion, check and mate, stalemate, the 50-move rule and threefold repetition.',
+    r3h:'Castling',r3:'The king starts on e. Short castling: king e→g, rook i→f. Long castling: king e→c, rook a→d. Same conditions as in ordinary chess.',
+    credits:'Pieces by Colin M. L. Burnett (BSD/GPL/GFDL). Fonts: Playfair Display and Cinzel (SIL Open Font License).'
+  }
+};
+var lang=tqLang();
+function apply(){
+  var T=TQ_I18N[lang],X=L[lang];document.documentElement.lang=lang;
+  document.querySelectorAll('[data-t]').forEach(function(el){el.textContent=T[el.dataset.t]});
+  document.querySelectorAll('[data-l]').forEach(function(el){el.textContent=X[el.dataset.l]});
+  document.getElementById('langBtn').textContent=T.lang;
+  document.title=T.title;
+}
+document.getElementById('langBtn').onclick=function(){lang=lang==='ru'?'en':'ru';tqSetLang(lang);apply()};
+document.getElementById('setupRow').innerHTML=['R','N','B','Q','K','Q','N','B','R'].map(function(p){return '<img src="assets/pieces/w'+p+'.svg" alt="'+p+'">'}).join('');
+/* inside the Android app there is nothing to download */
+if(window.Capacitor||/TwinQueensApp/.test(navigator.userAgent)){var a=document.getElementById('apkBtn');a.parentNode.removeChild(a)}
+apply();
+if(!window.Capacitor&&'serviceWorker' in navigator&&location.protocol.indexOf('http')===0)navigator.serviceWorker.register('sw.js').catch(function(){});
+})();
+</script>
+</body>
+</html>

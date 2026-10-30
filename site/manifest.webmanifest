@@ -1,0 +1,16 @@
+{
+  "name": "Twin Queens — Chess 9×8",
+  "short_name": "Twin Queens",
+  "description": "Chess on a 9×8 board with two queens per side.",
+  "start_url": "./play.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0a3f37",
+  "theme_color": "#0e4a40",
+  "icons": [
+    {"src": "assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png"},
+    {"src": "assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png"},
+    {"src": "assets/icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ]
+}

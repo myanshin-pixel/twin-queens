@@ -1,0 +1,19 @@
+{
+  "name": "twin-queens-android",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Android wrapper for the Twin Queens web game (Capacitor)",
+  "scripts": {
+    "sync": "rm -rf www && cp -r ../site www && rm -f www/CNAME www/gen-sw.py www/assets/banner-*.jpg && npx cap sync android"
+  },
+  "dependencies": {
+    "@capacitor/android": "8.6.0",
+    "@capacitor/core": "8.6.0"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "8.6.0"
+  },
+  "overrides": {
+    "tslib": "2.8.1"
+  }
+}

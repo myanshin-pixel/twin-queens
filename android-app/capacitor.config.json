@@ -1,0 +1,9 @@
+{
+  "appId": "com.twinqueens.app",
+  "appName": "Twin Queens",
+  "webDir": "www",
+  "android": {
+    "appendUserAgent": "TwinQueensApp",
+    "backgroundColor": "#0a3f37"
+  }
+}
