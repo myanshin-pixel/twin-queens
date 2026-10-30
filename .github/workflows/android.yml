@@ -16,11 +16,11 @@ jobs:
       TQ_VERSION_CODE: ${{ github.run_number }}
       TQ_VERSION_NAME: 1.0.${{ github.run_number }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
-      - uses: actions/setup-java@v4
+      - uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: 21
@@ -30,8 +30,8 @@ jobs:
         working-directory: android-app
         run: |
           python3 ../site/gen-sw.py
-          npm ci
-          npm run sync
+          bash ../.github/run-logged.sh npm ci
+          bash ../.github/run-logged.sh npm run sync
 
       - name: Release signing key
         env:
@@ -52,7 +52,7 @@ jobs:
         working-directory: android-app/android
         run: |
           chmod +x gradlew
-          ./gradlew --no-daemon assembleRelease
+          bash ../../.github/run-logged.sh ./gradlew --no-daemon --console=plain assembleRelease
           cp app/build/outputs/apk/release/app-release.apk "$GITHUB_WORKSPACE/twin-queens.apk"
 
       - uses: actions/upload-artifact@v4
