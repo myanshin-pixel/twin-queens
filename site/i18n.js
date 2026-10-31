@@ -20,7 +20,7 @@ var TQ_I18N={
     resign:'Сдаться',offerDraw:'Ничья',sure:'Точно?',resignT:'Сдача',agreed:'Ничья по соглашению',
     copyPgn:'Копировать PGN',downloadPgn:'Скачать PGN',copied:'PGN скопирован',
     sound:'Звук',dests:'Подсказывать ходы',anim:'Анимация',autoQueen:'Сразу в ферзя',coords:'Координаты',
-    first:'В начало',prev:'Назад',next:'Вперёд',last:'К последнему ходу',premove:'Предход'
+    first:'В начало',prev:'Назад',next:'Вперёд',last:'К последнему ходу',premove:'Предход',soon:'скоро'
   },
   en:{
     title:'Twin Queens — new chess on a 9×8 board',
@@ -42,7 +42,7 @@ var TQ_I18N={
     resign:'Resign',offerDraw:'Draw',sure:'Sure?',resignT:'Resignation',agreed:'Draw by agreement',
     copyPgn:'Copy PGN',downloadPgn:'Download PGN',copied:'PGN copied',
     sound:'Sound',dests:'Show legal moves',anim:'Animation',autoQueen:'Auto-queen',coords:'Coordinates',
-    first:'First move',prev:'Back',next:'Forward',last:'Last move',premove:'Premove'
+    first:'First move',prev:'Back',next:'Forward',last:'Last move',premove:'Premove',soon:'soon'
   }
 };
 function tqLang(){

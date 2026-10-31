@@ -543,16 +543,20 @@ $('pgnSave').onclick=()=>{
 
 /* ---------- controls ---------- */
 const selMode=$('selMode'),selSide=$('selSide'),selLevel=$('selLevel'),selTime=$('selTime');
-const TIMES=[[0,0],[60,0],[120,1],[180,0],[180,2],[300,0],[300,3],[600,0],[600,5],[900,10],[1800,0],[1800,20]];
+/* [seconds, increment, locked]. Locked controls stay visible but greyed out until there are
+   enough players online, so everyone meets in the few most popular controls. Set the third
+   value to false to open one. */
+const TIMES=[[0,0],[60,0],[120,1,true],[180,0],[180,2,true],[300,0],[300,3,true],[600,0],[600,5],[900,10,true],[1800,0],[1800,20,true]];
+const timeLocked=v=>TIMES.some(([t,i,l])=>l&&t+'+'+i===v);
 function fillSelects(){
   const opt=(v,t)=>'<option value="'+v+'">'+t+'</option>';
   selMode.innerHTML=opt('pc',T.computer)+opt('pvp',T.friend);
   selSide.innerHTML=opt('w',T.white)+opt('b',T.black)+opt('r',T.random);
   selLevel.innerHTML=T.levels.map((n,i)=>opt(i+1,n)).join('');
-  selTime.innerHTML=TIMES.map(([t,i])=>opt(t+'+'+i,t?(t/60)+' + '+i:T.noClock)).join('');
+  selTime.innerHTML=TIMES.map(([t,i,l])=>'<option value="'+t+'+'+i+'"'+(l?' disabled':'')+'>'+(t?(t/60)+' + '+i:T.noClock)+(l?' — '+T.soon:'')+'</option>').join('');
   selMode.value=settings.mode;selSide.value=settings.side;selLevel.value=String(settings.level);
   selTime.value=settings.time+'+'+(settings.inc||0);
-  if(selTime.selectedIndex<0)selTime.value='600+0';
+  if(selTime.selectedIndex<0||timeLocked(selTime.value)){selTime.value='600+0';settings.time=600;settings.inc=0}
   selSide.disabled=selLevel.disabled=settings.mode==='pvp';
 }
 function fillPrefs(){

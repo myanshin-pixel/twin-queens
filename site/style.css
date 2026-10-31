@@ -126,6 +126,7 @@ button,select{font:inherit}
   color:var(--ink);border:1px solid var(--line);border-radius:9px;padding:8px 26px 8px 10px;font-size:14px;text-transform:none;letter-spacing:0}
 .settings select:disabled{opacity:.45}
 .settings option{background:#0a3f37}
+.settings option:disabled{color:#7f948e;background:#13302b}
 
 @media (max-width:900px){
   .wrap{grid-template-columns:1fr;gap:14px;padding:4px 10px 24px}
