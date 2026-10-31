@@ -278,11 +278,11 @@ function renderBoard(anim){
   });
   html+=shapesSvg();
   if(promoPending){
-    html+='<div class="overlay"><div class="card"><h2>'+T.promo+'</h2><p>'+T.promoSub+'</p><div class="promo">'+
+    html+='<div class="overlay"><div class="card glass" data-tilt data-tilt-strength="10"><h2>'+T.promo+'</h2><p>'+T.promoSub+'</p><div class="promo">'+
       ['q','r','b','n'].map(t=>'<button data-promo="'+t+'" aria-label="'+t+'">'+img(s.t,t)+'</button>').join('')+'</div></div></div>';
   }else if(G.result&&!overlayHidden&&live){
     const [title,detail]=resText(G.result);
-    html+='<div class="overlay"><div class="card"><div class="score gold">'+G.result.score+'</div><h2>'+title+'</h2><p>'+detail+'</p>'+
+    html+='<div class="overlay"><div class="card glass" data-tilt data-tilt-strength="10"><div class="score gold">'+G.result.score+'</div><h2>'+title+'</h2><p>'+detail+'</p>'+
       '<div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap"><button class="btn primary" data-act="again">'+T.again+'</button><button class="btn" data-act="view">'+T.view+'</button></div></div></div>';
   }
   boardEl.innerHTML=html;

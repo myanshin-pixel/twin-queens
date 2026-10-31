@@ -42,30 +42,30 @@
         <a class="btn big" id="apkBtn" href="https://github.com/myanshin-pixel/twin-queens/releases/latest/download/twin-queens.apk" data-t="download"></a>
       </div>
     </div>
-    <img class="logo" src="assets/logo-720.jpg" width="720" height="720" alt="Twin Queens">
+    <img class="logo tiltimg" data-tilt data-tilt-strength="8" src="assets/logo-720.jpg" width="720" height="720" alt="Twin Queens">
   </section>
 
   <section class="section why" id="why">
     <h2 class="gold" data-l="wh"></h2>
     <p class="why-lead" data-l="wl"></p>
     <div class="rules-grid">
-      <div class="rcard"><div class="big gold">×1,77</div><h3 data-l="w1h"></h3><p data-l="w1"></p></div>
-      <div class="rcard"><div class="big gold">0</div><h3 data-l="w2h"></h3><p data-l="w2"></p></div>
-      <div class="rcard"><div class="big gold">=</div><h3 data-l="w3h"></h3><p data-l="w3"></p></div>
+      <div class="rcard glass" data-tilt><div class="big gold">×1,77</div><h3 data-l="w1h"></h3><p data-l="w1"></p></div>
+      <div class="rcard glass" data-tilt><div class="big gold">0</div><h3 data-l="w2h"></h3><p data-l="w2"></p></div>
+      <div class="rcard glass" data-tilt><div class="big gold">=</div><h3 data-l="w3h"></h3><p data-l="w3"></p></div>
     </div>
   </section>
 
   <section class="section" id="rules">
     <h2 class="gold" data-t="rules"></h2>
     <div class="rules-grid">
-      <div class="rcard">
+      <div class="rcard glass" data-tilt>
         <h3 data-l="r1h"></h3>
         <p data-l="r1"></p>
         <div class="setup" id="setupRow"></div>
         <div class="files"><span>a</span><span>b</span><span>c</span><span>d</span><span>e</span><span>f</span><span>g</span><span>h</span><span>i</span></div>
       </div>
-      <div class="rcard"><h3 data-l="r2h"></h3><p data-l="r2"></p></div>
-      <div class="rcard"><h3 data-l="r3h"></h3><p data-l="r3"></p></div>
+      <div class="rcard glass" data-tilt><h3 data-l="r2h"></h3><p data-l="r2"></p></div>
+      <div class="rcard glass" data-tilt><h3 data-l="r3h"></h3><p data-l="r3"></p></div>
     </div>
   </section>
 </main>
@@ -76,6 +76,7 @@
 </footer>
 
 <script src="i18n.js"></script>
+<script src="tilt.js"></script>
 <script>
 (function(){
 var L={
