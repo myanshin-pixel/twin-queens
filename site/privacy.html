@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Twin Queens Chess — политика конфиденциальности</title>
+<meta name="theme-color" content="#0e4a40">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="stylesheet" href="style.css">
+<style>
+.doc{max-width:820px;margin:0 auto;padding:10px 16px 50px;line-height:1.65}
+.doc h1{font-family:var(--f-display);font-size:clamp(28px,4vw,40px);margin:10px 0 6px}
+.doc h2{font-family:var(--f-display);font-size:22px;color:var(--gold-2);margin:28px 0 8px}
+.doc p,.doc li{color:var(--ink)}
+.doc .muted{color:var(--ink-dim);font-size:14px}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="./"><img src="assets/icons/icon-192.png" alt=""><b class="gold">Twin Queens</b></a>
+  <span class="sp"></span>
+  <a class="navlink" href="./" data-t="home"></a>
+  <button class="langbtn" id="langBtn"></button>
+</header>
+<main class="doc" id="doc"></main>
+<script src="i18n.js"></script>
+<script src="config.js"></script>
+<script>
+(function(){
+var C=window.TQ_CONFIG||{};
+var contact=C.contactEmail?'<a href="mailto:'+C.contactEmail+'">'+C.contactEmail+'</a>':(C.telegramUrl?'<a href="'+C.telegramUrl+'">Telegram</a>':'twinqueens.com');
+var D={
+ru:'<h1 class="gold">Политика конфиденциальности</h1><p class="muted">Редакция от 31 октября 2026 года</p>'+
+'<p>Эта политика объясняет, какие данные собирает сайт twinqueens.com и приложение Twin Queens Chess и зачем.</p>'+
+'<h2>Игра</h2><p>Партии, настройки и выбранный язык сохраняются только в вашем браузере или на вашем устройстве. Мы их не получаем. Очистить их можно, удалив данные сайта в браузере или удалив приложение.</p>'+
+'<h2>Статистика посещений</h2><p>Только если вы нажали «Принять» в окне про cookie, сайт подключает сервис Яндекс Метрика. Он собирает сведения о визите: страницы, время визита, тип устройства и браузера, примерную страну и город по IP-адресу, а также события игры — начало и окончание партии, скачивание приложения. Мы используем эти данные только чтобы понимать, сколько людей играет, и улучшать игру. Как Яндекс обрабатывает данные, описано в <a href="https://yandex.ru/legal/confidential/">политике конфиденциальности Яндекса</a>. Отказаться можно, нажав «Только необходимые» или удалив данные сайта в браузере. В приложении для Android статистика не собирается.</p>'+
+'<h2>Подписка на новости о запуске</h2><p>Если вы оставили email в форме, мы используем его только чтобы сообщить о запуске игры по сети и важных новостях Twin Queens Chess. Мы не передаём адреса третьим лицам и не продаём их. Подписка в Telegram-канале регулируется правилами Telegram.</p>'+
+'<h2>Ваши права</h2><p>Вы можете попросить удалить ваш email или задать вопрос о данных: '+contact+'.</p>'+
+'<h2>Изменения</h2><p>Если политика изменится, новая редакция появится на этой странице с новой датой.</p>',
+en:'<h1 class="gold">Privacy policy</h1><p class="muted">Version of 31 October 2026</p>'+
+'<p>This policy explains what data the twinqueens.com website and the Twin Queens Chess app collect and why.</p>'+
+'<h2>The game</h2><p>Your games, settings and language are stored only in your browser or on your device. We do not receive them. You can clear them by deleting site data in your browser or uninstalling the app.</p>'+
+'<h2>Visit statistics</h2><p>Only if you click “Accept” in the cookie notice, the site loads Yandex Metrica. It collects information about your visit: pages, visit time, device and browser type, approximate country and city from the IP address, and game events such as starting and finishing a game or downloading the app. We use it only to understand how many people play and to improve the game. How Yandex processes data is described in the <a href="https://yandex.com/legal/confidential/">Yandex privacy policy</a>. You can opt out by clicking “Necessary only” or deleting site data in your browser. The Android app does not collect statistics.</p>'+
+'<h2>Launch news</h2><p>If you leave your email in the form, we use it only to tell you when online play launches and about important Twin Queens Chess news. We never share or sell addresses. Telegram channel subscriptions are governed by Telegram’s rules.</p>'+
+'<h2>Your rights</h2><p>You can ask us to delete your email or ask any question about your data: '+contact+'.</p>'+
+'<h2>Changes</h2><p>If this policy changes, the new version will appear on this page with a new date.</p>'
+};
+var lang=tqLang();
+function apply(){var T=TQ_I18N[lang];document.documentElement.lang=lang;document.getElementById('doc').innerHTML=D[lang];
+  document.querySelectorAll('[data-t]').forEach(function(el){el.textContent=T[el.dataset.t]});
+  document.getElementById('langBtn').textContent=T.lang;document.title='Twin Queens Chess — '+(lang==='ru'?'политика конфиденциальности':'privacy policy')}
+document.getElementById('langBtn').onclick=function(){lang=lang==='ru'?'en':'ru';tqSetLang(lang);apply()};
+apply();
+})();
+</script>
+</body>
+</html>

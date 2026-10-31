@@ -145,6 +145,7 @@ function newGame(){
      time:settings.time,inc:settings.inc||0,clocks:{w:settings.time*1000,b:settings.time*1000},tickAt:0,lowWarned:{}};
   flipped=settings.mode==='pc'&&human==='b';
   render();save();play('start');maybeEngine();
+  if(window.tqTrack)tqTrack('game_start',{mode:G.mode,level:G.mode==='pc'?G.level:0,time:G.time+'+'+G.inc});
 }
 function doMove(m,opts){
   opts=opts||{};
@@ -160,7 +161,7 @@ function doMove(m,opts){
   selected=null;targets=[];shapes=[];viewPly=null;
   render(opts.noAnim?null:movedPieces(real,s));save();
   play(soundFor(s,real,ns));
-  if(G.result)setTimeout(()=>play('end'),250);
+  if(G.result){setTimeout(()=>play('end'),250);trackEnd()}
   maybeEngine();
   if(!G.result&&premove&&humanCan(ns.t))setTimeout(playPremove,30);
   return true;
@@ -194,10 +195,11 @@ function undo(){
   G.result=null;overlayHidden=false;viewPly=null;clearUi();G.tickAt=performance.now();
   render();save();maybeEngine();
 }
+function trackEnd(){if(window.tqTrack&&G.result)tqTrack('game_end',{mode:G.mode,result:G.result.code,score:G.result.score,moves:G.hist.length})}
 function finishBy(result){
   reqId++;thinking=false;if(worker)worker._finish=null;
   G.result=result;overlayHidden=false;viewPly=null;clearUi();
-  render();save();play('end');
+  render();save();play('end');trackEnd();
 }
 function resign(){
   if(G.result)return;

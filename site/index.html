@@ -55,6 +55,19 @@
     </div>
   </section>
 
+  <section class="section" id="online">
+    <div class="rcard glass waitlist" data-tilt data-tilt-strength="6">
+      <div>
+        <h2 class="gold" data-l="oh"></h2>
+        <p data-l="ot"></p>
+      </div>
+      <div class="cta">
+        <a class="btn primary" id="tgBtn" target="_blank" rel="noopener" data-l="otg"></a>
+        <a class="btn" id="formBtn" target="_blank" rel="noopener" data-l="oform"></a>
+      </div>
+    </div>
+  </section>
+
   <section class="section" id="rules">
     <h2 class="gold" data-t="rules"></h2>
     <div class="rules-grid">
@@ -73,9 +86,12 @@
 <footer class="footer">
   <div>© 2026 Twin Queens Chess · <a href="https://twinqueens.com">twinqueens.com</a></div>
   <div data-l="credits"></div>
+  <div><a href="privacy.html" data-l="privacy"></a> · <a href="https://github.com/myanshin-pixel/twin-queens">Source code (AGPL-3.0)</a></div>
 </footer>
 
 <script src="i18n.js"></script>
+<script src="config.js"></script>
+<script src="analytics.js"></script>
 <script src="tilt.js"></script>
 <script>
 (function(){
@@ -89,6 +105,7 @@ var L={
     w1h:'Больше вариантов',w1:'Уже на пятом полуходе возможных партий почти вдвое больше, чем в классике: 8,6 млн против 4,9 млн. Каждый ход — больше решений и больше острых позиций.',
     w2h:'Ноль заученной теории',w2:'У соперника нет наработанных схем, домашних заготовок и выученных ловушек. Никто не разыграет против вас партию, найденную компьютером годы назад.',
     w3h:'Все равны',w3:'Ставка только на логику, расчёт и фантазию. Неважно, сколько лет вы учили дебюты, — здесь побеждает тот, кто лучше думает за доской.',
+    oh:'Игра по сети и рейтинг — скоро',ot:'Мы готовим онлайн-игру с живыми соперниками, рейтингом и турнирами. Узнайте о запуске первыми — и станьте одним из первых игроков.',otg:'Telegram-канал',oform:'Оставить email',privacy:'Политика конфиденциальности',
     r1h:'Расстановка',r1:'Девять вертикалей (a–i) и восемь горизонталей. Перед фигурами — девять пешек. Ферзи стоят по обе стороны от короля, слоны — на полях разного цвета.',
     r2h:'Ходы',r2:'Все фигуры ходят как в классических шахматах: взятие на проходе, превращение пешки, шах и мат, пат, правило 50 ходов и троекратное повторение.',
     r3h:'Рокировка',r3:'Король стоит на e. Короткая рокировка: король e→g, ладья i→f. Длинная: король e→c, ладья a→d. Условия те же, что в обычных шахматах.',
@@ -103,6 +120,7 @@ var L={
     w1h:'More possibilities',w1:'After just five half-moves there are almost twice as many possible games as in classical chess: 8.6 million versus 4.9 million. More decisions and sharper positions on every move.',
     w2h:'Zero memorised theory',w2:'Your opponent has no prepared schemes, no home analysis and no memorised traps. Nobody can replay a computer-found line against you.',
     w3h:'Everyone is equal',w3:'It all comes down to logic, calculation and imagination. However long you have studied openings, here the winner is whoever thinks better at the board.',
+    oh:'Online play and ratings — coming soon',ot:'We are building online play with real opponents, ratings and tournaments. Be the first to know when it launches — and become one of the first players.',otg:'Telegram channel',oform:'Leave your email',privacy:'Privacy policy',
     r1h:'Setup',r1:'Nine files (a–i) and eight ranks. Nine pawns in front. A queen stands on each side of the king, and the bishops are on opposite colours.',
     r2h:'Moves',r2:'Every piece moves as in classical chess: en passant, promotion, check and mate, stalemate, the 50-move rule and threefold repetition.',
     r3h:'Castling',r3:'The king starts on e. Short castling: king e→g, rook i→f. Long castling: king e→c, rook a→d. Same conditions as in ordinary chess.',
@@ -121,6 +139,15 @@ document.getElementById('langBtn').onclick=function(){lang=lang==='ru'?'en':'ru'
 document.getElementById('setupRow').innerHTML=['R','N','B','Q','K','Q','N','B','R'].map(function(p){return '<img src="assets/pieces/w'+p+'.svg" alt="'+p+'">'}).join('');
 /* inside the Android app there is nothing to download */
 if(window.Capacitor||/TwinQueensApp/.test(navigator.userAgent)){var a=document.getElementById('apkBtn');a.parentNode.removeChild(a)}
+/* waitlist links from config.js; hide what is not set up yet */
+var CF=window.TQ_CONFIG||{},tg=document.getElementById('tgBtn'),fm=document.getElementById('formBtn');
+if(CF.telegramUrl)tg.href=CF.telegramUrl;else tg.remove();
+if(CF.formUrl)fm.href=CF.formUrl;else fm.remove();
+if(!CF.telegramUrl&&!CF.formUrl){var on=document.getElementById('online');on.parentNode.removeChild(on)}
+/* statistics goals */
+document.addEventListener('click',function(e){var a=e.target.closest('a');if(!a||!window.tqTrack)return;
+  if(a.id==='apkBtn')tqTrack('apk_click');else if(a.id==='tgBtn')tqTrack('telegram_click');else if(a.id==='formBtn')tqTrack('form_click');
+  else if(/mode=pc/.test(a.href))tqTrack('play_pc_click');else if(/mode=pvp/.test(a.href))tqTrack('play_pvp_click')});
 apply();
 if(!window.Capacitor&&'serviceWorker' in navigator&&location.protocol.indexOf('http')===0)navigator.serviceWorker.register('sw.js').catch(function(){});
 })();
