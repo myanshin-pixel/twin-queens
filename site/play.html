@@ -34,16 +34,35 @@
     </div>
     <div class="status" id="status"></div>
     <div class="moves" id="moves"></div>
+    <div class="nav">
+      <button class="btn" id="navFirst" data-tt="first">⏮</button>
+      <button class="btn" id="navPrev" data-tt="prev">◀</button>
+      <button class="btn" id="navNext" data-tt="next">▶</button>
+      <button class="btn" id="navLast" data-tt="last">⏭</button>
+    </div>
     <div class="tools">
       <button class="btn" id="undoBtn">↶ <span data-t="undo"></span></button>
       <button class="btn" id="flipBtn">⇅ <span data-t="flip"></span></button>
-      <button class="btn primary" id="newBtn" data-t="newGame"></button>
+      <button class="btn" id="drawBtn">½ <span></span></button>
+      <button class="btn" id="resignBtn">⚑ <span></span></button>
     </div>
+    <button class="btn primary" id="newBtn" data-t="newGame"></button>
     <div class="settings">
       <label><span data-t="opponent"></span><select id="selMode"></select></label>
       <label><span data-t="yourColor"></span><select id="selSide"></select></label>
       <label><span data-t="level"></span><select id="selLevel"></select></label>
       <label><span data-t="time"></span><select id="selTime"></select></label>
+    </div>
+    <div class="prefs">
+      <label><input type="checkbox" data-pref="sound"><span data-t="sound"></span></label>
+      <label><input type="checkbox" data-pref="dests"><span data-t="dests"></span></label>
+      <label><input type="checkbox" data-pref="anim"><span data-t="anim"></span></label>
+      <label><input type="checkbox" data-pref="autoQueen"><span data-t="autoQueen"></span></label>
+      <label><input type="checkbox" data-pref="coords"><span data-t="coords"></span></label>
+    </div>
+    <div class="tools pgn">
+      <button class="btn" id="pgnCopy" data-t="copyPgn"></button>
+      <button class="btn" id="pgnSave" data-t="downloadPgn"></button>
     </div>
   </aside>
 </div>

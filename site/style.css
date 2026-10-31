@@ -54,7 +54,7 @@ button,select{font:inherit}
 
 /* ---------- game layout ---------- */
 .wrap{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:22px;max-width:1240px;margin:0 auto;padding:6px 16px 28px;align-items:start}
-.boardcol{min-width:0;display:flex;flex-direction:column;gap:8px;max-width:calc((100vh - 160px)*9/8);width:100%;justify-self:center}
+.boardcol{min-width:0;display:flex;flex-direction:column;gap:8px;max-width:calc((100svh - 215px)*9/8);width:100%;justify-self:center}
 .frame{padding:clamp(6px,1.4vw,14px);border-radius:14px;
   background:linear-gradient(145deg,#f7d97a,#b8841e 30%,#f3cf6b 55%,#9c6a12 80%,#e9c055);
   box-shadow:0 18px 50px rgba(0,0,0,.35)}
@@ -113,7 +113,7 @@ button,select{font:inherit}
 .thinking i{width:5px;height:5px;border-radius:50%;background:var(--gold-2);animation:bl 1s infinite}
 .thinking i:nth-child(2){animation-delay:.15s}.thinking i:nth-child(3){animation-delay:.3s}
 @keyframes bl{0%,100%{opacity:.2}50%{opacity:1}}
-.moves{max-height:220px;overflow:auto;font-family:var(--f-mono);font-size:14px;background:rgba(0,0,0,.18);border-radius:10px;padding:6px 8px}
+.moves{max-height:240px;min-height:90px;overflow:auto;font-family:var(--f-mono);font-size:14px;background:rgba(0,0,0,.18);border-radius:10px;padding:6px 8px}
 .mrow{display:grid;grid-template-columns:34px 1fr 1fr;padding:2px 0}
 .mrow .n{color:var(--ink-dim)}
 .mrow .cur{background:rgba(243,207,107,.25);border-radius:4px;padding:0 4px;margin-left:-4px}
@@ -139,9 +139,34 @@ button,select{font:inherit}
   .tools .btn{padding:9px 8px;font-size:13px}
 }
 
+
+/* lichess-like extras */
+.piece.anim{position:relative;z-index:3}
+.sq.presel{background:rgba(120,160,255,.45)}
+.sq.pre{background:rgba(90,130,230,.45)}
+.board.nocoords .coord{display:none}
+.board.past::after{content:'';position:absolute;inset:0;box-shadow:inset 0 0 0 3px rgba(243,207,107,.7);pointer-events:none;z-index:4}
+.shapes{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:4}
+.pretag{margin-left:auto;font-size:12px;padding:2px 8px;border-radius:999px;background:rgba(90,130,230,.45)}
+.mv{cursor:pointer;border-radius:4px;padding:0 4px;margin-left:-4px}
+.mv:hover{background:rgba(255,255,255,.08)}
+.mrow .cur{background:rgba(243,207,107,.3)}
+.mres{text-align:center;padding:4px 0 2px;color:var(--gold-2);font-weight:700}
+.nav{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.nav .btn{padding:7px 0;font-size:15px}
+.btn.confirm{background:#b8321f;border-color:#e0604a;color:#fff}
+#newBtn{width:100%}
+.prefs{display:grid;grid-template-columns:1fr 1fr;gap:6px 12px;font-size:14px}
+.prefs label{display:flex;align-items:center;gap:8px;cursor:pointer}
+.prefs input{accent-color:#e9b949;width:16px;height:16px}
+.tools.pgn .btn{font-size:13px;padding:8px 6px}
+.toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,20px);opacity:0;background:#f4ecd8;color:#0a3f37;font-weight:700;
+  padding:10px 16px;border-radius:10px;box-shadow:0 10px 30px rgba(0,0,0,.35);transition:.2s;z-index:100;pointer-events:none}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
 /* ---------- landing ---------- */
 .hero{max-width:1240px;margin:0 auto;padding:24px 16px 10px;display:grid;grid-template-columns:1.05fr 1fr;gap:36px;align-items:center}
-.hero img.logo{width:100%;max-width:560px;border-radius:22px;box-shadow:0 24px 60px rgba(0,0,0,.4),0 0 0 1px var(--line);justify-self:center}
+.hero img.logo{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;max-width:560px;border-radius:22px;box-shadow:0 24px 60px rgba(0,0,0,.4),0 0 0 1px var(--line);justify-self:center}
 .kicker{font-family:'TQ Caps',var(--f-display);letter-spacing:.22em;font-size:14px;color:var(--gold-2)}
 .hero h1{font-family:var(--f-display);font-size:clamp(40px,6vw,76px);line-height:1;margin:10px 0 14px}
 .hero .lead{font-size:clamp(17px,1.6vw,21px);line-height:1.5;color:var(--ink);max-width:34em}

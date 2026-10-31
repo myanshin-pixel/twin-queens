@@ -16,7 +16,11 @@ var TQ_I18N={
     won:{w:'Белые победили',b:'Чёрные победили'},wonTime:{w:'Белые победили по времени',b:'Чёрные победили по времени'},
     noMoves:{w:'Белым некуда ходить — ничья',b:'Чёрным некуда ходить — ничья'},
     fifty:'Правило 50 ходов',threefold:'Троекратное повторение позиции',material:'Недостаточно материала для мата',
-    settings:'Настройки',lang:'English'
+    settings:'Настройки',lang:'English',
+    resign:'Сдаться',offerDraw:'Ничья',sure:'Точно?',resignT:'Сдача',agreed:'Ничья по соглашению',
+    copyPgn:'Копировать PGN',downloadPgn:'Скачать PGN',copied:'PGN скопирован',
+    sound:'Звук',dests:'Подсказывать ходы',anim:'Анимация',autoQueen:'Сразу в ферзя',coords:'Координаты',
+    first:'В начало',prev:'Назад',next:'Вперёд',last:'К последнему ходу',premove:'Предход'
   },
   en:{
     title:'Twin Queens — new chess on a 9×8 board',
@@ -34,7 +38,11 @@ var TQ_I18N={
     won:{w:'White wins',b:'Black wins'},wonTime:{w:'White wins on time',b:'Black wins on time'},
     noMoves:{w:'White has no legal moves — draw',b:'Black has no legal moves — draw'},
     fifty:'50-move rule',threefold:'Threefold repetition',material:'Insufficient material',
-    settings:'Settings',lang:'Русский'
+    settings:'Settings',lang:'Русский',
+    resign:'Resign',offerDraw:'Draw',sure:'Sure?',resignT:'Resignation',agreed:'Draw by agreement',
+    copyPgn:'Copy PGN',downloadPgn:'Download PGN',copied:'PGN copied',
+    sound:'Sound',dests:'Show legal moves',anim:'Animation',autoQueen:'Auto-queen',coords:'Coordinates',
+    first:'First move',prev:'Back',next:'Forward',last:'Last move',premove:'Premove'
   }
 };
 function tqLang(){
