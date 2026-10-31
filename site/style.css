@@ -35,7 +35,7 @@ button,select{font:inherit}
 .topbar{display:flex;align-items:center;gap:12px;padding:10px 16px;max-width:1240px;margin:0 auto}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit}
 .brand img{width:36px;height:36px;border-radius:9px;box-shadow:0 0 0 1px var(--line)}
-.brand b{font-family:var(--f-display);font-size:22px;letter-spacing:.3px}
+.brand b{white-space:nowrap;font-family:var(--f-display);font-size:22px;letter-spacing:.3px}
 .topbar .sp{flex:1}
 .navlink{color:var(--ink);text-decoration:none;font-size:15px;padding:8px 10px;border-radius:8px;opacity:.9}
 .navlink:hover{background:rgba(255,255,255,.07)}
@@ -131,7 +131,8 @@ button,select{font:inherit}
   .wrap{grid-template-columns:1fr;gap:14px;padding:4px 10px 24px}
   .boardcol{max-width:none}
   .phead{display:none}
-  .topbar{padding:8px 12px}
+  .topbar{padding:8px 12px;gap:6px}
+  .brand b{font-size:19px}
   .topbar .navlink.hide-m{display:none}
 }
 @media (max-width:420px){
@@ -191,7 +192,7 @@ img.tiltimg:hover{box-shadow:0 24px 60px rgba(0,0,0,.4),0 0 0 1px rgba(243,207,1
 .hero img.logo{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;max-width:560px;border-radius:22px;box-shadow:0 24px 60px rgba(0,0,0,.4),0 0 0 1px var(--line);justify-self:center}
 .kicker{font-family:'TQ Caps',var(--f-display);letter-spacing:.22em;font-size:14px;color:var(--gold-2)}
 .hero h1{font-family:var(--f-display);font-size:clamp(40px,6vw,76px);line-height:1;margin:10px 0 14px}
-.hero .lead{font-size:clamp(17px,1.6vw,21px);line-height:1.5;color:var(--ink);max-width:34em}
+.hero .lead{white-space:pre-line;font-size:clamp(17px,1.6vw,21px);line-height:1.5;color:var(--ink);max-width:34em}
 .slogans{list-style:none;padding:0;margin:18px 0 26px;display:grid;gap:8px}
 .slogans li{font-family:var(--f-display);font-size:clamp(18px,1.8vw,22px);padding-left:26px;position:relative}
 .slogans li::before{content:'♛';position:absolute;left:0;color:var(--gold-2)}
