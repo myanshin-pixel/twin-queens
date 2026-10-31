@@ -1,7 +1,7 @@
 /* Twin Queens — interface strings (RU / EN) */
 var TQ_I18N={
   ru:{
-    title:'Twin Queens — новые шахматы 9×8',
+    title:'Twin Queens Chess — новые шахматы 9×8',
     play:'Играть',playPc:'Играть с компьютером',playFriend:'Играть вдвоём',
     rules:'Правила',download:'Скачать для Android',home:'Главная',
     opponent:'Соперник',computer:'Компьютер',friend:'Друг (на одном экране)',
@@ -23,7 +23,7 @@ var TQ_I18N={
     first:'В начало',prev:'Назад',next:'Вперёд',last:'К последнему ходу',premove:'Предход',soon:'скоро'
   },
   en:{
-    title:'Twin Queens — new chess on a 9×8 board',
+    title:'Twin Queens Chess — new chess on a 9×8 board',
     play:'Play',playPc:'Play the computer',playFriend:'Play a friend',
     rules:'Rules',download:'Download for Android',home:'Home',
     opponent:'Opponent',computer:'Computer',friend:'Friend (same screen)',

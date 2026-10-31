@@ -1,5 +1,5 @@
 {
-  "name": "Twin Queens — Chess 9×8",
+  "name": "Twin Queens Chess",
   "short_name": "Twin Queens",
   "description": "Chess on a 9×8 board with two queens per side.",
   "start_url": "./play.html",

@@ -70,9 +70,9 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v${{ env.TQ_VERSION_NAME }}
-          name: Twin Queens ${{ env.TQ_VERSION_NAME }} (Android)
+          name: Twin Queens Chess ${{ env.TQ_VERSION_NAME }} (Android)
           body: |
-            Android app for Twin Queens — chess on a 9×8 board with two queens per side.
+            Android app for Twin Queens Chess — chess on a 9×8 board with two queens per side.
             Install: download twin-queens.apk on your phone and open it (allow installing from this source when asked).
           files: twin-queens.apk
           make_latest: true
