@@ -127,6 +127,14 @@ from inbox_api import (
     inbox_unread,
     subscribe_inbox,
 )
+from email_auth import (
+    email_auth_page,
+    forgot_password,
+    login_with_password,
+    reset_password,
+    signup,
+    verify_email,
+)
 from login import (
     check_username_availability,
     confirm_username,
@@ -265,6 +273,8 @@ get_routes: tuple[RouteDef, ...] = (
     ("/account/engines", account_engines),
     ("/api/external-engine", list_engines),
     ("/login", login_choice),
+    ("/login/email", email_auth_page),
+    ("/auth/verify", verify_email),
     ("/login/{provider}", login),
     ("/oauth/{provider}", oauth),
     ("/account", account_home),
@@ -532,6 +542,10 @@ post_routes: tuple[RouteDef, ...] = (
     (r"/bot-challenge/cancel/{gameId:\w{8}}", bot_challenge_view.cancel_bot_challenge),
     (r"/api/challenge/{gameId:\w{8}}/accept", challenge_accept),
     (r"/api/challenge/{gameId:\w{8}}/decline", challenge_decline),
+    ("/api/auth/signup", signup),
+    ("/api/auth/login", login_with_password),
+    ("/api/auth/forgot", forgot_password),
+    ("/api/auth/reset", reset_password),
     ("/api/check-username", check_username_availability),
     ("/api/confirm-username", confirm_username),
     ("/pref/theme", set_theme),

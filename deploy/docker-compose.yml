@@ -1,0 +1,60 @@
+# Twin Queens Chess — production stack (one server).
+# Started and updated by deploy/setup.sh and deploy/update.sh; settings live in deploy/.env.
+name: twinqueens
+
+services:
+  mongodb:
+    image: mongo:7.0
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ADMIN_PASS}
+    volumes:
+      - mongo-data:/data/db
+      - ./backups:/backups
+    command: ["--wiredTigerCacheSizeGB", "0.5"]
+
+  server:
+    build:
+      context: ..
+      dockerfile: docker/server.Dockerfile
+    restart: always
+    env_file: .env
+    environment:
+      MONGO_HOST: mongodb://admin:${MONGO_ADMIN_PASS}@mongodb:27017
+      PROD: "true"
+      CLIENT_IP_MODE: heroku
+    command: ["python", "server/server.py"]
+    depends_on:
+      - mongodb
+
+  fishnet:
+    build:
+      context: .
+      dockerfile: fishnet.Dockerfile
+    restart: always
+    environment:
+      FISHNET_KEY: ${FISHNET_KEY}
+    depends_on:
+      - server
+
+  caddy:
+    image: caddy:2
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    environment:
+      DOMAIN: ${DOMAIN}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+      - caddy-config:/config
+    depends_on:
+      - server
+
+volumes:
+  mongo-data:
+  caddy-data:
+  caddy-config:

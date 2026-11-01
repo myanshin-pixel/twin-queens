@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Twin Queens Chess — вход</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0e4a40">
+<style>
+:root{--ink:#f6f1e3;--dim:#c9d8d2;--line:rgba(243,207,107,.32);--gold:#f3cf6b}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:var(--ink);
+  background-color:#0a3f37;background-image:radial-gradient(1000px 600px at 15% -10%,rgba(40,190,160,.35),transparent 60%),
+  linear-gradient(160deg,#0f5a4e,#0a3f37 45%,#06302a);background-attachment:fixed;
+  display:flex;align-items:center;justify-content:center;padding:24px 16px}
+.card{width:100%;max-width:420px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:20px;
+  padding:26px 24px;-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);box-shadow:0 24px 60px -24px rgba(0,0,0,.6)}
+.brand{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+.brand a{color:var(--gold);text-decoration:none;font-family:Georgia,serif;font-size:24px;font-weight:700}
+.lang{background:none;border:1px solid var(--line);color:var(--gold);border-radius:999px;padding:5px 11px;cursor:pointer;font-size:13px}
+.tabs{display:flex;gap:6px;margin-bottom:18px;background:rgba(0,0,0,.2);padding:4px;border-radius:12px}
+.tabs button{flex:1;border:0;background:none;color:var(--dim);padding:9px 6px;border-radius:9px;font:inherit;font-weight:600;cursor:pointer}
+.tabs button.on{background:rgba(255,255,255,.12);color:var(--ink)}
+form{display:none;flex-direction:column;gap:12px}
+form.on{display:flex}
+label{display:flex;flex-direction:column;gap:5px;font-size:13px;color:var(--dim)}
+input{font:inherit;font-size:16px;color:var(--ink);background:rgba(0,0,0,.25);border:1px solid var(--line);border-radius:10px;padding:11px 12px;outline:none}
+input:focus{border-color:var(--gold)}
+.hint{font-size:12px;color:var(--dim);margin:-4px 0 0}
+.btn{font:inherit;font-weight:700;border-radius:11px;padding:12px;cursor:pointer;border:1px solid #b8851f;
+  background:linear-gradient(180deg,#ffe596,#e9b949 55%,#c99327);color:#3a2604}
+.btn:disabled{opacity:.6;cursor:default}
+.link{background:none;border:0;color:var(--gold);font:inherit;font-size:14px;cursor:pointer;padding:0;text-align:left}
+.msg{display:none;margin-bottom:14px;border-radius:10px;padding:10px 12px;font-size:14px;line-height:1.45}
+.msg.err{display:block;background:rgba(220,60,40,.22);border:1px solid rgba(255,120,100,.5)}
+.msg.ok{display:block;background:rgba(80,200,140,.18);border:1px solid rgba(120,230,170,.5)}
+.or{display:flex;align-items:center;gap:10px;color:var(--dim);font-size:13px;margin:18px 0 12px}
+.or::before,.or::after{content:'';flex:1;height:1px;background:var(--line)}
+.prov{display:flex;gap:8px}
+.prov a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;color:var(--ink);font-weight:600;
+  border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);border-radius:11px;padding:11px}
+.prov a:hover{background:rgba(255,255,255,.12)}
+.prov svg{width:18px;height:18px}
+.legal{margin-top:16px;font-size:12px;color:var(--dim);line-height:1.5}
+.legal a{color:var(--gold)}
+</style>
+</head>
+<body>
+<main class="card">
+  <div class="brand"><a href="/">Twin Queens</a><button class="lang" id="lang"></button></div>
+  <div class="tabs" id="tabs">
+    <button data-tab="login" data-t="tabLogin"></button>
+    <button data-tab="signup" data-t="tabSignup"></button>
+  </div>
+  <div class="msg" id="msg" role="status"></div>
+
+  <form id="f-login" novalidate>
+    <label><span data-t="loginField"></span><input name="login" autocomplete="username" required></label>
+    <label><span data-t="password"></span><input name="password" type="password" autocomplete="current-password" required></label>
+    <button class="btn" type="submit" data-t="doLogin"></button>
+    <button class="link" type="button" data-go="forgot" data-t="forgotLink"></button>
+  </form>
+
+  <form id="f-signup" novalidate>
+    <label><span data-t="username"></span><input name="username" autocomplete="username" minlength="3" maxlength="20" required></label>
+    <p class="hint" data-t="usernameHint"></p>
+    <label><span>Email</span><input name="email" type="email" autocomplete="email" required></label>
+    <label><span data-t="password"></span><input name="password" type="password" autocomplete="new-password" minlength="8" required></label>
+    <p class="hint" data-t="passwordHint"></p>
+    <button class="btn" type="submit" data-t="doSignup"></button>
+  </form>
+
+  <form id="f-forgot" novalidate>
+    <p class="hint" data-t="forgotText"></p>
+    <label><span>Email</span><input name="email" type="email" autocomplete="email" required></label>
+    <button class="btn" type="submit" data-t="doForgot"></button>
+    <button class="link" type="button" data-go="login" data-t="backLogin"></button>
+  </form>
+
+  <form id="f-reset" novalidate>
+    <label><span data-t="newPassword"></span><input name="password" type="password" autocomplete="new-password" minlength="8" required></label>
+    <p class="hint" data-t="passwordHint"></p>
+    <button class="btn" type="submit" data-t="doReset"></button>
+  </form>
+
+  <div class="or" data-t="or"></div>
+  <div class="prov">
+    <a href="/login/lichess"><svg viewBox="0 0 50 50"><path fill="currentColor" d="M38.956.5c-3.53.418-6.452.902-9.286 2.984C5.534 1.786-.692 18.533.68 29.364 3.493 50.214 31.918 55.785 41.329 41.7c-7.444 7.696-19.276 8.752-28.323 3.084C3.959 39.116-.506 27.392 4.683 17.567 9.873 7.742 18.996 4.535 29.03 6.405c2.43-1.418 5.225-3.22 7.655-3.187l-1.694 4.86 12.752 21.37c-.439 5.654-5.459 6.112-5.459 6.112-.574-1.47-1.634-2.942-4.842-6.036-3.207-3.094-17.465-10.177-15.788-16.207-2.001 6.967 10.311 14.152 14.04 17.663 3.73 3.51 5.426 6.04 5.795 6.756 0 0 9.392-2.504 7.838-8.927L37.4 7.171z"/></svg>Lichess</a>
+    <a href="/login/google"><svg viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>Google</a>
+  </div>
+  <p class="legal" data-t="legal"></p>
+</main>
+<script>
+(function(){
+'use strict';
+var T={
+ ru:{lang:'English',tabLogin:'Вход',tabSignup:'Регистрация',loginField:'Ник или email',password:'Пароль',doLogin:'Войти',
+   forgotLink:'Забыли пароль?',username:'Ник',usernameHint:'3–20 символов: латинские буквы, цифры, _ и -. Его увидят соперники.',
+   passwordHint:'Не меньше 8 символов.',doSignup:'Создать аккаунт',forgotText:'Введите email, указанный при регистрации, — пришлём ссылку для нового пароля.',
+   doForgot:'Отправить ссылку',backLogin:'← Назад ко входу',newPassword:'Новый пароль',doReset:'Сохранить пароль',or:'или войти через',
+   legal:'Продолжая, вы соглашаетесь с <a href="https://twinqueens.com/privacy.html">политикой конфиденциальности</a>.',
+   e:{bad_username:'Ник: 3–20 символов, только латинские буквы, цифры, _ и -.',username_reserved:'Этот ник занят системой, выберите другой.',
+     username_taken:'Такой ник уже занят.',bad_email:'Проверьте адрес email.',email_taken:'На этот email уже есть аккаунт. Войдите или восстановите пароль.',
+     weak_password:'Пароль должен быть не короче 8 символов.',bad_credentials:'Неверный ник, email или пароль.',closed:'Этот аккаунт закрыт.',
+     rate_limited:'Слишком много попыток. Попробуйте позже.',blocked:'Регистрация отклонена. Если это ошибка, напишите администрации.',
+     mail_unavailable:'Восстановление пароля по почте пока не работает. Напишите администрации.',bad_token:'Ссылка устарела или уже использована. Запросите новую.',
+     server_error:'Ошибка сервера. Попробуйте позже.',verify_failed:'Ссылка подтверждения устарела или уже использована.',network:'Нет связи с сервером.',bad_request:'Ошибка запроса.'},
+   sent:'Если такой email зарегистрирован, мы отправили на него ссылку. Проверьте почту и папку «Спам».',
+   verified:'Email подтверждён. Можно играть!',
+   signedUp:'Аккаунт создан! Мы отправили письмо для подтверждения email.',signedUpNoMail:'Аккаунт создан!'},
+ en:{lang:'Русский',tabLogin:'Sign in',tabSignup:'Sign up',loginField:'Username or email',password:'Password',doLogin:'Sign in',
+   forgotLink:'Forgot your password?',username:'Username',usernameHint:'3–20 characters: Latin letters, digits, _ and -. Opponents will see it.',
+   passwordHint:'At least 8 characters.',doSignup:'Create account',forgotText:'Enter the email you signed up with and we will send you a link to set a new password.',
+   doForgot:'Send link',backLogin:'← Back to sign in',newPassword:'New password',doReset:'Save password',or:'or continue with',
+   legal:'By continuing you agree to the <a href="https://twinqueens.com/privacy.html">privacy policy</a>.',
+   e:{bad_username:'Username: 3–20 characters, Latin letters, digits, _ and - only.',username_reserved:'This username is reserved, please pick another.',
+     username_taken:'This username is already taken.',bad_email:'Please check the email address.',email_taken:'There is already an account with this email. Sign in or reset your password.',
+     weak_password:'The password must be at least 8 characters.',bad_credentials:'Wrong username, email or password.',closed:'This account is closed.',
+     rate_limited:'Too many attempts. Please try again later.',blocked:'Sign-up was declined. If this is a mistake, contact the admins.',
+     mail_unavailable:'Password reset by email is not available yet. Please contact the admins.',bad_token:'This link has expired or was already used. Request a new one.',
+     server_error:'Server error. Please try again later.',verify_failed:'This confirmation link has expired or was already used.',network:'Cannot reach the server.',bad_request:'Bad request.'},
+   sent:'If this email is registered, we have sent a link to it. Check your inbox and spam folder.',
+   verified:'Email confirmed. Enjoy the game!',
+   signedUp:'Account created! We have sent you an email to confirm your address.',signedUpNoMail:'Account created!'}
+};
+var lang;try{lang=localStorage.getItem('tq-lang')}catch(e){}
+if(lang!=='ru'&&lang!=='en')lang=/^(ru|uk|be|kk)/i.test(navigator.language||'')?'ru':'en';
+var $=function(id){return document.getElementById(id)},msgEl=$('msg'),view='login',resetToken=null,lastMsg=null;
+function L(){return T[lang]}
+function apply(){
+  document.documentElement.lang=lang;
+  document.querySelectorAll('[data-t]').forEach(function(el){var v=L()[el.dataset.t];if(el.dataset.t==='legal')el.innerHTML=v;else el.textContent=v});
+  $('lang').textContent=L().lang;
+  document.title='Twin Queens Chess — '+L().tabLogin;
+  if(lastMsg)show(lastMsg[0],lastMsg[1]);
+}
+function show(kind,key){
+  lastMsg=[kind,key];
+  var text=kind==='err'?(L().e[key]||L().e.server_error):L()[key];
+  msgEl.className='msg '+kind;msgEl.textContent=text;
+}
+function clearMsg(){lastMsg=null;msgEl.className='msg';msgEl.textContent=''}
+function go(v){
+  view=v;
+  ['login','signup','forgot','reset'].forEach(function(n){$('f-'+n).classList.toggle('on',n===v)});
+  document.querySelectorAll('#tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.tab===v)});
+  $('tabs').style.display=v==='reset'?'none':'';
+  var first=$('f-'+v).querySelector('input');if(first)setTimeout(function(){first.focus()},0);
+}
+function post(url,body,retried){
+  return fetch(url,{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)})
+    .then(function(r){
+      /* an expired sign-in cookie is dropped by the server with a plain 401; try once more without it */
+      if(r.status===401&&!retried&&(r.headers.get('Content-Type')||'').indexOf('json')<0)return post(url,body,true);
+      return r.json().catch(function(){return {error:'server_error'}});
+    },function(){return {error:'network'}});
+}
+function bind(id,url,collect,onOk){
+  var f=$(id);
+  f.addEventListener('submit',function(e){
+    e.preventDefault();clearMsg();
+    var btn=f.querySelector('.btn');btn.disabled=true;
+    post(url,collect(f)).then(function(res){
+      btn.disabled=false;
+      if(res&&res.success)onOk(res);else show('err',(res&&res.error)||'server_error');
+    });
+  });
+}
+var val=function(f,n){return f.elements[n].value};
+bind('f-login','/api/auth/login',function(f){return {login:val(f,'login').trim(),password:val(f,'password')}},function(){location.href='/'});
+bind('f-signup','/api/auth/signup',function(f){return {username:val(f,'username').trim(),email:val(f,'email').trim(),password:val(f,'password')}},
+  function(res){show('ok',res.mail?'signedUp':'signedUpNoMail');setTimeout(function(){location.href='/'},res.mail?2500:900)});
+bind('f-forgot','/api/auth/forgot',function(f){return {email:val(f,'email').trim()}},function(){show('ok','sent')});
+bind('f-reset','/api/auth/reset',function(f){return {token:resetToken,password:val(f,'password')}},function(){location.href='/'});
+document.querySelectorAll('#tabs button').forEach(function(b){b.addEventListener('click',function(){clearMsg();go(b.dataset.tab)})});
+document.querySelectorAll('[data-go]').forEach(function(b){b.addEventListener('click',function(){clearMsg();go(b.dataset.go)})});
+$('lang').addEventListener('click',function(){lang=lang==='ru'?'en':'ru';try{localStorage.setItem('tq-lang',lang)}catch(e){}apply()});
+
+function route(){
+  var h=location.hash.slice(1);clearMsg();
+  if(h.indexOf('reset=')===0){resetToken=h.slice(6);history.replaceState(null,'',location.pathname);go('reset')}
+  else if(h==='verified'){go('login');show('ok','verified')}
+  else if(h==='verify-failed'){go('login');show('err','verify_failed')}
+  else if(h==='signup')go('signup');
+  else go('login');
+}
+window.addEventListener('hashchange',route);
+route();
+apply();
+})();
+</script>
+</body>
+</html>
