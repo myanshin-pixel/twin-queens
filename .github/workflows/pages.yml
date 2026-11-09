@@ -3,7 +3,7 @@ name: Website (GitHub Pages)
 on:
   push:
     branches: [main]
-    paths: ['site/**', '.github/workflows/pages.yml']
+    paths: ['site/**', '.github/workflows/pages.yml', '.github/copy-site-engine.sh']
   workflow_dispatch:
 
 permissions:
@@ -23,6 +23,11 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - name: Copy Fairy-Stockfish browser runtime
+        run: bash .github/copy-site-engine.sh
       - name: Refresh offline cache list
         run: python3 site/gen-sw.py && rm site/gen-sw.py
       - uses: actions/configure-pages@v5
