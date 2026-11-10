@@ -137,6 +137,7 @@ function savePrefs(){try{localStorage.setItem('tq-prefs',JSON.stringify(prefs))}
 /* ---------- game flow ---------- */
 function clearUi(){selected=null;targets=[];preMode=false;premove=null;promoPending=null;shapes=[]}
 function newGame(){
+  if(window.tqFairyEngine)window.tqFairyEngine.stop();
   reqId++;thinking=false;overlayHidden=false;viewPly=null;clearUi();
   if(worker)worker._finish=null;
   const s0=startState();
@@ -178,6 +179,17 @@ function maybeEngine(){
   thinking=true;renderStatus();
   const id=++reqId,s=cur(),level=G.level,started=performance.now();
   const finish=m=>{const wait=Math.max(0,350-(performance.now()-started));setTimeout(()=>onEngine(id,m),wait)};
+  if(window.tqFairyEngine){
+    window.tqFairyEngine.bestMove(s,G.hist,level,G.clocks[s.t]).then(m=>{
+      if(id===reqId)finish(m);
+    }).catch(err=>{
+      console.warn('Fairy-Stockfish unavailable; using the built-in engine.',err);
+      if(id!==reqId)return;
+      if(worker){worker._finish=finish;worker._id=id;worker.postMessage({id,s,level})}
+      else setTimeout(()=>{if(id===reqId)finish(bestMove(s,level))},40);
+    });
+    return;
+  }
   if(worker){worker._finish=finish;worker._id=id;worker.postMessage({id,s,level})}
   else setTimeout(()=>{if(id!==reqId)return;finish(bestMove(s,level))},40);
 }
@@ -188,6 +200,7 @@ function onEngine(id,m){
 }
 function undo(){
   if(G.hist.length===0)return;
+  if(window.tqFairyEngine)window.tqFairyEngine.stop();
   if(thinking){reqId++;thinking=false;if(worker)worker._finish=null}
   const pop=()=>{G.states.pop();G.hist.pop();G.keys.pop()};
   pop();
@@ -197,6 +210,7 @@ function undo(){
 }
 function trackEnd(){if(window.tqTrack&&G.result)tqTrack('game_end',{mode:G.mode,result:G.result.code,score:G.result.score,moves:G.hist.length})}
 function finishBy(result){
+  if(window.tqFairyEngine)window.tqFairyEngine.stop();
   reqId++;thinking=false;if(worker)worker._finish=null;
   G.result=result;overlayHidden=false;viewPly=null;clearUi();
   render();save();play('end');trackEnd();
