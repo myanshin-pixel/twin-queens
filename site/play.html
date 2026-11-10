@@ -76,6 +76,6 @@
 <script src="engine.js"></script>
 <script src="game.js"></script>
 <script src="tilt.js"></script>
-<script>if(!window.Capacitor&&'serviceWorker' in navigator&&location.protocol.startsWith('http'))navigator.serviceWorker.register('sw.js').catch(function(){});</script>
+<script>if(!window.Capacitor&&'serviceWorker' in navigator&&location.protocol.startsWith('http')){var coiKey='tq-coi-reload';navigator.serviceWorker.register('sw.js').then(function(){return navigator.serviceWorker.ready}).then(function(){if(crossOriginIsolated)sessionStorage.removeItem(coiKey);else if(!sessionStorage.getItem(coiKey)){sessionStorage.setItem(coiKey,'1');location.reload()}}).catch(function(){});}</script>
 </body>
 </html>

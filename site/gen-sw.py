@@ -16,9 +16,15 @@ const CACHE='tq-{h.hexdigest()[:10]}';
 const FILES={json.dumps(['./'] + files, indent=1)};
 self.addEventListener('install',e=>{{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(FILES)).then(()=>self.skipWaiting()))}});
 self.addEventListener('activate',e=>{{e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))}});
+function withIsolationHeaders(response){{
+  const headers=new Headers(response.headers);
+  headers.set('Cross-Origin-Opener-Policy','same-origin');
+  headers.set('Cross-Origin-Embedder-Policy','require-corp');
+  return new Response(response.body,{{status:response.status,statusText:response.statusText,headers}});
+}}
 self.addEventListener('fetch',e=>{{
   if(e.request.method!=='GET')return;
-  e.respondWith(caches.match(e.request,{{ignoreSearch:true}}).then(r=>r||fetch(e.request)));
+  e.respondWith(caches.match(e.request,{{ignoreSearch:true}}).then(r=>r||fetch(e.request)).then(withIsolationHeaders));
 }});
 """
 open(os.path.join(root, 'sw.js'), 'w').write(src)
